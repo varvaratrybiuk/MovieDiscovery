@@ -16,12 +16,15 @@ namespace api.Services
         public async Task<MovieResponse> AddMovieAsync(CreateMovieRequest movieRequest)
         {
             ArgumentNullException.ThrowIfNull(movieRequest);
-            var result = await GetByTitleAsync(movieRequest.Title);
+            try{
+                var result = await GetByTitleAsync(movieRequest.Title);
+                
+                 if(result is not null){
+                    throw new MovieAlreadyExistsException(movieRequest.Title);
+                }
 
-            if(result is not null){
-
-                throw new MovieAlreadyExistsException(movieRequest.Title);
-            }
+            }catch(MovieNotFoundException){}
+           
             var movie = new Movie() { 
                 Title = movieRequest.Title,
                 Year = movieRequest.Year,

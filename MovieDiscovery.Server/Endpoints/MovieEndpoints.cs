@@ -1,4 +1,5 @@
-﻿using api.Contracts;
+﻿using System.Web;
+using api.Contracts;
 using api.Helpers;
 using api.Interfaces;
 
@@ -30,7 +31,9 @@ namespace api.Endpoints
             app.MapPost("/add", async (CreateMovieRequest create, IMovieService service) =>
             {
                 var result =  await service.AddMovieAsync(create);
-                return Results.Created($"movie/{result.Title}", result);
+                string encodedTitle = HttpUtility.UrlEncode(result.Title);
+                
+                return Results.Created($"movie/{encodedTitle}", result);
             }).AddEndpointFilter(async (context, next) =>
             {
                 var movie = context.GetArgument<CreateMovieRequest>(0);

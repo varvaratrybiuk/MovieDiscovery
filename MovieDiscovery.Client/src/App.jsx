@@ -6,9 +6,9 @@ import {
 } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+import Layout from "./pages/Layout";
 const Home = lazy(() => import("./pages/home/Home"));
-const AddNewMovie = lazy(() => import("./pages/addNewMovie/addNewMovie"));
-const Layout = lazy(() => import("./pages/Layout"));
+const AddNewMovie = lazy(() => import("./pages/addNewMovie/AddNewMovie"));
 const ErrorPage = lazy(() => import("./pages/error/ErrorPage"));
 
 import "./App.css";

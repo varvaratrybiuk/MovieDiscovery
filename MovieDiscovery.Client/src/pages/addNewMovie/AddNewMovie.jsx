@@ -1,6 +1,10 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { lazy } from "react";
 
 import AddFilmForm from "../../components/addFilmForm/AddFilmForm";
+const ErrorMessage = lazy(() =>
+  import("../../components/errorMessage/ErrorMessage")
+);
 
 import { getGenres } from "../../services/genreService";
 import { addMovie } from "../../services/movieService";
@@ -16,9 +20,15 @@ export default function AddNewMovie() {
     queryFn: getGenres,
   });
 
+  const mutation = useMutation({
+    mutationFn: addMovie,
+    onSuccess: () => {
+      console.log("Фільм додано успішно");
+    },
+  });
+
   const onSubmit = async (data) => {
     console.log(data);
-
     const movieData = {
       title: data.filmTitle,
       description: data.description,
@@ -26,22 +36,16 @@ export default function AddNewMovie() {
       year: data.year,
       rating: data.rating,
     };
-
     console.log(movieData);
-
-    try {
-      await addMovie(movieData);
-      console.log("Movie added successfully!");
-    } catch (error) {
-      throw error;
-    }
+    mutation.mutate(movieData);
   };
-  
+
   if (isLoading) return <p>Завантаження жанрів...</p>;
-  if (error) return <p>Помилка: {error.message}</p>;
+  if (error) return <ErrorMessage error={error.response.data.message} />;
 
   return (
     <>
+      <ErrorMessage error={mutation.error?.response.data.message} />
       <AddFilmForm genres={genres} onSubmit={onSubmit} />
     </>
   );
