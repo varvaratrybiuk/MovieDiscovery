@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import FormInput from "../formInput/FormInput";
 import FormTextarea from "../formTextarea/FormTextarea";
 import GenreOptions from "../genreOptions/GenreOptions";
+import ErrorMessage from "../errorMessage/ErrorMessage";
 
 import { movieValidationShema } from "../../schemas/movieFormValidationSchema";
 
@@ -45,19 +46,7 @@ export default function AddFilmForm(props) {
             options={genres}
             fieldname="filmGenres"
           />
-          {errors.filmGenres && (
-            <div>
-              <span
-                style={{
-                  color: "#ff4c4c",
-                  fontSize: "12px",
-                  marginTop: "5px",
-                }}
-              >
-                {errors.filmGenres.root.message}
-              </span>
-            </div>
-          )}
+          <ErrorMessage error={errors.filmGenres?.root.message} />
         </div>
 
         <FormInput

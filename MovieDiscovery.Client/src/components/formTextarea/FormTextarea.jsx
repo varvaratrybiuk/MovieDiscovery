@@ -1,5 +1,7 @@
 import { useFormContext } from "react-hook-form";
 
+import ErrorMessage from "../errorMessage/ErrorMessage";
+
 import style from "./FormTextareaStyle.module.css";
 
 export default function FormTextarea(props) {
@@ -21,7 +23,7 @@ export default function FormTextarea(props) {
           ...validationOptions,
         })}
       />
-      {errors[fieldKey] && <span>{errors[fieldKey].message}</span>}
+      <ErrorMessage error={errors[fieldKey]?.message} />
     </div>
   );
 }
