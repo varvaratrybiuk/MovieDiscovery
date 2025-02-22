@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
+using MovieDiscovery.Server.Exceptions;
 
 namespace api.Exceptions
 {
@@ -11,13 +12,14 @@ namespace api.Exceptions
             {
                 MovieNotFoundException => StatusCodes.Status404NotFound,
                 NoMoviesFoundException => StatusCodes.Status404NotFound,
+                MovieAlreadyExistsException => StatusCodes.Status400BadRequest,
                 ArgumentException or ArgumentNullException => StatusCodes.Status400BadRequest,
                 _ => StatusCodes.Status500InternalServerError
             };
 
             var message = exception switch
             {
-                ArgumentNullException => "Invalid request. Some required parameters are missing.",
+                ArgumentNullException => "Недійсний запит. Деякі обов’язкові параметри відсутні.",
                 _ => exception.Message ?? "Виникла невідома помилка. Спробуйте, будь ласка, пізніше"
             };
 

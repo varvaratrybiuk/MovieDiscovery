@@ -22,4 +22,13 @@
 .input-container input:hover {
   background-color: #ffe4e8;
 }
+.container {
+  flex-direction: column;
+  justify-items: center;
+}
 
+.error-message {
+  color: #ff4c4c;
+  font-size: 12px;
+  margin-top: 5px;
+}

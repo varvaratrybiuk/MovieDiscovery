@@ -8,7 +8,7 @@ export default function FilmCard(props) {
       <div className={style["description"]}>
         <div className={style["title"]}>Опис фільму</div>
         <div>
-          <div>Жанри: {genres.join(", ")}</div>
+          <div className={style["genre"]}>Жанри: {genres.join(", ")}</div>
           <div>{description}</div>
         </div>
       </div>

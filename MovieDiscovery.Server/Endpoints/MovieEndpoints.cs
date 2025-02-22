@@ -30,7 +30,7 @@ namespace api.Endpoints
             app.MapPost("/add", async (CreateMovieRequest create, IMovieService service) =>
             {
                 var result =  await service.AddMovieAsync(create);
-                return Results.Created($"movie/{result.Id}", result);
+                return Results.Created($"movie/{result.Title}", result);
             }).AddEndpointFilter(async (context, next) =>
             {
                 var movie = context.GetArgument<CreateMovieRequest>(0);

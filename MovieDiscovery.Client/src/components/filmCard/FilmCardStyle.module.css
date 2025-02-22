@@ -2,6 +2,7 @@
   background-color: #ffe0f0;
   border-radius: 12px;
   padding: 16px;
+  margin: 10px;
   background-color: #ff69b4a3;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 300px;
@@ -18,6 +19,7 @@
 .description {
   background-color: #ffd1e3a5;
   padding: 10px;
+  color: #333;
   border-radius: 8px;
   margin-bottom: 10px;
 }
@@ -32,4 +34,7 @@
   font-size: 14px;
   font-weight: bold;
     color: #333;
+}
+.genre{
+  font-weight: bold;
 }

@@ -14,7 +14,9 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       policy =>
                       {
-                          policy.WithOrigins("http://localhost:5173");
+                           policy.WithOrigins("http://localhost:5173")
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
                       });
 });
 
@@ -33,6 +35,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseCors(MyAllowSpecificOrigins);
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -40,7 +43,7 @@ if (app.Environment.IsDevelopment())
 }
 app.UseExceptionHandler(_ => { });
 app.UseHttpsRedirection();
-app.UseCors(MyAllowSpecificOrigins);
+
 
 app.MapGroup("/movies").MapMovieEndPoint();
 app.MapGroup("/genres").MapGenreEndPoint();
