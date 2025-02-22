@@ -7,6 +7,19 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                           policy.WithOrigins("http://localhost:5173")
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
+                      });
+});
+
 builder.Services.AddDbContext<MovieDBContext>(configure =>
 {
     configure.UseSqlite(builder.Configuration.GetConnectionString("sqlConnection"));
@@ -22,6 +35,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseCors(MyAllowSpecificOrigins);
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -29,6 +43,7 @@ if (app.Environment.IsDevelopment())
 }
 app.UseExceptionHandler(_ => { });
 app.UseHttpsRedirection();
+
 
 app.MapGroup("/movies").MapMovieEndPoint();
 app.MapGroup("/genres").MapGenreEndPoint();

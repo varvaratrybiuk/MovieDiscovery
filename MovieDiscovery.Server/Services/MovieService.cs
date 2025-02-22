@@ -4,6 +4,7 @@ using api.Exceptions;
 using api.Interfaces;
 using api.Models;
 using Microsoft.EntityFrameworkCore;
+using MovieDiscovery.Server.Exceptions;
 
 namespace api.Services
 {
@@ -15,6 +16,15 @@ namespace api.Services
         public async Task<MovieResponse> AddMovieAsync(CreateMovieRequest movieRequest)
         {
             ArgumentNullException.ThrowIfNull(movieRequest);
+            try{
+                var result = await GetByTitleAsync(movieRequest.Title);
+                
+                 if(result is not null){
+                    throw new MovieAlreadyExistsException(movieRequest.Title);
+                }
+
+            }catch(MovieNotFoundException){}
+           
             var movie = new Movie() { 
                 Title = movieRequest.Title,
                 Year = movieRequest.Year,
