@@ -46,7 +46,7 @@ namespace MovieDiscovery.Server.Endpoints
                 }
 
                 var hasher = new PasswordHasher<User>();
-                var result = hasher.VerifyHashedPassword(null, existingUser.Password, user.Password);
+                var result = hasher.VerifyHashedPassword(null, existingUser.Password,user.Password);
                 if (result == PasswordVerificationResult.Failed)
                 {
                     return Results.Unauthorized();

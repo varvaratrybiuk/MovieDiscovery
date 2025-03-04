@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using MovieDiscovery.Server.Context;
 using MovieDiscovery.Server.Endpoints;
 using MovieDiscovery.Server.Exceptions;
@@ -30,8 +31,16 @@ builder.Services.AddDbContext<MovieDBContext>(configure =>
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
-        options.LoginPath = "/account/login";
-        options.LogoutPath = "/account/logout";
+        options.Events.OnRedirectToLogin = context =>
+        {
+            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+            context.Response.ContentType = "application/json";
+
+            var response = new { message = "Потрібна автентифікація" };
+            var json = System.Text.Json.JsonSerializer.Serialize(response);
+
+            return context.Response.WriteAsync(json);
+        };
     });
 builder.Services.AddAuthorization();
 

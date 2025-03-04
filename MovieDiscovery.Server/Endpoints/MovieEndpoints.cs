@@ -1,4 +1,6 @@
-﻿using MovieDiscovery.Server.Contracts;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using MovieDiscovery.Server.Contracts;
 using MovieDiscovery.Server.Helpers;
 using MovieDiscovery.Server.Interfaces;
 using System.Web;
@@ -28,7 +30,7 @@ namespace MovieDiscovery.Server.Endpoints
                 return result is not null ? Results.Ok(result) : Results.NotFound();
             });
 
-            app.MapPost("/add", async (CreateMovieRequest create, IMovieService service) =>
+            app.MapPost("/add", [Authorize] async (CreateMovieRequest create, IMovieService service) =>
             {
                 var result = await service.AddMovieAsync(create);
                 string encodedTitle = HttpUtility.UrlEncode(result.Title);
@@ -46,7 +48,7 @@ namespace MovieDiscovery.Server.Endpoints
                 }
 
                 return await next(context);
-            }).RequireAuthorization();
+            });
 
             return app;
         }
