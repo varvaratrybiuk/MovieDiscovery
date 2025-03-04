@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Http;
-using MovieDiscovery.Server.Exceptions;
 
-namespace api.Exceptions
+namespace MovieDiscovery.Server.Exceptions
 {
     public class GlobalExceptionHandler : IExceptionHandler
     {

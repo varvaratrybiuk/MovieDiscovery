@@ -1,6 +1,6 @@
-﻿using api.Contracts;
+﻿using MovieDiscovery.Server.Contracts;
 
-namespace api.Helpers
+namespace MovieDiscovery.Server.Helpers
 {
     public static class ValidationUtilities
     {
@@ -34,6 +34,35 @@ namespace api.Helpers
             if (movie.GenresID.Any(m => m <= 0))
             {
                 return "ID жанру має бути більше 0.";
+            }
+
+            return string.Empty;
+        }
+        public static string ValidateUserRequest(CreateUserRequest user)
+        {
+            if (string.IsNullOrEmpty(user.Username))
+            {
+                return "Вкажіть ім'я користувача.";
+            }
+
+            if (string.IsNullOrEmpty(user.Email))
+            {
+                return "Вкажіть електронну пошту.";
+            }
+
+            if (!user.Email.Contains('@') || !user.Email.Contains('.'))
+            {
+                return "Введено некоректний формат електронної пошти.";
+            }
+
+            if (string.IsNullOrEmpty(user.Password))
+            {
+                return "Вкажіть пароль.";
+            }
+
+            if (user.Password.Length < 8)
+            {
+                return "Пароль повинен бути не менше 8 символів.";
             }
 
             return string.Empty;

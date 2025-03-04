@@ -1,10 +1,10 @@
-﻿using api.Interfaces;
+﻿using MovieDiscovery.Server.Interfaces;
 
-namespace api.Endpoints
+namespace MovieDiscovery.Server.Endpoints
 {
     public static class GenreEndpoints
     {
-        public static IEndpointRouteBuilder MapGenreEndPoint(this IEndpointRouteBuilder app)
+        public static IEndpointRouteBuilder MapGenreEndPoints(this IEndpointRouteBuilder app)
         {
             app.MapGet("/", async (IGenreService service) =>
             {

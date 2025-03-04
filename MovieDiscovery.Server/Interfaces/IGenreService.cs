@@ -1,6 +1,6 @@
-﻿using api.Contracts;
+﻿using MovieDiscovery.Server.Contracts;
 
-namespace api.Interfaces
+namespace MovieDiscovery.Server.Interfaces
 {
     public interface IGenreService
     {

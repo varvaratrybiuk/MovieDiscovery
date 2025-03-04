@@ -1,13 +1,13 @@
-﻿using System.Web;
-using api.Contracts;
-using api.Helpers;
-using api.Interfaces;
+﻿using MovieDiscovery.Server.Contracts;
+using MovieDiscovery.Server.Helpers;
+using MovieDiscovery.Server.Interfaces;
+using System.Web;
 
-namespace api.Endpoints
+namespace MovieDiscovery.Server.Endpoints
 {
     public static class MovieEndpoints
     {
-        public static IEndpointRouteBuilder MapMovieEndPoint(this IEndpointRouteBuilder app)
+        public static IEndpointRouteBuilder MapMovieEndPoints(this IEndpointRouteBuilder app)
         {
             app.MapGet("/", async (IMovieService service) =>
             {
@@ -24,15 +24,15 @@ namespace api.Endpoints
 
             app.MapGet("/{name}", async (string name, IMovieService service) =>
             {
-               var result = await service.GetByTitleAsync(name);
-               return result is not null ? Results.Ok(result) : Results.NotFound();
+                var result = await service.GetByTitleAsync(name);
+                return result is not null ? Results.Ok(result) : Results.NotFound();
             });
 
             app.MapPost("/add", async (CreateMovieRequest create, IMovieService service) =>
             {
-                var result =  await service.AddMovieAsync(create);
+                var result = await service.AddMovieAsync(create);
                 string encodedTitle = HttpUtility.UrlEncode(result.Title);
-                
+
                 return Results.Created($"movie/{encodedTitle}", result);
             }).AddEndpointFilter(async (context, next) =>
             {
@@ -46,7 +46,7 @@ namespace api.Endpoints
                 }
 
                 return await next(context);
-            });
+            }).RequireAuthorization();
 
             return app;
         }

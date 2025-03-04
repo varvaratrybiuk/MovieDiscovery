@@ -1,12 +1,11 @@
-﻿using api.Context;
-using api.Contracts;
-using api.Exceptions;
-using api.Interfaces;
-using api.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using MovieDiscovery.Server.Context;
+using MovieDiscovery.Server.Contracts;
 using MovieDiscovery.Server.Exceptions;
+using MovieDiscovery.Server.Interfaces;
+using MovieDiscovery.Server.Models;
 
-namespace api.Services
+namespace MovieDiscovery.Server.Services
 {
     public class MovieService : IMovieService
     {
@@ -16,16 +15,20 @@ namespace api.Services
         public async Task<MovieResponse> AddMovieAsync(CreateMovieRequest movieRequest)
         {
             ArgumentNullException.ThrowIfNull(movieRequest);
-            try{
+            try
+            {
                 var result = await GetByTitleAsync(movieRequest.Title);
-                
-                 if(result is not null){
+
+                if (result is not null)
+                {
                     throw new MovieAlreadyExistsException(movieRequest.Title);
                 }
 
-            }catch(MovieNotFoundException){}
-           
-            var movie = new Movie() { 
+            }
+            catch (MovieNotFoundException) { }
+
+            var movie = new Movie()
+            {
                 Title = movieRequest.Title,
                 Year = movieRequest.Year,
                 Description = movieRequest.Description,
@@ -42,7 +45,7 @@ namespace api.Services
                 MovieId = movie.Id,
                 GenreId = genreId
             }).ToList();
-             
+
             _context.Movies_Genres.AddRange(movieGenres);
             await _context.SaveChangesAsync();
 
@@ -79,55 +82,55 @@ namespace api.Services
                 Rating = g.Key.Rating
             })
             .ToListAsync();
-           
+
         }
 
         public async Task<MovieResponse?> GetByTitleAsync(string title)
         {
-                ArgumentNullException.ThrowIfNullOrWhiteSpace(title, "Film Title");
-                var movie = await _context.Movies_Genres
-                .Include(mg => mg.Genre)
-                .Include(mg => mg.Movie)
-                .Where(mg => mg.Movie.Title == title)
-                .GroupBy(mg => mg.Movie)
-                .Select(g => new MovieResponse()
-                {
-                    Id = g.Key.Id,
-                    Title = g.Key.Title,
-                    Year = g.Key.Year,
-                    Genres = g.Select(mg => mg.Genre.Name).ToList(),
-                    Description = g.Key.Description,
-                    Rating = g.Key.Rating
-                })
-                .FirstOrDefaultAsync();
+            ArgumentNullException.ThrowIfNullOrWhiteSpace(title, "Film Title");
+            var movie = await _context.Movies_Genres
+            .Include(mg => mg.Genre)
+            .Include(mg => mg.Movie)
+            .Where(mg => mg.Movie.Title == title)
+            .GroupBy(mg => mg.Movie)
+            .Select(g => new MovieResponse()
+            {
+                Id = g.Key.Id,
+                Title = g.Key.Title,
+                Year = g.Key.Year,
+                Genres = g.Select(mg => mg.Genre.Name).ToList(),
+                Description = g.Key.Description,
+                Rating = g.Key.Rating
+            })
+            .FirstOrDefaultAsync();
 
-                return movie is null ? throw new MovieNotFoundException(title) : movie;
+            return movie is null ? throw new MovieNotFoundException(title) : movie;
         }
         public async Task<MovieResponse?> GetRandomMovieAsync()
         {
-                Random random = new();
-                var movies = await _context.Movies_Genres
-                .Include(mg => mg.Genre)
-                .Include(mg => mg.Movie)
-                .GroupBy(mg => mg.Movie)
-                .Select(g => new MovieResponse()
-                {
-                    Id = g.Key.Id,
-                    Title = g.Key.Title,
-                    Year = g.Key.Year,
-                    Genres = g.Select(mg => mg.Genre.Name).ToList(),
-                    Description = g.Key.Description,
-                    Rating = g.Key.Rating
-                })
-                .ToListAsync();
+            Random random = new();
+            var movies = await _context.Movies_Genres
+            .Include(mg => mg.Genre)
+            .Include(mg => mg.Movie)
+            .GroupBy(mg => mg.Movie)
+            .Select(g => new MovieResponse()
+            {
+                Id = g.Key.Id,
+                Title = g.Key.Title,
+                Year = g.Key.Year,
+                Genres = g.Select(mg => mg.Genre.Name).ToList(),
+                Description = g.Key.Description,
+                Rating = g.Key.Rating
+            })
+            .ToListAsync();
 
-                if (movies.Count == 0)
-                {
-                    throw new NoMoviesFoundException();
-                }
+            if (movies.Count == 0)
+            {
+                throw new NoMoviesFoundException();
+            }
 
-                int id = random.Next(1, movies.Count);
-                return movies[id];
+            int id = random.Next(1, movies.Count);
+            return movies[id];
         }
     }
 }

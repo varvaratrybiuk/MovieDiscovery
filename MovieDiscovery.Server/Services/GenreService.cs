@@ -1,9 +1,9 @@
-﻿using api.Context;
-using api.Contracts;
-using api.Interfaces;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using MovieDiscovery.Server.Context;
+using MovieDiscovery.Server.Contracts;
+using MovieDiscovery.Server.Interfaces;
 
-namespace api.Services
+namespace MovieDiscovery.Server.Services
 {
     public class GenreService : IGenreService
     {

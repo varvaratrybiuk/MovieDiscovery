@@ -1,13 +1,14 @@
-﻿using api.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using MovieDiscovery.Server.Models;
 
-namespace api.Context
+namespace MovieDiscovery.Server.Context
 {
     public class MovieDBContext(DbContextOptions<MovieDBContext> dbContext) : DbContext(dbContext)
     {
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Movie_Genre> Movies_Genres { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -105,22 +106,22 @@ namespace api.Context
             );
 
             modelBuilder.Entity<Movie_Genre>().HasData(
-                new Movie_Genre { Id = 1, MovieId = 1, GenreId = 1 },
-                new Movie_Genre { Id = 2, MovieId = 1, GenreId = 2 },
-                new Movie_Genre { Id = 3, MovieId = 1, GenreId = 3 },
-                new Movie_Genre { Id = 4, MovieId = 2, GenreId = 3 },
-                new Movie_Genre { Id = 5, MovieId = 2, GenreId = 6 },
-                new Movie_Genre { Id = 6, MovieId = 2, GenreId = 7 },
-                new Movie_Genre { Id = 7, MovieId = 2, GenreId = 8 },
-                new Movie_Genre { Id = 8, MovieId = 3, GenreId = 1 },
-                new Movie_Genre { Id = 9, MovieId = 3, GenreId = 5 },
-                new Movie_Genre { Id = 10, MovieId = 3, GenreId = 7 },
-                new Movie_Genre { Id = 11, MovieId = 4, GenreId = 2 },
-                new Movie_Genre { Id = 12, MovieId = 4, GenreId = 5 },
-                new Movie_Genre { Id = 13, MovieId = 4, GenreId = 8 },
-                new Movie_Genre { Id = 14, MovieId = 5, GenreId = 1 },
-                new Movie_Genre { Id = 15, MovieId = 5, GenreId = 4 },
-                new Movie_Genre { Id = 16, MovieId = 5, GenreId = 5 }
+                new Movie_Genre { Id = 1, MovieId = 1, GenreId = 1, UserId = null },
+                new Movie_Genre { Id = 2, MovieId = 1, GenreId = 2, UserId = null },
+                new Movie_Genre { Id = 3, MovieId = 1, GenreId = 3, UserId = null },
+                new Movie_Genre { Id = 4, MovieId = 2, GenreId = 3, UserId = null },
+                new Movie_Genre { Id = 5, MovieId = 2, GenreId = 6, UserId = null },
+                new Movie_Genre { Id = 6, MovieId = 2, GenreId = 7, UserId = null },
+                new Movie_Genre { Id = 7, MovieId = 2, GenreId = 8, UserId = null },
+                new Movie_Genre { Id = 8, MovieId = 3, GenreId = 1, UserId = null },
+                new Movie_Genre { Id = 9, MovieId = 3, GenreId = 5, UserId = null },
+                new Movie_Genre { Id = 10, MovieId = 3, GenreId = 7, UserId = null },
+                new Movie_Genre { Id = 11, MovieId = 4, GenreId = 2, UserId = null },
+                new Movie_Genre { Id = 12, MovieId = 4, GenreId = 5, UserId = null },
+                new Movie_Genre { Id = 13, MovieId = 4, GenreId = 8, UserId = null },
+                new Movie_Genre { Id = 14, MovieId = 5, GenreId = 1, UserId = null },
+                new Movie_Genre { Id = 15, MovieId = 5, GenreId = 4, UserId = null },
+                new Movie_Genre { Id = 16, MovieId = 5, GenreId = 5, UserId = null }
             );
 
             base.OnModelCreating(modelBuilder);

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using api.Context;
+using MovieDiscovery.Server.Context;
 
 #nullable disable
 
@@ -16,7 +16,7 @@ namespace MovieDiscovery.Server.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.2");
 
-            modelBuilder.Entity("api.Models.Genre", b =>
+            modelBuilder.Entity("MovieDiscovery.Server.Models.Genre", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -73,7 +73,7 @@ namespace MovieDiscovery.Server.Migrations
                         });
                 });
 
-            modelBuilder.Entity("api.Models.Movie", b =>
+            modelBuilder.Entity("MovieDiscovery.Server.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -142,7 +142,7 @@ namespace MovieDiscovery.Server.Migrations
                         });
                 });
 
-            modelBuilder.Entity("api.Models.Movie_Genre", b =>
+            modelBuilder.Entity("MovieDiscovery.Server.Models.Movie_Genre", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -154,11 +154,16 @@ namespace MovieDiscovery.Server.Migrations
                     b.Property<int>("MovieId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int?>("UserId")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
                     b.HasIndex("GenreId");
 
                     b.HasIndex("MovieId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Movies_Genres");
 
@@ -261,31 +266,68 @@ namespace MovieDiscovery.Server.Migrations
                         });
                 });
 
-            modelBuilder.Entity("api.Models.Movie_Genre", b =>
+            modelBuilder.Entity("MovieDiscovery.Server.Models.User", b =>
                 {
-                    b.HasOne("api.Models.Genre", "Genre")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Username", "Email")
+                        .IsUnique();
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("MovieDiscovery.Server.Models.Movie_Genre", b =>
+                {
+                    b.HasOne("MovieDiscovery.Server.Models.Genre", "Genre")
                         .WithMany("MoviesGenres")
                         .HasForeignKey("GenreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("api.Models.Movie", "Movie")
+                    b.HasOne("MovieDiscovery.Server.Models.Movie", "Movie")
                         .WithMany("MoviesGenres")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("MovieDiscovery.Server.Models.User", "User")
+                        .WithMany("MoviesGenres")
+                        .HasForeignKey("UserId");
+
                     b.Navigation("Genre");
 
                     b.Navigation("Movie");
+
+                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("api.Models.Genre", b =>
+            modelBuilder.Entity("MovieDiscovery.Server.Models.Genre", b =>
                 {
                     b.Navigation("MoviesGenres");
                 });
 
-            modelBuilder.Entity("api.Models.Movie", b =>
+            modelBuilder.Entity("MovieDiscovery.Server.Models.Movie", b =>
+                {
+                    b.Navigation("MoviesGenres");
+                });
+
+            modelBuilder.Entity("MovieDiscovery.Server.Models.User", b =>
                 {
                     b.Navigation("MoviesGenres");
                 });

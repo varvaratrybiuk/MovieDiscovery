@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace api.Models
+namespace MovieDiscovery.Server.Models
 {
     public class Genre
     {

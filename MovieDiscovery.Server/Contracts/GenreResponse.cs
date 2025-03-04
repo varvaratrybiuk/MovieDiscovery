@@ -1,4 +1,4 @@
-﻿namespace api.Contracts
+﻿namespace MovieDiscovery.Server.Contracts
 {
     public record GenreResponse
     {
