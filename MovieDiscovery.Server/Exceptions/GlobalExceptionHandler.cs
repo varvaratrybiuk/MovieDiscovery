@@ -2,8 +2,18 @@
 
 namespace MovieDiscovery.Server.Exceptions
 {
+    /// <summary>
+    /// Глобальний обробник виключень, який обробляє різні типи виключень у застосунку.
+    /// </summary>
     public class GlobalExceptionHandler : IExceptionHandler
     {
+        /// <summary>
+        /// Метод, який асинхронно обробляє виключення, якщо це можливо.
+        /// </summary>
+        /// <param name="httpContext">Поточний HTTP контекст.</param>
+        /// <param name="exception">Виключення, яке потрібно обробити.</param>
+        /// <param name="cancellationToken">Токен для моніторингу запитів на скасування.</param>
+        /// <returns>Повертає `true`, якщо виключення було успішно оброблене, і `false` в іншому випадку.</returns>
         public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
         {
             var statusCode = exception switch

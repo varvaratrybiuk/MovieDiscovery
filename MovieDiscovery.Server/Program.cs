@@ -36,7 +36,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
             context.Response.ContentType = "application/json";
 
-            var response = new { message = "Потрібна автентифікація" };
+            var response = new { message = "Потрібна авторизація" };
             var json = System.Text.Json.JsonSerializer.Serialize(response);
 
             return context.Response.WriteAsync(json);
@@ -51,7 +51,17 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(x =>
+{
+    x.EnableAnnotations();
+    x.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Movie Discovery Api",
+        Version = "v1",
+        Description = "REST API для роботи з обліковими записами, додавання описів фільмів, пошуку інформації про фільми за назвою та отримання випадкової інформації про фільм."
+    });
+    x.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "MovieDiscoveryXMLDocumentation.xml"));
+});
 
 var app = builder.Build();
 
@@ -59,7 +69,10 @@ app.UseCors(MyAllowSpecificOrigins);
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Movie Discovery Api V1");
+    });
 }
 
 app.UseAuthentication();
