@@ -5,8 +5,15 @@ import ErrorMessage from "../errorMessage/ErrorMessage";
 import style from "./FormInputStyle.module.css";
 
 export default function FormInput(props) {
-  const { fieldKey, title, placeholderText, requiredText, validationOptions } =
-    props;
+  const {
+    fieldKey,
+    title,
+    placeholderText,
+    requiredText,
+    validationOptions,
+    type = "text",
+  } = props;
+  
   const {
     register,
     formState: { errors },
@@ -16,6 +23,7 @@ export default function FormInput(props) {
     <div className={style["input-container"]}>
       <label htmlFor={fieldKey}>{title}</label>
       <input
+        type={type}
         id={fieldKey}
         {...register(fieldKey, {
           required: requiredText ? requiredText : false,

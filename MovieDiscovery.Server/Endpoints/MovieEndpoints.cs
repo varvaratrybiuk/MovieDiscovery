@@ -100,7 +100,7 @@ namespace MovieDiscovery.Server.Endpoints
         {
             var userIdClaim = httpContext.User.FindFirst(ClaimTypes.NameIdentifier);
 
-            if (userIdClaim == null)
+            if (userIdClaim is null)
             {
                 return Results.Unauthorized();
             }

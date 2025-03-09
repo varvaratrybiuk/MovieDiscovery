@@ -32,7 +32,9 @@ export const getRandom = async () => {
 
 export const addMovie = async (movieData) => {
   try {
-    const response = await api.post("/movies/add", movieData);
+    const response = await api.post("/movies/add", movieData, {
+      withCredentials: true,
+    });
     return response.data;
   } catch (error) {
     console.error("Помилка додавання фільму:", error);

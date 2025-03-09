@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { lazy } from "react";
+import { lazy, useState } from "react";
 
 import AddFilmForm from "../../components/addFilmForm/AddFilmForm";
 const ErrorMessage = lazy(() =>
@@ -11,6 +11,7 @@ import { addMovie } from "../../services/movieService";
 import { filterOutFalse } from "../../helpers/filterData";
 
 export default function AddNewMovie() {
+  const [infoMessage, setInfoMessage] = useState("");
   const {
     data: genres = [],
     isLoading,
@@ -23,7 +24,7 @@ export default function AddNewMovie() {
   const mutation = useMutation({
     mutationFn: addMovie,
     onSuccess: () => {
-      console.log("Фільм додано успішно");
+      setInfoMessage("Фільм додано успішно");
     },
   });
 
@@ -45,6 +46,7 @@ export default function AddNewMovie() {
 
   return (
     <>
+      {infoMessage && <p>{infoMessage}</p>}
       <ErrorMessage error={mutation.error?.response.data.message} />
       <AddFilmForm genres={genres} onSubmit={onSubmit} />
     </>

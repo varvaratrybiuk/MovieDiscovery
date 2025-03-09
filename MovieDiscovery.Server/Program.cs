@@ -19,7 +19,8 @@ builder.Services.AddCors(options =>
                       {
                           policy.WithOrigins(allowedOrigins!)
                            .AllowAnyMethod()
-                           .AllowAnyHeader();
+                           .AllowAnyHeader()
+                           .AllowCredentials();
                       });
 });
 
@@ -36,7 +37,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
             context.Response.StatusCode = StatusCodes.Status401Unauthorized;
             context.Response.ContentType = "application/json";
 
-            var response = new { message = "Потрібна авторизація" };
+            var response = new { message = "РџРѕС‚СЂС–Р±РЅРѕ РїСЂРѕР№С‚Рё Р°РІС‚РµРЅС‚РёС„С–РєР°С†С–СЋ." };
             var json = System.Text.Json.JsonSerializer.Serialize(response);
 
             return context.Response.WriteAsync(json);
@@ -58,7 +59,7 @@ builder.Services.AddSwaggerGen(x =>
     {
         Title = "Movie Discovery Api",
         Version = "v1",
-        Description = "REST API для роботи з обліковими записами, додавання описів фільмів, пошуку інформації про фільми за назвою та отримання випадкової інформації про фільм."
+        Description = "REST API РґР»СЏ СЂРѕР±РѕС‚Рё Р· РѕР±Р»С–РєРѕРІРёРјРё Р·Р°РїРёСЃР°РјРё, РґРѕРґР°РІР°РЅРЅСЏ РѕРїРёСЃС–РІ С„С–Р»СЊРјС–РІ, РїРѕС€СѓРєСѓ С„С–Р»СЊРјС–РІ Р·Р° РЅР°Р·РІРѕСЋ С‚Р° РѕС‚СЂРёРјР°РЅРЅСЏ РІРёРїР°РґРєРѕРІРѕРіРѕ С„С–Р»СЊРјСѓ."
     });
     x.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "MovieDiscoveryXMLDocumentation.xml"));
 });

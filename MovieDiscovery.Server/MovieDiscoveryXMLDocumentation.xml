@@ -219,6 +219,18 @@
             <param name="app">Інтерфейс для налаштування маршрутів.</param>
             <returns>Інтерфейс для налаштування маршрутів.</returns>
         </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.AccountEndpoints.CheckAuth(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Перевірка чи користувач автентифікований.
+            </summary>
+            <returns>
+            Якщо користувач автентифікований, повертає статус 200 з даними користувача. Якщо ні - повертає статус 401.
+            </returns>
+            <param name="httpContext">Контекст HTTP.</param>
+            <response code="200">Користувач автентифікований.</response>
+            <response code="401">Користувач не увійшов у систему.</response>
+            <response code="401">Користувач не увійшов у систему.</response>
+        </member>
         <member name="M:MovieDiscovery.Server.Endpoints.AccountEndpoints.GetUserById(System.Int32,MovieDiscovery.Server.Interfaces.IUserService)">
             <summary>
             Отримання користувача за його ID.

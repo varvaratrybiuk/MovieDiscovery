@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using MovieDiscovery.Server.Contracts.User;
 using MovieDiscovery.Server.Helpers;
@@ -40,6 +41,8 @@ namespace MovieDiscovery.Server.Endpoints
 
             app.MapPost("/login", LoginUser);
 
+            app.MapGet("/check-auth", CheckAuth);
+
             app.MapPost("/logout", (Delegate)LogoutUser).RequireAuthorization(); ;
 
             app.MapPut("/update/{id}", UpdateUser).RequireAuthorization().AddEndpointFilter(async (context, next) =>
@@ -56,9 +59,31 @@ namespace MovieDiscovery.Server.Endpoints
                 return await next(context);
             });
 
-            app.MapDelete("/delete/{id}", DeleteUser).RequireAuthorization(); ;
+            app.MapDelete("/delete/{id}", DeleteUser).RequireAuthorization();
 
             return app;
+        }
+
+        /// <summary>
+        /// Перевірка чи користувач автентифікований.
+        /// </summary>
+        /// <returns>
+        /// Якщо користувач автентифікований, повертає статус 200 з даними користувача. Якщо ні - повертає статус 401.
+        /// </returns>
+        /// <param name="httpContext">Контекст HTTP.</param>
+        /// <response code="200">Користувач автентифікований.</response>
+        /// <response code="401">Користувач не увійшов у систему.</response>
+        /// <response code="401">Користувач не увійшов у систему.</response>
+        private static IResult CheckAuth(HttpContext httpContext)
+        {
+            var userNameClaim = httpContext.User.FindFirst(ClaimTypes.Name);
+
+            if (userNameClaim is null)
+            {
+                return Results.Unauthorized();
+            }
+
+            return Results.Ok(new { name = userNameClaim.Value });
         }
 
         /// <summary>

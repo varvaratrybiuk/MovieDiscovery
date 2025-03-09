@@ -7,9 +7,13 @@ import {
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import Layout from "./pages/Layout";
+import ProtectedRoute from "./utils/ProtectedRoute";
+import Anonymous from "./utils/Anonymous";
 const Home = lazy(() => import("./pages/home/Home"));
 const AddNewMovie = lazy(() => import("./pages/addNewMovie/AddNewMovie"));
 const ErrorPage = lazy(() => import("./pages/error/ErrorPage"));
+const LoginPage = lazy(() => import("./pages/login/LoginPage"));
+const RegisterPage = lazy(() => import("./pages/register/RegisterPage"));
 
 import "./App.css";
 
@@ -27,8 +31,26 @@ function App() {
           element: <Home />,
         },
         {
-          path: "add",
-          element: <AddNewMovie />,
+          element: <ProtectedRoute />,
+          children: [
+            {
+              path: "add",
+              element: <AddNewMovie />,
+            },
+          ],
+        },
+        {
+          element: <Anonymous />,
+          children: [
+            {
+              path: "login",
+              element: <LoginPage />,
+            },
+            {
+              path: "register",
+              element: <RegisterPage />,
+            },
+          ],
         },
       ],
     },
