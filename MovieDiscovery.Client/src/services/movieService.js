@@ -5,7 +5,7 @@ export const getMovies = async () => {
     const response = await api.get("/movies");
     return response.data;
   } catch (error) {
-    console.error("Помилка отримання фільмів:", error);
+    // console.error("Помилка отримання фільмів:", error);
     throw error;
   }
 };
@@ -15,7 +15,7 @@ export const getByName = async (title) => {
     const response = await api.get(`/movies/${title}`);
     return response.data;
   } catch (error) {
-    console.error("Помилка отримання фільмів:", error);
+    // console.error("Помилка отримання фільмів:", error);
     throw error;
   }
 };
@@ -25,7 +25,7 @@ export const getRandom = async () => {
     const response = await api.get(`/movies/random`);
     return response.data;
   } catch (error) {
-    console.error("Помилка отримання фільмів:", error);
+    // console.error("Помилка отримання фільмів:", error);
     throw error;
   }
 };
@@ -37,7 +37,7 @@ export const addMovie = async (movieData) => {
     });
     return response.data;
   } catch (error) {
-    console.error("Помилка додавання фільму:", error);
+    //console.error("Помилка додавання фільму:", error);
     throw error;
   }
 };

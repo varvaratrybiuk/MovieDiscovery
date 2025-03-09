@@ -219,6 +219,18 @@
             <param name="app">Інтерфейс для налаштування маршрутів.</param>
             <returns>Інтерфейс для налаштування маршрутів.</returns>
         </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.AccountEndpoints.GetAuthUserInfo(Microsoft.AspNetCore.Http.HttpContext,MovieDiscovery.Server.Interfaces.IUserService)">
+            <summary>
+            Отримання інформації про аутентифікованого користувача за допомогою його ID.
+            </summary>
+            <param name="httpContext">Контекст HTTP для доступу до куків і даних користувача.</param>
+            <param name="service">Сервіс для роботи з користувачами, що дозволяє отримати користувача за ID.</param>
+            <returns>Статус 200 з даними користувача, якщо користувач знайдений, 
+            або статус 401, якщо користувач не авторизований.</returns>
+            <response code="200">Дані користувача успішно знайдені.</response>
+            <response code="401">Користувач не авторизований.</response>
+            <response code="500">Внутрішня помилка сервера.</response>
+        </member>
         <member name="M:MovieDiscovery.Server.Endpoints.AccountEndpoints.CheckAuth(Microsoft.AspNetCore.Http.HttpContext)">
             <summary>
             Перевірка чи користувач автентифікований.
@@ -279,25 +291,25 @@
             <response code="200">Вихід успішний</response>
             <response code="500">Внутрішня помилка</response>
         </member>
-        <member name="M:MovieDiscovery.Server.Endpoints.AccountEndpoints.UpdateUser(MovieDiscovery.Server.Contracts.User.UpdateUserRequest,System.Int32,MovieDiscovery.Server.Interfaces.IUserService)">
+        <member name="M:MovieDiscovery.Server.Endpoints.AccountEndpoints.UpdateUser(MovieDiscovery.Server.Contracts.User.UpdateUserRequest,MovieDiscovery.Server.Interfaces.IUserService,Microsoft.AspNetCore.Http.HttpContext)">
             <summary>
             Оновлення даних користувача.
             </summary>
-            <param name="id">ID користувача для оновлення</param>
             <param name="user">Об'єкт, що містить дані для оновлення даних користувача</param>
             <param name="service">Сервіс для роботи з користувачами</param>
+            <param name="httpContext">Контекст HTTP.</param>
             <returns>Статус 204 при успішному оновленні</returns>
             <response code="204">Оновлення успішне</response>
             <response code="401">Користувач не увійшов у систему</response>
             <response code="404">Користувач не знайдений</response>
             <response code="500">Внутрішня помилка</response>
         </member>
-        <member name="M:MovieDiscovery.Server.Endpoints.AccountEndpoints.DeleteUser(System.Int32,MovieDiscovery.Server.Interfaces.IUserService)">
+        <member name="M:MovieDiscovery.Server.Endpoints.AccountEndpoints.DeleteUser(MovieDiscovery.Server.Interfaces.IUserService,Microsoft.AspNetCore.Http.HttpContext)">
             <summary>
             Видалення користувача.
             </summary>
-            <param name="id">ID користувача для видалення</param>
             <param name="service">Сервіс для роботи з користувачами</param>
+            <param name="httpContext">Контекст HTTP.</param>
             <returns>Статус 204 при успішному видаленні</returns>
             <response code="204">Користувач успішно видалений</response>
             <response code="401">Користувач не увійшов у систему</response>
@@ -773,6 +785,18 @@
             <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.Movie.MovieResponse"/>.</returns>
             <exception cref="T:MovieDiscovery.Server.Exceptions.NoMoviesFoundException">Виникає, якщо у базі немає фільмів.</exception>
             <exception cref="T:System.Exception">Може виникнути у разі неочікуваної помилки.</exception>
+        </member>
+        <member name="T:MovieDiscovery.Server.Services.UserContextService">
+            <summary>
+            Сервіс для роботи з контекстом користувача в HTTP запитах.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Services.UserContextService.GetUserIdFromHttpContext(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Отримання userId з контексту HTTP.
+            </summary>
+            <param name="httpContext">Контекст HTTP.</param>
+            <returns>userId користувача або null, якщо користувач не авторизований.</returns>
         </member>
         <member name="T:MovieDiscovery.Server.Services.UserService">
             <summary>

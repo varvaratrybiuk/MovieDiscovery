@@ -6,7 +6,10 @@ using MovieDiscovery.Server.Contracts.User;
 using MovieDiscovery.Server.Helpers;
 using MovieDiscovery.Server.Interfaces;
 using MovieDiscovery.Server.Models;
+using MovieDiscovery.Server.Services;
+using System.Net.Http;
 using System.Security.Claims;
+using System.Threading;
 
 namespace MovieDiscovery.Server.Endpoints
 {
@@ -23,6 +26,8 @@ namespace MovieDiscovery.Server.Endpoints
         public static IEndpointRouteBuilder MapAccountEndPoints(this IEndpointRouteBuilder app)
         {
             app.MapGet("/{id}", GetUserById);
+
+            app.MapGet("/auth-user", GetAuthUserInfo).RequireAuthorization();
 
             app.MapPost("/register", RegisterUser)
                .AddEndpointFilter(async (context, next) =>
@@ -45,7 +50,7 @@ namespace MovieDiscovery.Server.Endpoints
 
             app.MapPost("/logout", (Delegate)LogoutUser).RequireAuthorization(); ;
 
-            app.MapPut("/update/{id}", UpdateUser).RequireAuthorization().AddEndpointFilter(async (context, next) =>
+            app.MapPut("/update", UpdateUser).RequireAuthorization().AddEndpointFilter(async (context, next) =>
             {
                 var user = context.GetArgument<UpdateUserRequest>(0);
 
@@ -59,9 +64,30 @@ namespace MovieDiscovery.Server.Endpoints
                 return await next(context);
             });
 
-            app.MapDelete("/delete/{id}", DeleteUser).RequireAuthorization();
+            app.MapDelete("/delete", DeleteUser).RequireAuthorization();
 
             return app;
+        }
+        /// <summary>
+        /// Отримання інформації про аутентифікованого користувача за допомогою його ID.
+        /// </summary>
+        /// <param name="httpContext">Контекст HTTP для доступу до куків і даних користувача.</param>
+        /// <param name="service">Сервіс для роботи з користувачами, що дозволяє отримати користувача за ID.</param>
+        /// <returns>Статус 200 з даними користувача, якщо користувач знайдений, 
+        /// або статус 401, якщо користувач не авторизований.</returns>
+        /// <response code="200">Дані користувача успішно знайдені.</response>
+        /// <response code="401">Користувач не авторизований.</response>
+        /// <response code="500">Внутрішня помилка сервера.</response>
+        private static async Task<IResult> GetAuthUserInfo(HttpContext httpContext, IUserService service)
+        {
+            var userId = UserContextService.GetUserIdFromHttpContext(httpContext);
+
+            if (userId is null)
+            {
+                return Results.Unauthorized();
+            }
+            var result = await service.GetUserByIdAsync(userId.Value);
+            return Results.Ok(result);
         }
 
         /// <summary>
@@ -131,19 +157,19 @@ namespace MovieDiscovery.Server.Endpoints
         /// <response code="401">Невірні облікові дані</response>
         /// <response code="404">Користувач не знайдений</response>
         /// <response code="500">Внутрішня помилка</response>
-        private static async Task<IResult> LoginUser(UserRequest user, IUserService service, HttpContext httpContext)
+        private static async Task<IResult?> LoginUser(UserRequest user, IUserService service, HttpContext httpContext)
         {
             var existingUser = await service.GetUserByEmailAndUsernameAsync(user.Username, string.Empty) as UserResponseWithPassword;
             if (existingUser is null)
             {
-                return Results.NotFound();
+                return Results.NotFound("Користувача не знайдено");
             }
 
             var hasher = new PasswordHasher<User>();
             var result = hasher.VerifyHashedPassword(null, existingUser.Password, user.Password);
             if (result == PasswordVerificationResult.Failed)
             {
-                return Results.Unauthorized();
+                return Results.Problem("Невірний пароль", statusCode: 401);
             }
 
             var claims = new List<Claim>
@@ -173,36 +199,54 @@ namespace MovieDiscovery.Server.Endpoints
             return Results.Ok(new { message = "Вихід успішний" });
         }
 
+       
+
         /// <summary>
         /// Оновлення даних користувача.
         /// </summary>
-        /// <param name="id">ID користувача для оновлення</param>
         /// <param name="user">Об'єкт, що містить дані для оновлення даних користувача</param>
         /// <param name="service">Сервіс для роботи з користувачами</param>
+        /// <param name="httpContext">Контекст HTTP.</param>
         /// <returns>Статус 204 при успішному оновленні</returns>
         /// <response code="204">Оновлення успішне</response>
         /// <response code="401">Користувач не увійшов у систему</response>
         /// <response code="404">Користувач не знайдений</response>
         /// <response code="500">Внутрішня помилка</response>
-        private static async Task<IResult> UpdateUser(UpdateUserRequest user, int id, IUserService service)
+        private static async Task<IResult> UpdateUser(UpdateUserRequest user, IUserService service, HttpContext httpContext)
         {
-            var updatedUser = await service.UpdateUserAsync(user, id);
+            var userId = UserContextService.GetUserIdFromHttpContext(httpContext);
+
+            if (userId is null)
+            {
+                return Results.Unauthorized();
+            }
+
+            var updatedUser = await service.UpdateUserAsync(user, userId.Value);
             return updatedUser is not null ? Results.NoContent() : Results.NotFound("Користувач не знайдений.");
         }
 
         /// <summary>
         /// Видалення користувача.
         /// </summary>
-        /// <param name="id">ID користувача для видалення</param>
         /// <param name="service">Сервіс для роботи з користувачами</param>
+        /// <param name="httpContext">Контекст HTTP.</param>
         /// <returns>Статус 204 при успішному видаленні</returns>
         /// <response code="204">Користувач успішно видалений</response>
         /// <response code="401">Користувач не увійшов у систему</response>
         /// <response code="404">Користувач не знайдений</response>
         /// <response code="500">Внутрішня помилка</response>
-        private static async Task<IResult> DeleteUser(int id, IUserService service)
+        private static async Task<IResult> DeleteUser(IUserService service, HttpContext httpContext)
         {
-            var deleted = await service.DeleteUserAsync(id);
+            var userId = UserContextService.GetUserIdFromHttpContext(httpContext);
+
+            if (userId is null)
+            {
+                return Results.Unauthorized();
+            }
+
+            var deleted = await service.DeleteUserAsync(userId.Value);
+            await httpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+
             return deleted ? Results.NoContent() : Results.NotFound("Користувач не знайдений.");
         }
 

@@ -1,26 +1,22 @@
-import { useMutation } from "@tanstack/react-query";
-import { useNavigate } from "react-router";
 import { lazy } from "react";
+import { useNavigate } from "react-router";
 
 import LoginForm from "../../components/loginForm/LoginForm";
 const ErrorMessage = lazy(() =>
   import("../../components/errorMessage/ErrorMessage")
 );
 
-import { login } from "../../services/accountService";
+import { AccountMachineContext } from "../../contexts/accountContext";
 
 export default function LoginPage() {
-  let navigate = useNavigate();
-  const mutation = useMutation({
-    mutationFn: login,
-    onSuccess: (data) => {
-      console.log(data);
-      navigate("/");
-    },
-  });
+  const actor = AccountMachineContext.useActorRef();
+  const error = AccountMachineContext.useSelector(
+    (state) => state.context.errorMessage
+  );
 
   const onSubmit = async (data) => {
-    mutation.mutate({
+    actor.send({
+      type: "LOGIN",
       username: data.username,
       password: data.password,
     });
@@ -28,7 +24,7 @@ export default function LoginPage() {
 
   return (
     <>
-      <ErrorMessage error={mutation.error?.response?.data?.message} />
+      <ErrorMessage error={error} />
       <LoginForm onSubmit={onSubmit} />
     </>
   );

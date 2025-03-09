@@ -1,5 +1,5 @@
-import { useMutation } from "@tanstack/react-query";
-import { useNavigate } from "react-router";
+import { redirect, useNavigate } from "react-router";
+import { useEffect } from "react";
 import { lazy } from "react";
 
 import RegisterForm from "../../components/registerForm/RegisterForm";
@@ -7,29 +7,26 @@ const ErrorMessage = lazy(() =>
   import("../../components/errorMessage/ErrorMessage")
 );
 
-import { register } from "../../services/accountService";
+import { AccountMachineContext } from "../../contexts/accountContext";
 
 export default function RegisterPage() {
   let navigate = useNavigate();
-  const mutation = useMutation({
-    mutationFn: register,
-    onSuccess: (data) => {
-      console.log(data.message);
-      navigate("/login");
-    },
-  });
+  const actor = AccountMachineContext.useActorRef();
+  const error = AccountMachineContext.useSelector(
+    (state) => state.context.errorMessage
+  );
 
   const onSubmit = async (data) => {
-    mutation.mutate({
-      username: data.username,
-      email: data.email,
-      password: data.password,
+    actor.send({
+      type: "REGISTER",
+      user: data,
     });
+    navigate("/login");
   };
 
   return (
     <>
-      <ErrorMessage error={mutation.error?.response?.data?.message} />
+      <ErrorMessage error={error} />
       <RegisterForm onSubmit={onSubmit} />
     </>
   );

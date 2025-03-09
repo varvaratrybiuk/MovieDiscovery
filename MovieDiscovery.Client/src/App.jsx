@@ -14,6 +14,9 @@ const AddNewMovie = lazy(() => import("./pages/addNewMovie/AddNewMovie"));
 const ErrorPage = lazy(() => import("./pages/error/ErrorPage"));
 const LoginPage = lazy(() => import("./pages/login/LoginPage"));
 const RegisterPage = lazy(() => import("./pages/register/RegisterPage"));
+const ProfilePage = lazy(() => import("./pages/profile/ProfilePage"));
+
+import { AccountProvider } from "./contexts/accountContext";
 
 import "./App.css";
 
@@ -36,6 +39,10 @@ function App() {
             {
               path: "add",
               element: <AddNewMovie />,
+            },
+            {
+              path: "profile",
+              element: <ProfilePage />,
             },
           ],
         },
@@ -61,9 +68,11 @@ function App() {
   ]);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <AccountProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </AccountProvider>
   );
 }
 

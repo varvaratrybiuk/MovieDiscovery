@@ -1,0 +1,20 @@
+.options-container {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+}
+.menu-container {
+  padding: 20px;
+  gap: 20px;
+  justify-self: center;
+  align-items: center;
+}
+.update-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}

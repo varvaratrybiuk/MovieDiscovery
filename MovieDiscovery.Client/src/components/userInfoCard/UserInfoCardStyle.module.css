@@ -1,0 +1,11 @@
+.card {
+  border-radius: 12px;
+  padding: 16px;
+  margin: 10px;
+  border: 1px solid #ff4c91;
+  display: flex;
+  flex-direction: column;
+  color: #333;
+  max-width: 300px;
+  font-family: Arial, sans-serif;
+}

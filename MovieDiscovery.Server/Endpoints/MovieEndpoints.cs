@@ -1,6 +1,7 @@
 ﻿using MovieDiscovery.Server.Contracts.Movie;
 using MovieDiscovery.Server.Helpers;
 using MovieDiscovery.Server.Interfaces;
+using MovieDiscovery.Server.Services;
 using System.Security.Claims;
 using System.Web;
 
@@ -98,15 +99,14 @@ namespace MovieDiscovery.Server.Endpoints
         /// <response code="500">Внутрішня помилка сервера.</response>
         private static async Task<IResult> AddMovie(CreateMovieRequest create, IMovieService service, HttpContext httpContext)
         {
-            var userIdClaim = httpContext.User.FindFirst(ClaimTypes.NameIdentifier);
+            var userId = UserContextService.GetUserIdFromHttpContext(httpContext);
 
-            if (userIdClaim is null)
+            if (userId is null)
             {
                 return Results.Unauthorized();
             }
 
-            int userId = int.Parse(userIdClaim.Value);
-            var result = await service.AddMovieAsync(create, userId);
+            var result = await service.AddMovieAsync(create, userId.Value);
             string encodedTitle = HttpUtility.UrlEncode(result.Title);
 
             return Results.Created($"movie/{encodedTitle}", result);
