@@ -81,7 +81,16 @@ app.UseAuthorization();
 
 app.UseExceptionHandler(_ => { });
 app.UseHttpsRedirection();
+app.Use(async (context, next) =>
+{
+    var method = context.Request.Method;
+     var path = context.Request.Path;
 
+    Console.WriteLine($"HTTP Method: {method}, Request Path: {path}");
+
+    // Передаємо запит далі по конвеєру
+    await next();
+});
 
 app.MapGroup("/movies").MapMovieEndPoints();
 app.MapGroup("/genres").MapGenreEndPoints();

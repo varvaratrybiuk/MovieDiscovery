@@ -71,14 +71,14 @@ namespace MovieDiscovery.Server.Endpoints
         }
 
         /// <summary>
-        /// Отримання фільму за назвою.
+        /// Отримання фільму(ів) за назвою.
         /// </summary>
         /// <param name="name">Назва фільму.</param>
         /// <param name="service">Сервіс для роботи з фільмами.</param>
-        /// <returns>Інформація про фільм.</returns>
-        /// <response code="200">Успішно отримано інформацію про фільм.</response>
+        /// <returns>Інформація про фільм(и).</returns>
+        /// <response code="200">Успішно отримано інформацію про фільм(и).</response>
         /// <response code="400">Некоректний запит.</response>
-        /// <response code="404">Фільм із вказаною назвою не знайдено.</response>
+        /// <response code="404">Фільм(и) із вказаною назвою не знайдено.</response>
         /// <response code="500">Внутрішня помилка сервера.</response>
         private static async Task<IResult> GetMovieByTitle(string name, IMovieService service)
         {

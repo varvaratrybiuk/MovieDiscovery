@@ -38,7 +38,7 @@
         </member>
         <member name="M:MovieDiscovery.Server.Context.MovieDBContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <summary>
-            Заповнення початковими даними.
+            Заповнення початковими даними та налаштування моделей.
             </summary>
             <param name="modelBuilder">Об'єкт для конфігурації моделі.</param>
         </member>
@@ -370,14 +370,14 @@
         </member>
         <member name="M:MovieDiscovery.Server.Endpoints.MovieEndpoints.GetMovieByTitle(System.String,MovieDiscovery.Server.Interfaces.IMovieService)">
             <summary>
-            Отримання фільму за назвою.
+            Отримання фільму(ів) за назвою.
             </summary>
             <param name="name">Назва фільму.</param>
             <param name="service">Сервіс для роботи з фільмами.</param>
-            <returns>Інформація про фільм.</returns>
-            <response code="200">Успішно отримано інформацію про фільм.</response>
+            <returns>Інформація про фільм(и).</returns>
+            <response code="200">Успішно отримано інформацію про фільм(и).</response>
             <response code="400">Некоректний запит.</response>
-            <response code="404">Фільм із вказаною назвою не знайдено.</response>
+            <response code="404">Фільм(и) із вказаною назвою не знайдено.</response>
             <response code="500">Внутрішня помилка сервера.</response>
         </member>
         <member name="M:MovieDiscovery.Server.Endpoints.MovieEndpoints.AddMovie(MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest,MovieDiscovery.Server.Interfaces.IMovieService,Microsoft.AspNetCore.Http.HttpContext)">
@@ -507,10 +507,10 @@
         </member>
         <member name="M:MovieDiscovery.Server.Interfaces.IMovieService.GetByTitleAsync(System.String)">
             <summary>
-            Отримання фільму за його назвою.
+            Отримання фільму(ів) за назвою.
             </summary>
             <param name="title">Назва фільму, який потрібно знайти.</param>
-            <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.Movie.MovieResponse"/> з фільмом або null, якщо фільм не знайдено.</returns>
+            <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.Movie.MovieResponse"/> з фільмом(ами) або null, якщо фільм не знайдено.</returns>
         </member>
         <member name="M:MovieDiscovery.Server.Interfaces.IMovieService.GetAllAsync">
             <summary>
@@ -594,6 +594,30 @@
             <inheritdoc />
         </member>
         <member name="M:MovieDiscovery.Server.Migrations.CreateUsersTable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:MovieDiscovery.Server.Migrations.SetNullOnUserDelete">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.SetNullOnUserDelete.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.SetNullOnUserDelete.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.SetNullOnUserDelete.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:MovieDiscovery.Server.Migrations.UpdateMovieDescription">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.UpdateMovieDescription.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.UpdateMovieDescription.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.UpdateMovieDescription.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
         <member name="T:MovieDiscovery.Server.Models.Genre">
@@ -770,12 +794,12 @@
         </member>
         <member name="M:MovieDiscovery.Server.Services.MovieService.GetByTitleAsync(System.String)">
             <summary>
-            Отримання фільму за його заголовком.
+            Отримання фільму(ів) за назвою.
             </summary>
             <param name="title">Назва фільму.</param>
             <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.Movie.MovieResponse"/> або викликає виняток.</returns>
             <exception cref="T:System.ArgumentNullException">Виникає, якщо <paramref name="title"/> є null або порожнім.</exception>
-            <exception cref="T:MovieDiscovery.Server.Exceptions.MovieNotFoundException">Виникає, якщо фільм не знайдено.</exception> 
+            <exception cref="T:MovieDiscovery.Server.Exceptions.MovieNotFoundException">Виникає, якщо фільм(и) не знайдено.</exception> 
             <exception cref="T:System.Exception">Може виникнути у разі неочікуваної помилки.</exception>
         </member>
         <member name="M:MovieDiscovery.Server.Services.MovieService.GetRandomMovieAsync">

@@ -22,11 +22,11 @@ namespace MovieDiscovery.Server.Interfaces
         Task<MovieResponse?> GetRandomMovieAsync();
 
         /// <summary>
-        /// Отримання фільму за його назвою.
+        /// Отримання фільму(ів) за назвою.
         /// </summary>
         /// <param name="title">Назва фільму, який потрібно знайти.</param>
-        /// <returns>Об'єкт <see cref="MovieResponse"/> з фільмом або null, якщо фільм не знайдено.</returns>
-        Task<MovieResponse?> GetByTitleAsync(string title);
+        /// <returns>Об'єкт <see cref="MovieResponse"/> з фільмом(ами) або null, якщо фільм не знайдено.</returns>
+        Task<IEnumerable<MovieResponse>> GetByTitleAsync(string title);
 
         /// <summary>
         /// Отримання всіх фільмів.

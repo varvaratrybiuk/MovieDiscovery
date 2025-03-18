@@ -1,5 +1,4 @@
-import { redirect, useNavigate } from "react-router";
-import { useEffect } from "react";
+import { useNavigate } from "react-router";
 import { lazy } from "react";
 
 import RegisterForm from "../../components/registerForm/RegisterForm";

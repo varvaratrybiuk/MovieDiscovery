@@ -15,6 +15,7 @@ const ErrorPage = lazy(() => import("./pages/error/ErrorPage"));
 const LoginPage = lazy(() => import("./pages/login/LoginPage"));
 const RegisterPage = lazy(() => import("./pages/register/RegisterPage"));
 const ProfilePage = lazy(() => import("./pages/profile/ProfilePage"));
+import CookiePopup from "./components/cookiePopup/CookiePopup";
 
 import { AccountProvider } from "./contexts/accountContext";
 
@@ -71,6 +72,7 @@ function App() {
     <AccountProvider>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
+        <CookiePopup />
       </QueryClientProvider>
     </AccountProvider>
   );

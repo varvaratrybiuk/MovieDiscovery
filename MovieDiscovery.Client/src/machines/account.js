@@ -6,6 +6,7 @@ import {
   logout,
   updateUser,
   checkAuth,
+  getAuthUserInfo,
 } from "../services/accountService";
 
 export const accountMachine = setup({
@@ -13,7 +14,8 @@ export const accountMachine = setup({
     checkingAuth: fromPromise(async () => {
       const user = await checkAuth();
       if (user) {
-        return { user };
+        const userResponse = await getAuthUserInfo();
+        return { user: userResponse };
       } else {
         throw new Error("Користувач не авторизований");
       }
@@ -21,7 +23,8 @@ export const accountMachine = setup({
     loginAction: fromPromise(async ({ input }) => {
       console.log("Логін користувача");
       const response = await login(input.user);
-      return { message: response.message };
+      const userResponse = await getAuthUserInfo();
+      return { message: response.message, user: userResponse };
     }),
     registerAction: fromPromise(async ({ input }) => {
       console.log("Реєстрація користувача");
@@ -36,7 +39,8 @@ export const accountMachine = setup({
     updateProfileAction: fromPromise(async ({ input }) => {
       console.log("Оновлення профілю");
       await updateUser(input.profileData);
-      return { message: "Оновлення успішне" };
+      const userResponse = await getAuthUserInfo();
+      return { user: userResponse };
     }),
     deleteUserAction: fromPromise(async () => {
       console.log("Видалення акаунту");
@@ -51,6 +55,7 @@ export const accountMachine = setup({
   context: {
     errorMessage: "",
     message: "",
+    user: null,
   },
   states: {
     checkingAuth: {
@@ -84,6 +89,7 @@ export const accountMachine = setup({
         onDone: {
           target: "authenticated",
           actions: assign({
+            user: ({ event }) => event.output.user,
             errorMessage: () => "",
           }),
         },
@@ -133,6 +139,7 @@ export const accountMachine = setup({
           target: "checkingAuth",
           actions: assign({
             errorMessage: () => "",
+            user: null,
           }),
         },
         onError: {
@@ -149,10 +156,13 @@ export const accountMachine = setup({
         src: "updateProfileAction",
         input: ({ event }) => ({ profileData: event.profileData }),
         onDone: {
-          target: "authenticated",
           actions: assign({
+            user: ({ event }) => {
+              return event.output?.user;
+            },
             errorMessage: () => "",
           }),
+          target: "authenticated",
         },
         onError: {
           target: "error",

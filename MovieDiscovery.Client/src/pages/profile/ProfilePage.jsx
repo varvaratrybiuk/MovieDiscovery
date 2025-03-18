@@ -1,4 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
 import { lazy } from "react";
 
 import UpdateUserForm from "../../components/updateUserForm/UpdateUserForm";
@@ -9,8 +8,6 @@ const ErrorMessage = lazy(() =>
 
 import { AccountMachineContext } from "../../contexts/accountContext";
 
-import { getAuthUserInfo } from "../../services/accountService";
-
 import style from "./ProfilePageStyle.module.css";
 import buttonStyles from "../../styles/buttonsStyle.module.css";
 
@@ -19,19 +16,21 @@ export default function ProfilePage() {
   const error = AccountMachineContext.useSelector(
     (state) => state.context.errorMessage
   );
+  const userInfo = AccountMachineContext.useSelector(
+    (state) => state.context.user
+  );
 
-  const { data, isLoading, refetch } = useQuery({
-    queryKey: ["userInfo"],
-    queryFn: getAuthUserInfo,
-  });
+  // const { data, isLoading, refetch } = useQuery({
+  //   queryKey: ["userInfo"],
+  //   queryFn: getAuthUserInfo,
+  // });
 
   const handleUpdateClick = (userData) => {
     actor.send({
       type: "UPDATE_PROFILE",
       profileData: userData,
     });
-
-    refetch();
+    //refetch();
   };
 
   const handleDeleteClick = () => {
@@ -46,7 +45,7 @@ export default function ProfilePage() {
     });
   };
 
-  if (isLoading) return <p>Завантаження...</p>;
+  //if (isLoading) return <p>Завантаження...</p>;
 
   return (
     <div className={style["menu-container"]}>
@@ -64,7 +63,11 @@ export default function ProfilePage() {
           <UpdateUserForm onSubmit={handleUpdateClick} />
         </div>
         <div>
-          {data ? <UserInfoCard user={data} /> : <p>Користувача не знайдено</p>}
+          {userInfo ? (
+            <UserInfoCard user={userInfo} />
+          ) : (
+            <p>Користувача не знайдено</p>
+          )}
         </div>
       </div>
     </div>

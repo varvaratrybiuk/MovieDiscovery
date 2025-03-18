@@ -3,7 +3,7 @@ import { Checkbox } from "antd";
 import { Controller, useFormContext } from "react-hook-form";
 
 const OptionItem = (props) => {
-  const { name, value, onChange, checked = false } = props;
+  const { name, value, onChange, checked = false, disabled = false } = props;
   const { control } = useFormContext();
 
   return (
@@ -11,6 +11,7 @@ const OptionItem = (props) => {
       name={name}
       control={control}
       defaultValue={checked}
+      disabled={disabled}
       render={({ field }) => (
         <Checkbox
           {...field}

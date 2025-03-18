@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import { useEffect } from "react";
 
 import NavBar from "../components/navBar/NavBar";
 
@@ -16,11 +17,14 @@ export default function Layout() {
     (option) =>
       option.requiresAuth === null || option.requiresAuth === isAuthenticated
   );
-  if (state === "error") {
-    actor.send({
-      type: "RETRY",
-    });
-  }
+
+  useEffect(() => {
+    if (state === "error") {
+      actor.send({
+        type: "RETRY",
+      });
+    }
+  }, [state, actor]);
 
   return (
     <>

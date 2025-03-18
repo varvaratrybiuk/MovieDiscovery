@@ -109,21 +109,21 @@ namespace MovieDiscovery.Server.Services
         }
 
         /// <summary>
-        /// Отримання фільму за його заголовком.
+        /// Отримання фільму(ів) за назвою.
         /// </summary>
         /// <param name="title">Назва фільму.</param>
         /// <returns>Об'єкт <see cref="MovieResponse"/> або викликає виняток.</returns>
         /// <exception cref="ArgumentNullException">Виникає, якщо <paramref name="title"/> є null або порожнім.</exception>
-        /// <exception cref="MovieNotFoundException">Виникає, якщо фільм не знайдено.</exception> 
+        /// <exception cref="MovieNotFoundException">Виникає, якщо фільм(и) не знайдено.</exception> 
         /// <exception cref="Exception">Може виникнути у разі неочікуваної помилки.</exception>
-        public async Task<MovieResponse?> GetByTitleAsync(string title)
+        public async Task<IEnumerable<MovieResponse>> GetByTitleAsync(string title)
         {
             ArgumentNullException.ThrowIfNullOrWhiteSpace(title, "Film Title");
 
             var movie = await _context.Movies_Genres
                 .Include(mg => mg.Genre)
                 .Include(mg => mg.Movie)
-                .Where(mg => mg.Movie.Title == title)
+                .Where(mg => mg.Movie.Title.Contains(title))
                 .GroupBy(mg => mg.Movie)
                 .Select(g => new MovieResponse()
                 {
@@ -134,9 +134,9 @@ namespace MovieDiscovery.Server.Services
                     Description = g.Key.Description,
                     Rating = g.Key.Rating
                 })
-                .FirstOrDefaultAsync();
+                .ToListAsync();
 
-            return movie is null ? throw new MovieNotFoundException(title) : movie;
+            return movie.Count == 0 ? throw new MovieNotFoundException(title) : movie;
         }
 
         /// <summary>

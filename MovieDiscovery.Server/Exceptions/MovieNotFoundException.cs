@@ -10,6 +10,6 @@
         /// </summary>
         /// <param name="title">Назва фільму, який не знайдено.</param>
         public MovieNotFoundException(string title)
-            : base($"Фільм з назвою '{title}' не знайдено.") { }
+            : base($"Фільм(и) з назвою '{title}' не знайдено.") { }
     }
 }
