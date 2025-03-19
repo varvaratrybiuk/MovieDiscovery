@@ -1,0 +1,542 @@
+### YamlMime:ManagedReference
+items:
+- uid: MovieDiscovery.Server.Helpers.ValidationUtilities
+  commentId: T:MovieDiscovery.Server.Helpers.ValidationUtilities
+  id: ValidationUtilities
+  parent: MovieDiscovery.Server.Helpers
+  children:
+  - MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateCreateUserRequest(MovieDiscovery.Server.Contracts.User.CreateUserRequest)
+  - MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateMovieRequest(MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest)
+  - MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateUpdateUserRequest(MovieDiscovery.Server.Contracts.User.UpdateUserRequest)
+  langs:
+  - csharp
+  - vb
+  name: ValidationUtilities
+  nameWithType: ValidationUtilities
+  fullName: MovieDiscovery.Server.Helpers.ValidationUtilities
+  type: Class
+  source:
+    remote:
+      path: MovieDiscovery.Server/Helpers/ValidationUtilities.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: ValidationUtilities
+    path: Helpers/ValidationUtilities.cs
+    startLine: 9
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Helpers
+  summary: Статичний клас для обробки валідації запитів.
+  example: []
+  syntax:
+    content: public static class ValidationUtilities
+    content.vb: Public Module ValidationUtilities
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateMovieRequest(MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest)
+  commentId: M:MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateMovieRequest(MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest)
+  id: ValidateMovieRequest(MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest)
+  parent: MovieDiscovery.Server.Helpers.ValidationUtilities
+  langs:
+  - csharp
+  - vb
+  name: ValidateMovieRequest(CreateMovieRequest)
+  nameWithType: ValidationUtilities.ValidateMovieRequest(CreateMovieRequest)
+  fullName: MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateMovieRequest(MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest)
+  type: Method
+  source:
+    remote:
+      path: MovieDiscovery.Server/Helpers/ValidationUtilities.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: ValidateMovieRequest
+    path: Helpers/ValidationUtilities.cs
+    startLine: 16
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Helpers
+  summary: Валідує запит на створення фільму.
+  example: []
+  syntax:
+    content: public static string ValidateMovieRequest(CreateMovieRequest movie)
+    parameters:
+    - id: movie
+      type: MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest
+      description: Об'єкт, що містить дані для створення фільму.
+    return:
+      type: System.String
+      description: Повертає повідомлення про помилку, якщо валідація не пройдена, або порожній рядок, якщо все вірно.
+    content.vb: Public Shared Function ValidateMovieRequest(movie As CreateMovieRequest) As String
+  overload: MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateMovieRequest*
+- uid: MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateCreateUserRequest(MovieDiscovery.Server.Contracts.User.CreateUserRequest)
+  commentId: M:MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateCreateUserRequest(MovieDiscovery.Server.Contracts.User.CreateUserRequest)
+  id: ValidateCreateUserRequest(MovieDiscovery.Server.Contracts.User.CreateUserRequest)
+  parent: MovieDiscovery.Server.Helpers.ValidationUtilities
+  langs:
+  - csharp
+  - vb
+  name: ValidateCreateUserRequest(CreateUserRequest)
+  nameWithType: ValidationUtilities.ValidateCreateUserRequest(CreateUserRequest)
+  fullName: MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateCreateUserRequest(MovieDiscovery.Server.Contracts.User.CreateUserRequest)
+  type: Method
+  source:
+    remote:
+      path: MovieDiscovery.Server/Helpers/ValidationUtilities.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: ValidateCreateUserRequest
+    path: Helpers/ValidationUtilities.cs
+    startLine: 56
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Helpers
+  summary: Валідує запит на створення користувача.
+  example: []
+  syntax:
+    content: public static string ValidateCreateUserRequest(CreateUserRequest user)
+    parameters:
+    - id: user
+      type: MovieDiscovery.Server.Contracts.User.CreateUserRequest
+      description: Об'єкт, що містить дані для створення користувача.
+    return:
+      type: System.String
+      description: Повертає повідомлення про помилку, якщо валідація не пройдена, або порожній рядок, якщо все вірно.
+    content.vb: Public Shared Function ValidateCreateUserRequest(user As CreateUserRequest) As String
+  overload: MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateCreateUserRequest*
+- uid: MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateUpdateUserRequest(MovieDiscovery.Server.Contracts.User.UpdateUserRequest)
+  commentId: M:MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateUpdateUserRequest(MovieDiscovery.Server.Contracts.User.UpdateUserRequest)
+  id: ValidateUpdateUserRequest(MovieDiscovery.Server.Contracts.User.UpdateUserRequest)
+  parent: MovieDiscovery.Server.Helpers.ValidationUtilities
+  langs:
+  - csharp
+  - vb
+  name: ValidateUpdateUserRequest(UpdateUserRequest)
+  nameWithType: ValidationUtilities.ValidateUpdateUserRequest(UpdateUserRequest)
+  fullName: MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateUpdateUserRequest(MovieDiscovery.Server.Contracts.User.UpdateUserRequest)
+  type: Method
+  source:
+    remote:
+      path: MovieDiscovery.Server/Helpers/ValidationUtilities.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: ValidateUpdateUserRequest
+    path: Helpers/ValidationUtilities.cs
+    startLine: 87
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Helpers
+  summary: Валідує запит на оновлення користувача.
+  example: []
+  syntax:
+    content: public static string ValidateUpdateUserRequest(UpdateUserRequest user)
+    parameters:
+    - id: user
+      type: MovieDiscovery.Server.Contracts.User.UpdateUserRequest
+      description: Об'єкт, що містить дані для оновлення користувача.
+    return:
+      type: System.String
+      description: Повертає повідомлення про помилку, якщо валідація не пройдена, або порожній рядок, якщо все вірно.
+    content.vb: Public Shared Function ValidateUpdateUserRequest(user As UpdateUserRequest) As String
+  overload: MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateUpdateUserRequest*
+references:
+- uid: MovieDiscovery.Server.Helpers
+  commentId: N:MovieDiscovery.Server.Helpers
+  href: MovieDiscovery.html
+  name: MovieDiscovery.Server.Helpers
+  nameWithType: MovieDiscovery.Server.Helpers
+  fullName: MovieDiscovery.Server.Helpers
+  spec.csharp:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Helpers
+    name: Helpers
+    href: MovieDiscovery.Server.Helpers.html
+  spec.vb:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Helpers
+    name: Helpers
+    href: MovieDiscovery.Server.Helpers.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateMovieRequest*
+  commentId: Overload:MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateMovieRequest
+  href: MovieDiscovery.Server.Helpers.ValidationUtilities.html#MovieDiscovery_Server_Helpers_ValidationUtilities_ValidateMovieRequest_MovieDiscovery_Server_Contracts_Movie_CreateMovieRequest_
+  name: ValidateMovieRequest
+  nameWithType: ValidationUtilities.ValidateMovieRequest
+  fullName: MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateMovieRequest
+- uid: MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest
+  commentId: T:MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest
+  parent: MovieDiscovery.Server.Contracts.Movie
+  href: MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest.html
+  name: CreateMovieRequest
+  nameWithType: CreateMovieRequest
+  fullName: MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: MovieDiscovery.Server.Contracts.Movie
+  commentId: N:MovieDiscovery.Server.Contracts.Movie
+  href: MovieDiscovery.html
+  name: MovieDiscovery.Server.Contracts.Movie
+  nameWithType: MovieDiscovery.Server.Contracts.Movie
+  fullName: MovieDiscovery.Server.Contracts.Movie
+  spec.csharp:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts
+    name: Contracts
+    href: MovieDiscovery.Server.Contracts.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts.Movie
+    name: Movie
+    href: MovieDiscovery.Server.Contracts.Movie.html
+  spec.vb:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts
+    name: Contracts
+    href: MovieDiscovery.Server.Contracts.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts.Movie
+    name: Movie
+    href: MovieDiscovery.Server.Contracts.Movie.html
+- uid: MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateCreateUserRequest*
+  commentId: Overload:MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateCreateUserRequest
+  href: MovieDiscovery.Server.Helpers.ValidationUtilities.html#MovieDiscovery_Server_Helpers_ValidationUtilities_ValidateCreateUserRequest_MovieDiscovery_Server_Contracts_User_CreateUserRequest_
+  name: ValidateCreateUserRequest
+  nameWithType: ValidationUtilities.ValidateCreateUserRequest
+  fullName: MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateCreateUserRequest
+- uid: MovieDiscovery.Server.Contracts.User.CreateUserRequest
+  commentId: T:MovieDiscovery.Server.Contracts.User.CreateUserRequest
+  parent: MovieDiscovery.Server.Contracts.User
+  href: MovieDiscovery.Server.Contracts.User.CreateUserRequest.html
+  name: CreateUserRequest
+  nameWithType: CreateUserRequest
+  fullName: MovieDiscovery.Server.Contracts.User.CreateUserRequest
+- uid: MovieDiscovery.Server.Contracts.User
+  commentId: N:MovieDiscovery.Server.Contracts.User
+  href: MovieDiscovery.html
+  name: MovieDiscovery.Server.Contracts.User
+  nameWithType: MovieDiscovery.Server.Contracts.User
+  fullName: MovieDiscovery.Server.Contracts.User
+  spec.csharp:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts
+    name: Contracts
+    href: MovieDiscovery.Server.Contracts.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts.User
+    name: User
+    href: MovieDiscovery.Server.Contracts.User.html
+  spec.vb:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts
+    name: Contracts
+    href: MovieDiscovery.Server.Contracts.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts.User
+    name: User
+    href: MovieDiscovery.Server.Contracts.User.html
+- uid: MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateUpdateUserRequest*
+  commentId: Overload:MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateUpdateUserRequest
+  href: MovieDiscovery.Server.Helpers.ValidationUtilities.html#MovieDiscovery_Server_Helpers_ValidationUtilities_ValidateUpdateUserRequest_MovieDiscovery_Server_Contracts_User_UpdateUserRequest_
+  name: ValidateUpdateUserRequest
+  nameWithType: ValidationUtilities.ValidateUpdateUserRequest
+  fullName: MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateUpdateUserRequest
+- uid: MovieDiscovery.Server.Contracts.User.UpdateUserRequest
+  commentId: T:MovieDiscovery.Server.Contracts.User.UpdateUserRequest
+  parent: MovieDiscovery.Server.Contracts.User
+  href: MovieDiscovery.Server.Contracts.User.UpdateUserRequest.html
+  name: UpdateUserRequest
+  nameWithType: UpdateUserRequest
+  fullName: MovieDiscovery.Server.Contracts.User.UpdateUserRequest

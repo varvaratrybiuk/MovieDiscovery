@@ -1,0 +1,703 @@
+### YamlMime:ManagedReference
+items:
+- uid: MovieDiscovery.Server.Models.Movie_Genre
+  commentId: T:MovieDiscovery.Server.Models.Movie_Genre
+  id: Movie_Genre
+  parent: MovieDiscovery.Server.Models
+  children:
+  - MovieDiscovery.Server.Models.Movie_Genre.Genre
+  - MovieDiscovery.Server.Models.Movie_Genre.GenreId
+  - MovieDiscovery.Server.Models.Movie_Genre.Id
+  - MovieDiscovery.Server.Models.Movie_Genre.Movie
+  - MovieDiscovery.Server.Models.Movie_Genre.MovieId
+  - MovieDiscovery.Server.Models.Movie_Genre.User
+  - MovieDiscovery.Server.Models.Movie_Genre.UserId
+  langs:
+  - csharp
+  - vb
+  name: Movie_Genre
+  nameWithType: Movie_Genre
+  fullName: MovieDiscovery.Server.Models.Movie_Genre
+  type: Class
+  source:
+    remote:
+      path: MovieDiscovery.Server/Models/Movie_Genre.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: Movie_Genre
+    path: Models/Movie_Genre.cs
+    startLine: 8
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Models
+  summary: Сутність, що представляє зв'язок між фільмами, жанрами та користувачами.
+  example: []
+  syntax:
+    content: public class Movie_Genre
+    content.vb: Public Class Movie_Genre
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: MovieDiscovery.Server.Models.Movie_Genre.Id
+  commentId: P:MovieDiscovery.Server.Models.Movie_Genre.Id
+  id: Id
+  parent: MovieDiscovery.Server.Models.Movie_Genre
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: Movie_Genre.Id
+  fullName: MovieDiscovery.Server.Models.Movie_Genre.Id
+  type: Property
+  source:
+    remote:
+      path: MovieDiscovery.Server/Models/Movie_Genre.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: Id
+    path: Models/Movie_Genre.cs
+    startLine: 13
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Models
+  summary: Унікальний ідентифікатор зв'язку.
+  example: []
+  syntax:
+    content: >-
+      [Key]
+
+      public int Id { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <Key>
+
+      Public Property Id As Integer
+  overload: MovieDiscovery.Server.Models.Movie_Genre.Id*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.KeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.KeyAttribute.#ctor
+    arguments: []
+- uid: MovieDiscovery.Server.Models.Movie_Genre.MovieId
+  commentId: P:MovieDiscovery.Server.Models.Movie_Genre.MovieId
+  id: MovieId
+  parent: MovieDiscovery.Server.Models.Movie_Genre
+  langs:
+  - csharp
+  - vb
+  name: MovieId
+  nameWithType: Movie_Genre.MovieId
+  fullName: MovieDiscovery.Server.Models.Movie_Genre.MovieId
+  type: Property
+  source:
+    remote:
+      path: MovieDiscovery.Server/Models/Movie_Genre.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: MovieId
+    path: Models/Movie_Genre.cs
+    startLine: 19
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Models
+  summary: Ідентифікатор фільму.
+  example: []
+  syntax:
+    content: >-
+      [ForeignKey("Movie")]
+
+      public int MovieId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <ForeignKey("Movie")>
+
+      Public Property MovieId As Integer
+  overload: MovieDiscovery.Server.Models.Movie_Genre.MovieId*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Movie
+- uid: MovieDiscovery.Server.Models.Movie_Genre.GenreId
+  commentId: P:MovieDiscovery.Server.Models.Movie_Genre.GenreId
+  id: GenreId
+  parent: MovieDiscovery.Server.Models.Movie_Genre
+  langs:
+  - csharp
+  - vb
+  name: GenreId
+  nameWithType: Movie_Genre.GenreId
+  fullName: MovieDiscovery.Server.Models.Movie_Genre.GenreId
+  type: Property
+  source:
+    remote:
+      path: MovieDiscovery.Server/Models/Movie_Genre.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: GenreId
+    path: Models/Movie_Genre.cs
+    startLine: 25
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Models
+  summary: Ідентифікатор жанру.
+  example: []
+  syntax:
+    content: >-
+      [ForeignKey("Genre")]
+
+      public int GenreId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <ForeignKey("Genre")>
+
+      Public Property GenreId As Integer
+  overload: MovieDiscovery.Server.Models.Movie_Genre.GenreId*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: Genre
+- uid: MovieDiscovery.Server.Models.Movie_Genre.UserId
+  commentId: P:MovieDiscovery.Server.Models.Movie_Genre.UserId
+  id: UserId
+  parent: MovieDiscovery.Server.Models.Movie_Genre
+  langs:
+  - csharp
+  - vb
+  name: UserId
+  nameWithType: Movie_Genre.UserId
+  fullName: MovieDiscovery.Server.Models.Movie_Genre.UserId
+  type: Property
+  source:
+    remote:
+      path: MovieDiscovery.Server/Models/Movie_Genre.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: UserId
+    path: Models/Movie_Genre.cs
+    startLine: 31
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Models
+  summary: Ідентифікатор користувача (необов'язково).
+  example: []
+  syntax:
+    content: >-
+      [ForeignKey("User")]
+
+      public int? UserId { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: >-
+      <ForeignKey("User")>
+
+      Public Property UserId As Integer?
+  overload: MovieDiscovery.Server.Models.Movie_Genre.UserId*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: User
+- uid: MovieDiscovery.Server.Models.Movie_Genre.Genre
+  commentId: P:MovieDiscovery.Server.Models.Movie_Genre.Genre
+  id: Genre
+  parent: MovieDiscovery.Server.Models.Movie_Genre
+  langs:
+  - csharp
+  - vb
+  name: Genre
+  nameWithType: Movie_Genre.Genre
+  fullName: MovieDiscovery.Server.Models.Movie_Genre.Genre
+  type: Property
+  source:
+    remote:
+      path: MovieDiscovery.Server/Models/Movie_Genre.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: Genre
+    path: Models/Movie_Genre.cs
+    startLine: 37
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Models
+  summary: Жанр, до якого належить фільм.
+  example: []
+  syntax:
+    content: public virtual Genre? Genre { get; set; }
+    parameters: []
+    return:
+      type: MovieDiscovery.Server.Models.Genre
+    content.vb: Public Overridable Property Genre As Genre
+  overload: MovieDiscovery.Server.Models.Movie_Genre.Genre*
+- uid: MovieDiscovery.Server.Models.Movie_Genre.Movie
+  commentId: P:MovieDiscovery.Server.Models.Movie_Genre.Movie
+  id: Movie
+  parent: MovieDiscovery.Server.Models.Movie_Genre
+  langs:
+  - csharp
+  - vb
+  name: Movie
+  nameWithType: Movie_Genre.Movie
+  fullName: MovieDiscovery.Server.Models.Movie_Genre.Movie
+  type: Property
+  source:
+    remote:
+      path: MovieDiscovery.Server/Models/Movie_Genre.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: Movie
+    path: Models/Movie_Genre.cs
+    startLine: 42
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Models
+  summary: Фільм, до якого належить жанр.
+  example: []
+  syntax:
+    content: public virtual Movie? Movie { get; set; }
+    parameters: []
+    return:
+      type: MovieDiscovery.Server.Models.Movie
+    content.vb: Public Overridable Property Movie As Movie
+  overload: MovieDiscovery.Server.Models.Movie_Genre.Movie*
+- uid: MovieDiscovery.Server.Models.Movie_Genre.User
+  commentId: P:MovieDiscovery.Server.Models.Movie_Genre.User
+  id: User
+  parent: MovieDiscovery.Server.Models.Movie_Genre
+  langs:
+  - csharp
+  - vb
+  name: User
+  nameWithType: Movie_Genre.User
+  fullName: MovieDiscovery.Server.Models.Movie_Genre.User
+  type: Property
+  source:
+    remote:
+      path: MovieDiscovery.Server/Models/Movie_Genre.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: User
+    path: Models/Movie_Genre.cs
+    startLine: 47
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Models
+  summary: Користувач, що додав фільм.
+  example: []
+  syntax:
+    content: public virtual User? User { get; set; }
+    parameters: []
+    return:
+      type: MovieDiscovery.Server.Models.User
+    content.vb: Public Overridable Property User As User
+  overload: MovieDiscovery.Server.Models.Movie_Genre.User*
+references:
+- uid: MovieDiscovery.Server.Models
+  commentId: N:MovieDiscovery.Server.Models
+  href: MovieDiscovery.html
+  name: MovieDiscovery.Server.Models
+  nameWithType: MovieDiscovery.Server.Models
+  fullName: MovieDiscovery.Server.Models
+  spec.csharp:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Models
+    name: Models
+    href: MovieDiscovery.Server.Models.html
+  spec.vb:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Models
+    name: Models
+    href: MovieDiscovery.Server.Models.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: MovieDiscovery.Server.Models.Movie_Genre.Id*
+  commentId: Overload:MovieDiscovery.Server.Models.Movie_Genre.Id
+  href: MovieDiscovery.Server.Models.Movie_Genre.html#MovieDiscovery_Server_Models_Movie_Genre_Id
+  name: Id
+  nameWithType: Movie_Genre.Id
+  fullName: MovieDiscovery.Server.Models.Movie_Genre.Id
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: MovieDiscovery.Server.Models.Movie_Genre.MovieId*
+  commentId: Overload:MovieDiscovery.Server.Models.Movie_Genre.MovieId
+  href: MovieDiscovery.Server.Models.Movie_Genre.html#MovieDiscovery_Server_Models_Movie_Genre_MovieId
+  name: MovieId
+  nameWithType: Movie_Genre.MovieId
+  fullName: MovieDiscovery.Server.Models.Movie_Genre.MovieId
+- uid: MovieDiscovery.Server.Models.Movie_Genre.GenreId*
+  commentId: Overload:MovieDiscovery.Server.Models.Movie_Genre.GenreId
+  href: MovieDiscovery.Server.Models.Movie_Genre.html#MovieDiscovery_Server_Models_Movie_Genre_GenreId
+  name: GenreId
+  nameWithType: Movie_Genre.GenreId
+  fullName: MovieDiscovery.Server.Models.Movie_Genre.GenreId
+- uid: MovieDiscovery.Server.Models.Movie_Genre.UserId*
+  commentId: Overload:MovieDiscovery.Server.Models.Movie_Genre.UserId
+  href: MovieDiscovery.Server.Models.Movie_Genre.html#MovieDiscovery_Server_Models_Movie_Genre_UserId
+  name: UserId
+  nameWithType: Movie_Genre.UserId
+  fullName: MovieDiscovery.Server.Models.Movie_Genre.UserId
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: MovieDiscovery.Server.Models.Movie_Genre.Genre*
+  commentId: Overload:MovieDiscovery.Server.Models.Movie_Genre.Genre
+  href: MovieDiscovery.Server.Models.Movie_Genre.html#MovieDiscovery_Server_Models_Movie_Genre_Genre
+  name: Genre
+  nameWithType: Movie_Genre.Genre
+  fullName: MovieDiscovery.Server.Models.Movie_Genre.Genre
+- uid: MovieDiscovery.Server.Models.Genre
+  commentId: T:MovieDiscovery.Server.Models.Genre
+  parent: MovieDiscovery.Server.Models
+  href: MovieDiscovery.Server.Models.Genre.html
+  name: Genre
+  nameWithType: Genre
+  fullName: MovieDiscovery.Server.Models.Genre
+- uid: MovieDiscovery.Server.Models.Movie_Genre.Movie*
+  commentId: Overload:MovieDiscovery.Server.Models.Movie_Genre.Movie
+  href: MovieDiscovery.Server.Models.Movie_Genre.html#MovieDiscovery_Server_Models_Movie_Genre_Movie
+  name: Movie
+  nameWithType: Movie_Genre.Movie
+  fullName: MovieDiscovery.Server.Models.Movie_Genre.Movie
+- uid: MovieDiscovery.Server.Models.Movie
+  commentId: T:MovieDiscovery.Server.Models.Movie
+  parent: MovieDiscovery.Server.Models
+  href: MovieDiscovery.Server.Models.Movie.html
+  name: Movie
+  nameWithType: Movie
+  fullName: MovieDiscovery.Server.Models.Movie
+- uid: MovieDiscovery.Server.Models.Movie_Genre.User*
+  commentId: Overload:MovieDiscovery.Server.Models.Movie_Genre.User
+  href: MovieDiscovery.Server.Models.Movie_Genre.html#MovieDiscovery_Server_Models_Movie_Genre_User
+  name: User
+  nameWithType: Movie_Genre.User
+  fullName: MovieDiscovery.Server.Models.Movie_Genre.User
+- uid: MovieDiscovery.Server.Models.User
+  commentId: T:MovieDiscovery.Server.Models.User
+  parent: MovieDiscovery.Server.Models
+  href: MovieDiscovery.Server.Models.User.html
+  name: User
+  nameWithType: User
+  fullName: MovieDiscovery.Server.Models.User

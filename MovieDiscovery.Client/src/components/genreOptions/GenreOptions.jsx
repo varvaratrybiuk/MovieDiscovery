@@ -1,12 +1,9 @@
-import { useFormContext } from "react-hook-form";
-
 import OptionItem from "../optionItem/OptionItem.jsx";
 
 import style from "./GenreOptionsStyle.module.css";
 
 export default function GenreOptions(props) {
   const { description, options, fieldname } = props;
-
 
   return (
     <div className={style["option-group"]}>
@@ -21,8 +18,6 @@ export default function GenreOptions(props) {
           );
         })}
       </div>
-
-
     </div>
   );
 }

@@ -1,0 +1,51 @@
+### YamlMime:ManagedReference
+items:
+- uid: MovieDiscovery.Server.Exceptions
+  commentId: N:MovieDiscovery.Server.Exceptions
+  id: MovieDiscovery.Server.Exceptions
+  children:
+  - MovieDiscovery.Server.Exceptions.GlobalExceptionHandler
+  - MovieDiscovery.Server.Exceptions.MovieAlreadyExistsException
+  - MovieDiscovery.Server.Exceptions.MovieNotFoundException
+  - MovieDiscovery.Server.Exceptions.NoMoviesFoundException
+  - MovieDiscovery.Server.Exceptions.UserAlreadyExistsException
+  langs:
+  - csharp
+  - vb
+  name: MovieDiscovery.Server.Exceptions
+  nameWithType: MovieDiscovery.Server.Exceptions
+  fullName: MovieDiscovery.Server.Exceptions
+  type: Namespace
+  assemblies:
+  - MovieDiscovery.Server
+references:
+- uid: MovieDiscovery.Server.Exceptions.GlobalExceptionHandler
+  commentId: T:MovieDiscovery.Server.Exceptions.GlobalExceptionHandler
+  href: MovieDiscovery.Server.Exceptions.GlobalExceptionHandler.html
+  name: GlobalExceptionHandler
+  nameWithType: GlobalExceptionHandler
+  fullName: MovieDiscovery.Server.Exceptions.GlobalExceptionHandler
+- uid: MovieDiscovery.Server.Exceptions.MovieAlreadyExistsException
+  commentId: T:MovieDiscovery.Server.Exceptions.MovieAlreadyExistsException
+  href: MovieDiscovery.Server.Exceptions.MovieAlreadyExistsException.html
+  name: MovieAlreadyExistsException
+  nameWithType: MovieAlreadyExistsException
+  fullName: MovieDiscovery.Server.Exceptions.MovieAlreadyExistsException
+- uid: MovieDiscovery.Server.Exceptions.MovieNotFoundException
+  commentId: T:MovieDiscovery.Server.Exceptions.MovieNotFoundException
+  href: MovieDiscovery.Server.Exceptions.MovieNotFoundException.html
+  name: MovieNotFoundException
+  nameWithType: MovieNotFoundException
+  fullName: MovieDiscovery.Server.Exceptions.MovieNotFoundException
+- uid: MovieDiscovery.Server.Exceptions.NoMoviesFoundException
+  commentId: T:MovieDiscovery.Server.Exceptions.NoMoviesFoundException
+  href: MovieDiscovery.Server.Exceptions.NoMoviesFoundException.html
+  name: NoMoviesFoundException
+  nameWithType: NoMoviesFoundException
+  fullName: MovieDiscovery.Server.Exceptions.NoMoviesFoundException
+- uid: MovieDiscovery.Server.Exceptions.UserAlreadyExistsException
+  commentId: T:MovieDiscovery.Server.Exceptions.UserAlreadyExistsException
+  href: MovieDiscovery.Server.Exceptions.UserAlreadyExistsException.html
+  name: UserAlreadyExistsException
+  nameWithType: UserAlreadyExistsException
+  fullName: MovieDiscovery.Server.Exceptions.UserAlreadyExistsException

@@ -66,7 +66,7 @@ export default function CookiePopup() {
             onClick={handleAccept}
             style={{ margin: "10px" }}
           >
-            Прийняти
+            Прийняти всі
           </button>
           <button
             className={buttonStyles["pink-button"]}

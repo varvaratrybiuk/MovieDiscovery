@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: MovieDiscovery.Server.Endpoints
+  commentId: N:MovieDiscovery.Server.Endpoints
+  id: MovieDiscovery.Server.Endpoints
+  children:
+  - MovieDiscovery.Server.Endpoints.AccountEndpoints
+  - MovieDiscovery.Server.Endpoints.GenreEndpoints
+  - MovieDiscovery.Server.Endpoints.MovieEndpoints
+  langs:
+  - csharp
+  - vb
+  name: MovieDiscovery.Server.Endpoints
+  nameWithType: MovieDiscovery.Server.Endpoints
+  fullName: MovieDiscovery.Server.Endpoints
+  type: Namespace
+  assemblies:
+  - MovieDiscovery.Server
+references:
+- uid: MovieDiscovery.Server.Endpoints.AccountEndpoints
+  commentId: T:MovieDiscovery.Server.Endpoints.AccountEndpoints
+  href: MovieDiscovery.Server.Endpoints.AccountEndpoints.html
+  name: AccountEndpoints
+  nameWithType: AccountEndpoints
+  fullName: MovieDiscovery.Server.Endpoints.AccountEndpoints
+- uid: MovieDiscovery.Server.Endpoints.GenreEndpoints
+  commentId: T:MovieDiscovery.Server.Endpoints.GenreEndpoints
+  href: MovieDiscovery.Server.Endpoints.GenreEndpoints.html
+  name: GenreEndpoints
+  nameWithType: GenreEndpoints
+  fullName: MovieDiscovery.Server.Endpoints.GenreEndpoints
+- uid: MovieDiscovery.Server.Endpoints.MovieEndpoints
+  commentId: T:MovieDiscovery.Server.Endpoints.MovieEndpoints
+  href: MovieDiscovery.Server.Endpoints.MovieEndpoints.html
+  name: MovieEndpoints
+  nameWithType: MovieEndpoints
+  fullName: MovieDiscovery.Server.Endpoints.MovieEndpoints

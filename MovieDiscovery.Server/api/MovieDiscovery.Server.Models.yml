@@ -1,0 +1,77 @@
+### YamlMime:ManagedReference
+items:
+- uid: MovieDiscovery.Server.Models
+  commentId: N:MovieDiscovery.Server.Models
+  id: MovieDiscovery.Server.Models
+  children:
+  - MovieDiscovery.Server.Models.Genre
+  - MovieDiscovery.Server.Models.Movie
+  - MovieDiscovery.Server.Models.Movie_Genre
+  - MovieDiscovery.Server.Models.User
+  langs:
+  - csharp
+  - vb
+  name: MovieDiscovery.Server.Models
+  nameWithType: MovieDiscovery.Server.Models
+  fullName: MovieDiscovery.Server.Models
+  type: Namespace
+  assemblies:
+  - MovieDiscovery.Server
+references:
+- uid: MovieDiscovery.Server.Models.Genre
+  commentId: T:MovieDiscovery.Server.Models.Genre
+  parent: MovieDiscovery.Server.Models
+  href: MovieDiscovery.Server.Models.Genre.html
+  name: Genre
+  nameWithType: Genre
+  fullName: MovieDiscovery.Server.Models.Genre
+- uid: MovieDiscovery.Server.Models.Movie
+  commentId: T:MovieDiscovery.Server.Models.Movie
+  parent: MovieDiscovery.Server.Models
+  href: MovieDiscovery.Server.Models.Movie.html
+  name: Movie
+  nameWithType: Movie
+  fullName: MovieDiscovery.Server.Models.Movie
+- uid: MovieDiscovery.Server.Models.Movie_Genre
+  commentId: T:MovieDiscovery.Server.Models.Movie_Genre
+  href: MovieDiscovery.Server.Models.Movie_Genre.html
+  name: Movie_Genre
+  nameWithType: Movie_Genre
+  fullName: MovieDiscovery.Server.Models.Movie_Genre
+- uid: MovieDiscovery.Server.Models.User
+  commentId: T:MovieDiscovery.Server.Models.User
+  parent: MovieDiscovery.Server.Models
+  href: MovieDiscovery.Server.Models.User.html
+  name: User
+  nameWithType: User
+  fullName: MovieDiscovery.Server.Models.User
+- uid: MovieDiscovery.Server.Models
+  commentId: N:MovieDiscovery.Server.Models
+  href: MovieDiscovery.html
+  name: MovieDiscovery.Server.Models
+  nameWithType: MovieDiscovery.Server.Models
+  fullName: MovieDiscovery.Server.Models
+  spec.csharp:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Models
+    name: Models
+    href: MovieDiscovery.Server.Models.html
+  spec.vb:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Models
+    name: Models
+    href: MovieDiscovery.Server.Models.html

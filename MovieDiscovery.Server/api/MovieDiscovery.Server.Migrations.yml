@@ -1,0 +1,51 @@
+### YamlMime:ManagedReference
+items:
+- uid: MovieDiscovery.Server.Migrations
+  commentId: N:MovieDiscovery.Server.Migrations
+  id: MovieDiscovery.Server.Migrations
+  children:
+  - MovieDiscovery.Server.Migrations.CreateUsersTable
+  - MovieDiscovery.Server.Migrations.InitialCreate
+  - MovieDiscovery.Server.Migrations.SeedDatabase
+  - MovieDiscovery.Server.Migrations.SetNullOnUserDelete
+  - MovieDiscovery.Server.Migrations.UpdateMovieDescription
+  langs:
+  - csharp
+  - vb
+  name: MovieDiscovery.Server.Migrations
+  nameWithType: MovieDiscovery.Server.Migrations
+  fullName: MovieDiscovery.Server.Migrations
+  type: Namespace
+  assemblies:
+  - MovieDiscovery.Server
+references:
+- uid: MovieDiscovery.Server.Migrations.InitialCreate
+  commentId: T:MovieDiscovery.Server.Migrations.InitialCreate
+  href: MovieDiscovery.Server.Migrations.InitialCreate.html
+  name: InitialCreate
+  nameWithType: InitialCreate
+  fullName: MovieDiscovery.Server.Migrations.InitialCreate
+- uid: MovieDiscovery.Server.Migrations.SeedDatabase
+  commentId: T:MovieDiscovery.Server.Migrations.SeedDatabase
+  href: MovieDiscovery.Server.Migrations.SeedDatabase.html
+  name: SeedDatabase
+  nameWithType: SeedDatabase
+  fullName: MovieDiscovery.Server.Migrations.SeedDatabase
+- uid: MovieDiscovery.Server.Migrations.CreateUsersTable
+  commentId: T:MovieDiscovery.Server.Migrations.CreateUsersTable
+  href: MovieDiscovery.Server.Migrations.CreateUsersTable.html
+  name: CreateUsersTable
+  nameWithType: CreateUsersTable
+  fullName: MovieDiscovery.Server.Migrations.CreateUsersTable
+- uid: MovieDiscovery.Server.Migrations.SetNullOnUserDelete
+  commentId: T:MovieDiscovery.Server.Migrations.SetNullOnUserDelete
+  href: MovieDiscovery.Server.Migrations.SetNullOnUserDelete.html
+  name: SetNullOnUserDelete
+  nameWithType: SetNullOnUserDelete
+  fullName: MovieDiscovery.Server.Migrations.SetNullOnUserDelete
+- uid: MovieDiscovery.Server.Migrations.UpdateMovieDescription
+  commentId: T:MovieDiscovery.Server.Migrations.UpdateMovieDescription
+  href: MovieDiscovery.Server.Migrations.UpdateMovieDescription.html
+  name: UpdateMovieDescription
+  nameWithType: UpdateMovieDescription
+  fullName: MovieDiscovery.Server.Migrations.UpdateMovieDescription

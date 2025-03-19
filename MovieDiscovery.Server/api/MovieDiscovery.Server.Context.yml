@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: MovieDiscovery.Server.Context
+  commentId: N:MovieDiscovery.Server.Context
+  id: MovieDiscovery.Server.Context
+  children:
+  - MovieDiscovery.Server.Context.MovieDBContext
+  langs:
+  - csharp
+  - vb
+  name: MovieDiscovery.Server.Context
+  nameWithType: MovieDiscovery.Server.Context
+  fullName: MovieDiscovery.Server.Context
+  type: Namespace
+  assemblies:
+  - MovieDiscovery.Server
+references:
+- uid: MovieDiscovery.Server.Context.MovieDBContext
+  commentId: T:MovieDiscovery.Server.Context.MovieDBContext
+  parent: MovieDiscovery.Server.Context
+  href: MovieDiscovery.Server.Context.MovieDBContext.html
+  name: MovieDBContext
+  nameWithType: MovieDBContext
+  fullName: MovieDiscovery.Server.Context.MovieDBContext
+- uid: MovieDiscovery.Server.Context
+  commentId: N:MovieDiscovery.Server.Context
+  href: MovieDiscovery.html
+  name: MovieDiscovery.Server.Context
+  nameWithType: MovieDiscovery.Server.Context
+  fullName: MovieDiscovery.Server.Context
+  spec.csharp:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Context
+    name: Context
+    href: MovieDiscovery.Server.Context.html
+  spec.vb:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Context
+    name: Context
+    href: MovieDiscovery.Server.Context.html

@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: MovieDiscovery.Server.Interfaces
+  commentId: N:MovieDiscovery.Server.Interfaces
+  id: MovieDiscovery.Server.Interfaces
+  children:
+  - MovieDiscovery.Server.Interfaces.IGenreService
+  - MovieDiscovery.Server.Interfaces.IMovieService
+  - MovieDiscovery.Server.Interfaces.IUserService
+  langs:
+  - csharp
+  - vb
+  name: MovieDiscovery.Server.Interfaces
+  nameWithType: MovieDiscovery.Server.Interfaces
+  fullName: MovieDiscovery.Server.Interfaces
+  type: Namespace
+  assemblies:
+  - MovieDiscovery.Server
+references:
+- uid: MovieDiscovery.Server.Interfaces.IGenreService
+  commentId: T:MovieDiscovery.Server.Interfaces.IGenreService
+  parent: MovieDiscovery.Server.Interfaces
+  href: MovieDiscovery.Server.Interfaces.IGenreService.html
+  name: IGenreService
+  nameWithType: IGenreService
+  fullName: MovieDiscovery.Server.Interfaces.IGenreService
+- uid: MovieDiscovery.Server.Interfaces.IMovieService
+  commentId: T:MovieDiscovery.Server.Interfaces.IMovieService
+  parent: MovieDiscovery.Server.Interfaces
+  href: MovieDiscovery.Server.Interfaces.IMovieService.html
+  name: IMovieService
+  nameWithType: IMovieService
+  fullName: MovieDiscovery.Server.Interfaces.IMovieService
+- uid: MovieDiscovery.Server.Interfaces.IUserService
+  commentId: T:MovieDiscovery.Server.Interfaces.IUserService
+  parent: MovieDiscovery.Server.Interfaces
+  href: MovieDiscovery.Server.Interfaces.IUserService.html
+  name: IUserService
+  nameWithType: IUserService
+  fullName: MovieDiscovery.Server.Interfaces.IUserService
+- uid: MovieDiscovery.Server.Interfaces
+  commentId: N:MovieDiscovery.Server.Interfaces
+  href: MovieDiscovery.html
+  name: MovieDiscovery.Server.Interfaces
+  nameWithType: MovieDiscovery.Server.Interfaces
+  fullName: MovieDiscovery.Server.Interfaces
+  spec.csharp:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Interfaces
+    name: Interfaces
+    href: MovieDiscovery.Server.Interfaces.html
+  spec.vb:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Interfaces
+    name: Interfaces
+    href: MovieDiscovery.Server.Interfaces.html
