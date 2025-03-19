@@ -1,0 +1,217 @@
+### YamlMime:ManagedReference
+items:
+- uid: MovieDiscovery.Server.Interfaces.IGenreService
+  commentId: T:MovieDiscovery.Server.Interfaces.IGenreService
+  id: IGenreService
+  parent: MovieDiscovery.Server.Interfaces
+  children:
+  - MovieDiscovery.Server.Interfaces.IGenreService.GetAllAsync
+  langs:
+  - csharp
+  - vb
+  name: IGenreService
+  nameWithType: IGenreService
+  fullName: MovieDiscovery.Server.Interfaces.IGenreService
+  type: Interface
+  source:
+    remote:
+      path: MovieDiscovery.Server/Interfaces/IGenreService.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: IGenreService
+    path: Interfaces/IGenreService.cs
+    startLine: 7
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Interfaces
+  summary: Інтерфейс для сервісу жанрів.
+  example: []
+  syntax:
+    content: public interface IGenreService
+    content.vb: Public Interface IGenreService
+- uid: MovieDiscovery.Server.Interfaces.IGenreService.GetAllAsync
+  commentId: M:MovieDiscovery.Server.Interfaces.IGenreService.GetAllAsync
+  id: GetAllAsync
+  parent: MovieDiscovery.Server.Interfaces.IGenreService
+  langs:
+  - csharp
+  - vb
+  name: GetAllAsync()
+  nameWithType: IGenreService.GetAllAsync()
+  fullName: MovieDiscovery.Server.Interfaces.IGenreService.GetAllAsync()
+  type: Method
+  source:
+    remote:
+      path: MovieDiscovery.Server/Interfaces/IGenreService.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: GetAllAsync
+    path: Interfaces/IGenreService.cs
+    startLine: 13
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Interfaces
+  summary: Отримання всіх жанрів.
+  example: []
+  syntax:
+    content: Task<IEnumerable<GenreResponse>> GetAllAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{MovieDiscovery.Server.Contracts.Genre.GenreResponse}}
+      description: Колекція жанрів у вигляді <xref href="MovieDiscovery.Server.Contracts.Genre.GenreResponse" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Function GetAllAsync() As Task(Of IEnumerable(Of GenreResponse))
+  overload: MovieDiscovery.Server.Interfaces.IGenreService.GetAllAsync*
+references:
+- uid: MovieDiscovery.Server.Interfaces
+  commentId: N:MovieDiscovery.Server.Interfaces
+  href: MovieDiscovery.html
+  name: MovieDiscovery.Server.Interfaces
+  nameWithType: MovieDiscovery.Server.Interfaces
+  fullName: MovieDiscovery.Server.Interfaces
+  spec.csharp:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Interfaces
+    name: Interfaces
+    href: MovieDiscovery.Server.Interfaces.html
+  spec.vb:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Interfaces
+    name: Interfaces
+    href: MovieDiscovery.Server.Interfaces.html
+- uid: MovieDiscovery.Server.Contracts.Genre.GenreResponse
+  commentId: T:MovieDiscovery.Server.Contracts.Genre.GenreResponse
+  href: MovieDiscovery.Server.Contracts.Genre.GenreResponse.html
+  name: GenreResponse
+  nameWithType: GenreResponse
+  fullName: MovieDiscovery.Server.Contracts.Genre.GenreResponse
+- uid: MovieDiscovery.Server.Interfaces.IGenreService.GetAllAsync*
+  commentId: Overload:MovieDiscovery.Server.Interfaces.IGenreService.GetAllAsync
+  href: MovieDiscovery.Server.Interfaces.IGenreService.html#MovieDiscovery_Server_Interfaces_IGenreService_GetAllAsync
+  name: GetAllAsync
+  nameWithType: IGenreService.GetAllAsync
+  fullName: MovieDiscovery.Server.Interfaces.IGenreService.GetAllAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{MovieDiscovery.Server.Contracts.Genre.GenreResponse}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{MovieDiscovery.Server.Contracts.Genre.GenreResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IEnumerable<GenreResponse>>
+  nameWithType: Task<IEnumerable<GenreResponse>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<MovieDiscovery.Server.Contracts.Genre.GenreResponse>>
+  nameWithType.vb: Task(Of IEnumerable(Of GenreResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of MovieDiscovery.Server.Contracts.Genre.GenreResponse))
+  name.vb: Task(Of IEnumerable(Of GenreResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: MovieDiscovery.Server.Contracts.Genre.GenreResponse
+    name: GenreResponse
+    href: MovieDiscovery.Server.Contracts.Genre.GenreResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: MovieDiscovery.Server.Contracts.Genre.GenreResponse
+    name: GenreResponse
+    href: MovieDiscovery.Server.Contracts.Genre.GenreResponse.html
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

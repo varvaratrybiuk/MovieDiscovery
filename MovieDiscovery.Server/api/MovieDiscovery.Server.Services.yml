@@ -1,0 +1,44 @@
+### YamlMime:ManagedReference
+items:
+- uid: MovieDiscovery.Server.Services
+  commentId: N:MovieDiscovery.Server.Services
+  id: MovieDiscovery.Server.Services
+  children:
+  - MovieDiscovery.Server.Services.GenreService
+  - MovieDiscovery.Server.Services.MovieService
+  - MovieDiscovery.Server.Services.UserContextService
+  - MovieDiscovery.Server.Services.UserService
+  langs:
+  - csharp
+  - vb
+  name: MovieDiscovery.Server.Services
+  nameWithType: MovieDiscovery.Server.Services
+  fullName: MovieDiscovery.Server.Services
+  type: Namespace
+  assemblies:
+  - MovieDiscovery.Server
+references:
+- uid: MovieDiscovery.Server.Services.GenreService
+  commentId: T:MovieDiscovery.Server.Services.GenreService
+  href: MovieDiscovery.Server.Services.GenreService.html
+  name: GenreService
+  nameWithType: GenreService
+  fullName: MovieDiscovery.Server.Services.GenreService
+- uid: MovieDiscovery.Server.Services.MovieService
+  commentId: T:MovieDiscovery.Server.Services.MovieService
+  href: MovieDiscovery.Server.Services.MovieService.html
+  name: MovieService
+  nameWithType: MovieService
+  fullName: MovieDiscovery.Server.Services.MovieService
+- uid: MovieDiscovery.Server.Services.UserContextService
+  commentId: T:MovieDiscovery.Server.Services.UserContextService
+  href: MovieDiscovery.Server.Services.UserContextService.html
+  name: UserContextService
+  nameWithType: UserContextService
+  fullName: MovieDiscovery.Server.Services.UserContextService
+- uid: MovieDiscovery.Server.Services.UserService
+  commentId: T:MovieDiscovery.Server.Services.UserService
+  href: MovieDiscovery.Server.Services.UserService.html
+  name: UserService
+  nameWithType: UserService
+  fullName: MovieDiscovery.Server.Services.UserService

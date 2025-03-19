@@ -1,0 +1,92 @@
+### YamlMime:ManagedReference
+items:
+- uid: MovieDiscovery.Server.Contracts.User
+  commentId: N:MovieDiscovery.Server.Contracts.User
+  id: MovieDiscovery.Server.Contracts.User
+  children:
+  - MovieDiscovery.Server.Contracts.User.CreateUserRequest
+  - MovieDiscovery.Server.Contracts.User.UpdateUserRequest
+  - MovieDiscovery.Server.Contracts.User.UserRequest
+  - MovieDiscovery.Server.Contracts.User.UserResponse
+  - MovieDiscovery.Server.Contracts.User.UserResponseWithPassword
+  langs:
+  - csharp
+  - vb
+  name: MovieDiscovery.Server.Contracts.User
+  nameWithType: MovieDiscovery.Server.Contracts.User
+  fullName: MovieDiscovery.Server.Contracts.User
+  type: Namespace
+  assemblies:
+  - MovieDiscovery.Server
+references:
+- uid: MovieDiscovery.Server.Contracts.User.CreateUserRequest
+  commentId: T:MovieDiscovery.Server.Contracts.User.CreateUserRequest
+  parent: MovieDiscovery.Server.Contracts.User
+  href: MovieDiscovery.Server.Contracts.User.CreateUserRequest.html
+  name: CreateUserRequest
+  nameWithType: CreateUserRequest
+  fullName: MovieDiscovery.Server.Contracts.User.CreateUserRequest
+- uid: MovieDiscovery.Server.Contracts.User.UpdateUserRequest
+  commentId: T:MovieDiscovery.Server.Contracts.User.UpdateUserRequest
+  parent: MovieDiscovery.Server.Contracts.User
+  href: MovieDiscovery.Server.Contracts.User.UpdateUserRequest.html
+  name: UpdateUserRequest
+  nameWithType: UpdateUserRequest
+  fullName: MovieDiscovery.Server.Contracts.User.UpdateUserRequest
+- uid: MovieDiscovery.Server.Contracts.User.UserRequest
+  commentId: T:MovieDiscovery.Server.Contracts.User.UserRequest
+  href: MovieDiscovery.Server.Contracts.User.UserRequest.html
+  name: UserRequest
+  nameWithType: UserRequest
+  fullName: MovieDiscovery.Server.Contracts.User.UserRequest
+- uid: MovieDiscovery.Server.Contracts.User.UserResponse
+  commentId: T:MovieDiscovery.Server.Contracts.User.UserResponse
+  parent: MovieDiscovery.Server.Contracts.User
+  href: MovieDiscovery.Server.Contracts.User.UserResponse.html
+  name: UserResponse
+  nameWithType: UserResponse
+  fullName: MovieDiscovery.Server.Contracts.User.UserResponse
+- uid: MovieDiscovery.Server.Contracts.User.UserResponseWithPassword
+  commentId: T:MovieDiscovery.Server.Contracts.User.UserResponseWithPassword
+  href: MovieDiscovery.Server.Contracts.User.UserResponseWithPassword.html
+  name: UserResponseWithPassword
+  nameWithType: UserResponseWithPassword
+  fullName: MovieDiscovery.Server.Contracts.User.UserResponseWithPassword
+- uid: MovieDiscovery.Server.Contracts.User
+  commentId: N:MovieDiscovery.Server.Contracts.User
+  href: MovieDiscovery.html
+  name: MovieDiscovery.Server.Contracts.User
+  nameWithType: MovieDiscovery.Server.Contracts.User
+  fullName: MovieDiscovery.Server.Contracts.User
+  spec.csharp:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts
+    name: Contracts
+    href: MovieDiscovery.Server.Contracts.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts.User
+    name: User
+    href: MovieDiscovery.Server.Contracts.User.html
+  spec.vb:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts
+    name: Contracts
+    href: MovieDiscovery.Server.Contracts.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts.User
+    name: User
+    href: MovieDiscovery.Server.Contracts.User.html

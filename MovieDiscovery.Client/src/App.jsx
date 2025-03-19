@@ -7,9 +7,17 @@ import {
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import Layout from "./pages/Layout";
+import ProtectedRoute from "./utils/ProtectedRoute";
+import Anonymous from "./utils/Anonymous";
 const Home = lazy(() => import("./pages/home/Home"));
 const AddNewMovie = lazy(() => import("./pages/addNewMovie/AddNewMovie"));
 const ErrorPage = lazy(() => import("./pages/error/ErrorPage"));
+const LoginPage = lazy(() => import("./pages/login/LoginPage"));
+const RegisterPage = lazy(() => import("./pages/register/RegisterPage"));
+const ProfilePage = lazy(() => import("./pages/profile/ProfilePage"));
+import CookiePopup from "./components/cookiePopup/CookiePopup";
+
+import { AccountProvider } from "./contexts/accountContext";
 
 import "./App.css";
 
@@ -27,8 +35,30 @@ function App() {
           element: <Home />,
         },
         {
-          path: "add",
-          element: <AddNewMovie />,
+          element: <ProtectedRoute />,
+          children: [
+            {
+              path: "add",
+              element: <AddNewMovie />,
+            },
+            {
+              path: "profile",
+              element: <ProfilePage />,
+            },
+          ],
+        },
+        {
+          element: <Anonymous />,
+          children: [
+            {
+              path: "login",
+              element: <LoginPage />,
+            },
+            {
+              path: "register",
+              element: <RegisterPage />,
+            },
+          ],
         },
       ],
     },
@@ -39,9 +69,12 @@ function App() {
   ]);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    <AccountProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+        <CookiePopup />
+      </QueryClientProvider>
+    </AccountProvider>
   );
 }
 

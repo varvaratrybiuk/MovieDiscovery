@@ -1,0 +1,1095 @@
+### YamlMime:ManagedReference
+items:
+- uid: MovieDiscovery.Server.Services.UserService
+  commentId: T:MovieDiscovery.Server.Services.UserService
+  id: UserService
+  parent: MovieDiscovery.Server.Services
+  children:
+  - MovieDiscovery.Server.Services.UserService.#ctor(MovieDiscovery.Server.Context.MovieDBContext)
+  - MovieDiscovery.Server.Services.UserService.AddUser(MovieDiscovery.Server.Contracts.User.CreateUserRequest)
+  - MovieDiscovery.Server.Services.UserService.DeleteUserAsync(System.Int32)
+  - MovieDiscovery.Server.Services.UserService.GetUserByEmailAndUsernameAsync(System.String,System.String)
+  - MovieDiscovery.Server.Services.UserService.GetUserByIdAsync(System.Int32)
+  - MovieDiscovery.Server.Services.UserService.UpdateUserAsync(MovieDiscovery.Server.Contracts.User.UpdateUserRequest,System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: UserService
+  nameWithType: UserService
+  fullName: MovieDiscovery.Server.Services.UserService
+  type: Class
+  source:
+    remote:
+      path: MovieDiscovery.Server/Services/UserService.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: UserService
+    path: Services/UserService.cs
+    startLine: 13
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Services
+  summary: Сервіс для керування користувачами.
+  example: []
+  syntax:
+    content: 'public class UserService : IUserService'
+    content.vb: Public Class UserService Implements IUserService
+  inheritance:
+  - System.Object
+  implements:
+  - MovieDiscovery.Server.Interfaces.IUserService
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: MovieDiscovery.Server.Services.UserService.#ctor(MovieDiscovery.Server.Context.MovieDBContext)
+  commentId: M:MovieDiscovery.Server.Services.UserService.#ctor(MovieDiscovery.Server.Context.MovieDBContext)
+  id: '#ctor(MovieDiscovery.Server.Context.MovieDBContext)'
+  parent: MovieDiscovery.Server.Services.UserService
+  langs:
+  - csharp
+  - vb
+  name: UserService(MovieDBContext)
+  nameWithType: UserService.UserService(MovieDBContext)
+  fullName: MovieDiscovery.Server.Services.UserService.UserService(MovieDiscovery.Server.Context.MovieDBContext)
+  type: Constructor
+  source:
+    remote:
+      path: MovieDiscovery.Server/Services/UserService.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: .ctor
+    path: Services/UserService.cs
+    startLine: 21
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Services
+  summary: Конструктор класу UserService.
+  example: []
+  syntax:
+    content: public UserService(MovieDBContext context)
+    parameters:
+    - id: context
+      type: MovieDiscovery.Server.Context.MovieDBContext
+      description: Контекст бази даних.
+    content.vb: Public Sub New(context As MovieDBContext)
+  overload: MovieDiscovery.Server.Services.UserService.#ctor*
+  nameWithType.vb: UserService.New(MovieDBContext)
+  fullName.vb: MovieDiscovery.Server.Services.UserService.New(MovieDiscovery.Server.Context.MovieDBContext)
+  name.vb: New(MovieDBContext)
+- uid: MovieDiscovery.Server.Services.UserService.AddUser(MovieDiscovery.Server.Contracts.User.CreateUserRequest)
+  commentId: M:MovieDiscovery.Server.Services.UserService.AddUser(MovieDiscovery.Server.Contracts.User.CreateUserRequest)
+  id: AddUser(MovieDiscovery.Server.Contracts.User.CreateUserRequest)
+  parent: MovieDiscovery.Server.Services.UserService
+  langs:
+  - csharp
+  - vb
+  name: AddUser(CreateUserRequest)
+  nameWithType: UserService.AddUser(CreateUserRequest)
+  fullName: MovieDiscovery.Server.Services.UserService.AddUser(MovieDiscovery.Server.Contracts.User.CreateUserRequest)
+  type: Method
+  source:
+    remote:
+      path: MovieDiscovery.Server/Services/UserService.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: AddUser
+    path: Services/UserService.cs
+    startLine: 30
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Services
+  summary: Додавання нового користувача до бази даних.
+  example: []
+  syntax:
+    content: public Task<UserResponse> AddUser(CreateUserRequest user)
+    parameters:
+    - id: user
+      type: MovieDiscovery.Server.Contracts.User.CreateUserRequest
+      description: Об'єкт, що містить дані для створення користувача.
+    return:
+      type: System.Threading.Tasks.Task{MovieDiscovery.Server.Contracts.User.UserResponse}
+      description: Об'єкт <xref href="MovieDiscovery.Server.Contracts.User.UserResponse" data-throw-if-not-resolved="false"></xref> з інформацією про користувача.
+    content.vb: Public Function AddUser(user As CreateUserRequest) As Task(Of UserResponse)
+  overload: MovieDiscovery.Server.Services.UserService.AddUser*
+  exceptions:
+  - type: MovieDiscovery.Server.Exceptions.UserAlreadyExistsException
+    commentId: T:MovieDiscovery.Server.Exceptions.UserAlreadyExistsException
+    description: Виникає, якщо користувач з такою електронною поштою або ім'ям вже існує.
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: Може виникнути у разі неочікуваної помилки.
+  implements:
+  - MovieDiscovery.Server.Interfaces.IUserService.AddUser(MovieDiscovery.Server.Contracts.User.CreateUserRequest)
+- uid: MovieDiscovery.Server.Services.UserService.DeleteUserAsync(System.Int32)
+  commentId: M:MovieDiscovery.Server.Services.UserService.DeleteUserAsync(System.Int32)
+  id: DeleteUserAsync(System.Int32)
+  parent: MovieDiscovery.Server.Services.UserService
+  langs:
+  - csharp
+  - vb
+  name: DeleteUserAsync(int)
+  nameWithType: UserService.DeleteUserAsync(int)
+  fullName: MovieDiscovery.Server.Services.UserService.DeleteUserAsync(int)
+  type: Method
+  source:
+    remote:
+      path: MovieDiscovery.Server/Services/UserService.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: DeleteUserAsync
+    path: Services/UserService.cs
+    startLine: 64
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Services
+  summary: Видалення користувача за його ідентифікатором.
+  example: []
+  syntax:
+    content: public Task<bool> DeleteUserAsync(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: Ідентифікатор користувача.
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: True, якщо користувача видалено, інакше - false.
+    content.vb: Public Function DeleteUserAsync(id As Integer) As Task(Of Boolean)
+  overload: MovieDiscovery.Server.Services.UserService.DeleteUserAsync*
+  exceptions:
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: Може виникнути у разі неочікуваної помилки.
+  implements:
+  - MovieDiscovery.Server.Interfaces.IUserService.DeleteUserAsync(System.Int32)
+  nameWithType.vb: UserService.DeleteUserAsync(Integer)
+  fullName.vb: MovieDiscovery.Server.Services.UserService.DeleteUserAsync(Integer)
+  name.vb: DeleteUserAsync(Integer)
+- uid: MovieDiscovery.Server.Services.UserService.GetUserByEmailAndUsernameAsync(System.String,System.String)
+  commentId: M:MovieDiscovery.Server.Services.UserService.GetUserByEmailAndUsernameAsync(System.String,System.String)
+  id: GetUserByEmailAndUsernameAsync(System.String,System.String)
+  parent: MovieDiscovery.Server.Services.UserService
+  langs:
+  - csharp
+  - vb
+  name: GetUserByEmailAndUsernameAsync(string?, string?)
+  nameWithType: UserService.GetUserByEmailAndUsernameAsync(string?, string?)
+  fullName: MovieDiscovery.Server.Services.UserService.GetUserByEmailAndUsernameAsync(string?, string?)
+  type: Method
+  source:
+    remote:
+      path: MovieDiscovery.Server/Services/UserService.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: GetUserByEmailAndUsernameAsync
+    path: Services/UserService.cs
+    startLine: 84
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Services
+  summary: Отримання користувача за електронною потошою або ім'ям користувача.
+  example: []
+  syntax:
+    content: public Task<UserResponse?> GetUserByEmailAndUsernameAsync(string? username, string? email)
+    parameters:
+    - id: username
+      type: System.String
+      description: Ім'я користувача.
+    - id: email
+      type: System.String
+      description: Електронна пошта користувача.
+    return:
+      type: System.Threading.Tasks.Task{MovieDiscovery.Server.Contracts.User.UserResponse}
+      description: Об'єкт <xref href="MovieDiscovery.Server.Contracts.User.UserResponseWithPassword" data-throw-if-not-resolved="false"></xref> з інформацією про користувача або null, якщо користувача не знайдено.
+    content.vb: Public Function GetUserByEmailAndUsernameAsync(username As String, email As String) As Task(Of UserResponse)
+  overload: MovieDiscovery.Server.Services.UserService.GetUserByEmailAndUsernameAsync*
+  exceptions:
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: Може виникнути у разі неочікуваної помилки.
+  implements:
+  - MovieDiscovery.Server.Interfaces.IUserService.GetUserByEmailAndUsernameAsync(System.String,System.String)
+  nameWithType.vb: UserService.GetUserByEmailAndUsernameAsync(String, String)
+  fullName.vb: MovieDiscovery.Server.Services.UserService.GetUserByEmailAndUsernameAsync(String, String)
+  name.vb: GetUserByEmailAndUsernameAsync(String, String)
+- uid: MovieDiscovery.Server.Services.UserService.GetUserByIdAsync(System.Int32)
+  commentId: M:MovieDiscovery.Server.Services.UserService.GetUserByIdAsync(System.Int32)
+  id: GetUserByIdAsync(System.Int32)
+  parent: MovieDiscovery.Server.Services.UserService
+  langs:
+  - csharp
+  - vb
+  name: GetUserByIdAsync(int)
+  nameWithType: UserService.GetUserByIdAsync(int)
+  fullName: MovieDiscovery.Server.Services.UserService.GetUserByIdAsync(int)
+  type: Method
+  source:
+    remote:
+      path: MovieDiscovery.Server/Services/UserService.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: GetUserByIdAsync
+    path: Services/UserService.cs
+    startLine: 108
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Services
+  summary: Отримання користувача за ідентифікатором.
+  example: []
+  syntax:
+    content: public Task<UserResponse?> GetUserByIdAsync(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+      description: Ідентифікатор користувача.
+    return:
+      type: System.Threading.Tasks.Task{MovieDiscovery.Server.Contracts.User.UserResponse}
+      description: Об'єкт <xref href="MovieDiscovery.Server.Contracts.User.UserResponse" data-throw-if-not-resolved="false"></xref> з інформацією про користувача або null, якщо користувача не знайдено.
+    content.vb: Public Function GetUserByIdAsync(id As Integer) As Task(Of UserResponse)
+  overload: MovieDiscovery.Server.Services.UserService.GetUserByIdAsync*
+  exceptions:
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: Може виникнути у разі неочікуваної помилки.
+  implements:
+  - MovieDiscovery.Server.Interfaces.IUserService.GetUserByIdAsync(System.Int32)
+  nameWithType.vb: UserService.GetUserByIdAsync(Integer)
+  fullName.vb: MovieDiscovery.Server.Services.UserService.GetUserByIdAsync(Integer)
+  name.vb: GetUserByIdAsync(Integer)
+- uid: MovieDiscovery.Server.Services.UserService.UpdateUserAsync(MovieDiscovery.Server.Contracts.User.UpdateUserRequest,System.Int32)
+  commentId: M:MovieDiscovery.Server.Services.UserService.UpdateUserAsync(MovieDiscovery.Server.Contracts.User.UpdateUserRequest,System.Int32)
+  id: UpdateUserAsync(MovieDiscovery.Server.Contracts.User.UpdateUserRequest,System.Int32)
+  parent: MovieDiscovery.Server.Services.UserService
+  langs:
+  - csharp
+  - vb
+  name: UpdateUserAsync(UpdateUserRequest, int)
+  nameWithType: UserService.UpdateUserAsync(UpdateUserRequest, int)
+  fullName: MovieDiscovery.Server.Services.UserService.UpdateUserAsync(MovieDiscovery.Server.Contracts.User.UpdateUserRequest, int)
+  type: Method
+  source:
+    remote:
+      path: MovieDiscovery.Server/Services/UserService.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: UpdateUserAsync
+    path: Services/UserService.cs
+    startLine: 134
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Services
+  summary: Оновлювання даних користувача.
+  example: []
+  syntax:
+    content: public Task<UserResponse?> UpdateUserAsync(UpdateUserRequest user, int userId)
+    parameters:
+    - id: user
+      type: MovieDiscovery.Server.Contracts.User.UpdateUserRequest
+      description: Об'єкт, що містить дані для оновлення користувача.
+    - id: userId
+      type: System.Int32
+      description: Ідентифікатор користувача.
+    return:
+      type: System.Threading.Tasks.Task{MovieDiscovery.Server.Contracts.User.UserResponse}
+      description: Об'єкт <xref href="MovieDiscovery.Server.Contracts.User.UserResponse" data-throw-if-not-resolved="false"></xref> з оновленою інформацією або null, якщо користувача не знайдено.
+    content.vb: Public Function UpdateUserAsync(user As UpdateUserRequest, userId As Integer) As Task(Of UserResponse)
+  overload: MovieDiscovery.Server.Services.UserService.UpdateUserAsync*
+  exceptions:
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: Може виникнути у разі неочікуваної помилки.
+  implements:
+  - MovieDiscovery.Server.Interfaces.IUserService.UpdateUserAsync(MovieDiscovery.Server.Contracts.User.UpdateUserRequest,System.Int32)
+  nameWithType.vb: UserService.UpdateUserAsync(UpdateUserRequest, Integer)
+  fullName.vb: MovieDiscovery.Server.Services.UserService.UpdateUserAsync(MovieDiscovery.Server.Contracts.User.UpdateUserRequest, Integer)
+  name.vb: UpdateUserAsync(UpdateUserRequest, Integer)
+references:
+- uid: MovieDiscovery.Server.Services
+  commentId: N:MovieDiscovery.Server.Services
+  href: MovieDiscovery.html
+  name: MovieDiscovery.Server.Services
+  nameWithType: MovieDiscovery.Server.Services
+  fullName: MovieDiscovery.Server.Services
+  spec.csharp:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Services
+    name: Services
+    href: MovieDiscovery.Server.Services.html
+  spec.vb:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Services
+    name: Services
+    href: MovieDiscovery.Server.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: MovieDiscovery.Server.Interfaces.IUserService
+  commentId: T:MovieDiscovery.Server.Interfaces.IUserService
+  parent: MovieDiscovery.Server.Interfaces
+  href: MovieDiscovery.Server.Interfaces.IUserService.html
+  name: IUserService
+  nameWithType: IUserService
+  fullName: MovieDiscovery.Server.Interfaces.IUserService
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: MovieDiscovery.Server.Interfaces
+  commentId: N:MovieDiscovery.Server.Interfaces
+  href: MovieDiscovery.html
+  name: MovieDiscovery.Server.Interfaces
+  nameWithType: MovieDiscovery.Server.Interfaces
+  fullName: MovieDiscovery.Server.Interfaces
+  spec.csharp:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Interfaces
+    name: Interfaces
+    href: MovieDiscovery.Server.Interfaces.html
+  spec.vb:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Interfaces
+    name: Interfaces
+    href: MovieDiscovery.Server.Interfaces.html
+- uid: MovieDiscovery.Server.Services.UserService.#ctor*
+  commentId: Overload:MovieDiscovery.Server.Services.UserService.#ctor
+  href: MovieDiscovery.Server.Services.UserService.html#MovieDiscovery_Server_Services_UserService__ctor_MovieDiscovery_Server_Context_MovieDBContext_
+  name: UserService
+  nameWithType: UserService.UserService
+  fullName: MovieDiscovery.Server.Services.UserService.UserService
+  nameWithType.vb: UserService.New
+  fullName.vb: MovieDiscovery.Server.Services.UserService.New
+  name.vb: New
+- uid: MovieDiscovery.Server.Context.MovieDBContext
+  commentId: T:MovieDiscovery.Server.Context.MovieDBContext
+  parent: MovieDiscovery.Server.Context
+  href: MovieDiscovery.Server.Context.MovieDBContext.html
+  name: MovieDBContext
+  nameWithType: MovieDBContext
+  fullName: MovieDiscovery.Server.Context.MovieDBContext
+- uid: MovieDiscovery.Server.Context
+  commentId: N:MovieDiscovery.Server.Context
+  href: MovieDiscovery.html
+  name: MovieDiscovery.Server.Context
+  nameWithType: MovieDiscovery.Server.Context
+  fullName: MovieDiscovery.Server.Context
+  spec.csharp:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Context
+    name: Context
+    href: MovieDiscovery.Server.Context.html
+  spec.vb:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Context
+    name: Context
+    href: MovieDiscovery.Server.Context.html
+- uid: MovieDiscovery.Server.Contracts.User.UserResponse
+  commentId: T:MovieDiscovery.Server.Contracts.User.UserResponse
+  parent: MovieDiscovery.Server.Contracts.User
+  href: MovieDiscovery.Server.Contracts.User.UserResponse.html
+  name: UserResponse
+  nameWithType: UserResponse
+  fullName: MovieDiscovery.Server.Contracts.User.UserResponse
+- uid: MovieDiscovery.Server.Exceptions.UserAlreadyExistsException
+  commentId: T:MovieDiscovery.Server.Exceptions.UserAlreadyExistsException
+  href: MovieDiscovery.Server.Exceptions.UserAlreadyExistsException.html
+  name: UserAlreadyExistsException
+  nameWithType: UserAlreadyExistsException
+  fullName: MovieDiscovery.Server.Exceptions.UserAlreadyExistsException
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: MovieDiscovery.Server.Services.UserService.AddUser*
+  commentId: Overload:MovieDiscovery.Server.Services.UserService.AddUser
+  href: MovieDiscovery.Server.Services.UserService.html#MovieDiscovery_Server_Services_UserService_AddUser_MovieDiscovery_Server_Contracts_User_CreateUserRequest_
+  name: AddUser
+  nameWithType: UserService.AddUser
+  fullName: MovieDiscovery.Server.Services.UserService.AddUser
+- uid: MovieDiscovery.Server.Interfaces.IUserService.AddUser(MovieDiscovery.Server.Contracts.User.CreateUserRequest)
+  commentId: M:MovieDiscovery.Server.Interfaces.IUserService.AddUser(MovieDiscovery.Server.Contracts.User.CreateUserRequest)
+  parent: MovieDiscovery.Server.Interfaces.IUserService
+  href: MovieDiscovery.Server.Interfaces.IUserService.html#MovieDiscovery_Server_Interfaces_IUserService_AddUser_MovieDiscovery_Server_Contracts_User_CreateUserRequest_
+  name: AddUser(CreateUserRequest)
+  nameWithType: IUserService.AddUser(CreateUserRequest)
+  fullName: MovieDiscovery.Server.Interfaces.IUserService.AddUser(MovieDiscovery.Server.Contracts.User.CreateUserRequest)
+  spec.csharp:
+  - uid: MovieDiscovery.Server.Interfaces.IUserService.AddUser(MovieDiscovery.Server.Contracts.User.CreateUserRequest)
+    name: AddUser
+    href: MovieDiscovery.Server.Interfaces.IUserService.html#MovieDiscovery_Server_Interfaces_IUserService_AddUser_MovieDiscovery_Server_Contracts_User_CreateUserRequest_
+  - name: (
+  - uid: MovieDiscovery.Server.Contracts.User.CreateUserRequest
+    name: CreateUserRequest
+    href: MovieDiscovery.Server.Contracts.User.CreateUserRequest.html
+  - name: )
+  spec.vb:
+  - uid: MovieDiscovery.Server.Interfaces.IUserService.AddUser(MovieDiscovery.Server.Contracts.User.CreateUserRequest)
+    name: AddUser
+    href: MovieDiscovery.Server.Interfaces.IUserService.html#MovieDiscovery_Server_Interfaces_IUserService_AddUser_MovieDiscovery_Server_Contracts_User_CreateUserRequest_
+  - name: (
+  - uid: MovieDiscovery.Server.Contracts.User.CreateUserRequest
+    name: CreateUserRequest
+    href: MovieDiscovery.Server.Contracts.User.CreateUserRequest.html
+  - name: )
+- uid: MovieDiscovery.Server.Contracts.User.CreateUserRequest
+  commentId: T:MovieDiscovery.Server.Contracts.User.CreateUserRequest
+  parent: MovieDiscovery.Server.Contracts.User
+  href: MovieDiscovery.Server.Contracts.User.CreateUserRequest.html
+  name: CreateUserRequest
+  nameWithType: CreateUserRequest
+  fullName: MovieDiscovery.Server.Contracts.User.CreateUserRequest
+- uid: System.Threading.Tasks.Task{MovieDiscovery.Server.Contracts.User.UserResponse}
+  commentId: T:System.Threading.Tasks.Task{MovieDiscovery.Server.Contracts.User.UserResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<UserResponse>
+  nameWithType: Task<UserResponse>
+  fullName: System.Threading.Tasks.Task<MovieDiscovery.Server.Contracts.User.UserResponse>
+  nameWithType.vb: Task(Of UserResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of MovieDiscovery.Server.Contracts.User.UserResponse)
+  name.vb: Task(Of UserResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: MovieDiscovery.Server.Contracts.User.UserResponse
+    name: UserResponse
+    href: MovieDiscovery.Server.Contracts.User.UserResponse.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: MovieDiscovery.Server.Contracts.User.UserResponse
+    name: UserResponse
+    href: MovieDiscovery.Server.Contracts.User.UserResponse.html
+  - name: )
+- uid: MovieDiscovery.Server.Contracts.User
+  commentId: N:MovieDiscovery.Server.Contracts.User
+  href: MovieDiscovery.html
+  name: MovieDiscovery.Server.Contracts.User
+  nameWithType: MovieDiscovery.Server.Contracts.User
+  fullName: MovieDiscovery.Server.Contracts.User
+  spec.csharp:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts
+    name: Contracts
+    href: MovieDiscovery.Server.Contracts.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts.User
+    name: User
+    href: MovieDiscovery.Server.Contracts.User.html
+  spec.vb:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts
+    name: Contracts
+    href: MovieDiscovery.Server.Contracts.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts.User
+    name: User
+    href: MovieDiscovery.Server.Contracts.User.html
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: MovieDiscovery.Server.Services.UserService.DeleteUserAsync*
+  commentId: Overload:MovieDiscovery.Server.Services.UserService.DeleteUserAsync
+  href: MovieDiscovery.Server.Services.UserService.html#MovieDiscovery_Server_Services_UserService_DeleteUserAsync_System_Int32_
+  name: DeleteUserAsync
+  nameWithType: UserService.DeleteUserAsync
+  fullName: MovieDiscovery.Server.Services.UserService.DeleteUserAsync
+- uid: MovieDiscovery.Server.Interfaces.IUserService.DeleteUserAsync(System.Int32)
+  commentId: M:MovieDiscovery.Server.Interfaces.IUserService.DeleteUserAsync(System.Int32)
+  parent: MovieDiscovery.Server.Interfaces.IUserService
+  isExternal: true
+  href: MovieDiscovery.Server.Interfaces.IUserService.html#MovieDiscovery_Server_Interfaces_IUserService_DeleteUserAsync_System_Int32_
+  name: DeleteUserAsync(int)
+  nameWithType: IUserService.DeleteUserAsync(int)
+  fullName: MovieDiscovery.Server.Interfaces.IUserService.DeleteUserAsync(int)
+  nameWithType.vb: IUserService.DeleteUserAsync(Integer)
+  fullName.vb: MovieDiscovery.Server.Interfaces.IUserService.DeleteUserAsync(Integer)
+  name.vb: DeleteUserAsync(Integer)
+  spec.csharp:
+  - uid: MovieDiscovery.Server.Interfaces.IUserService.DeleteUserAsync(System.Int32)
+    name: DeleteUserAsync
+    href: MovieDiscovery.Server.Interfaces.IUserService.html#MovieDiscovery_Server_Interfaces_IUserService_DeleteUserAsync_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: MovieDiscovery.Server.Interfaces.IUserService.DeleteUserAsync(System.Int32)
+    name: DeleteUserAsync
+    href: MovieDiscovery.Server.Interfaces.IUserService.html#MovieDiscovery_Server_Interfaces_IUserService_DeleteUserAsync_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<bool>
+  nameWithType: Task<bool>
+  fullName: System.Threading.Tasks.Task<bool>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: MovieDiscovery.Server.Contracts.User.UserResponseWithPassword
+  commentId: T:MovieDiscovery.Server.Contracts.User.UserResponseWithPassword
+  href: MovieDiscovery.Server.Contracts.User.UserResponseWithPassword.html
+  name: UserResponseWithPassword
+  nameWithType: UserResponseWithPassword
+  fullName: MovieDiscovery.Server.Contracts.User.UserResponseWithPassword
+- uid: MovieDiscovery.Server.Services.UserService.GetUserByEmailAndUsernameAsync*
+  commentId: Overload:MovieDiscovery.Server.Services.UserService.GetUserByEmailAndUsernameAsync
+  href: MovieDiscovery.Server.Services.UserService.html#MovieDiscovery_Server_Services_UserService_GetUserByEmailAndUsernameAsync_System_String_System_String_
+  name: GetUserByEmailAndUsernameAsync
+  nameWithType: UserService.GetUserByEmailAndUsernameAsync
+  fullName: MovieDiscovery.Server.Services.UserService.GetUserByEmailAndUsernameAsync
+- uid: MovieDiscovery.Server.Interfaces.IUserService.GetUserByEmailAndUsernameAsync(System.String,System.String)
+  commentId: M:MovieDiscovery.Server.Interfaces.IUserService.GetUserByEmailAndUsernameAsync(System.String,System.String)
+  parent: MovieDiscovery.Server.Interfaces.IUserService
+  isExternal: true
+  href: MovieDiscovery.Server.Interfaces.IUserService.html#MovieDiscovery_Server_Interfaces_IUserService_GetUserByEmailAndUsernameAsync_System_String_System_String_
+  name: GetUserByEmailAndUsernameAsync(string, string)
+  nameWithType: IUserService.GetUserByEmailAndUsernameAsync(string, string)
+  fullName: MovieDiscovery.Server.Interfaces.IUserService.GetUserByEmailAndUsernameAsync(string, string)
+  nameWithType.vb: IUserService.GetUserByEmailAndUsernameAsync(String, String)
+  fullName.vb: MovieDiscovery.Server.Interfaces.IUserService.GetUserByEmailAndUsernameAsync(String, String)
+  name.vb: GetUserByEmailAndUsernameAsync(String, String)
+  spec.csharp:
+  - uid: MovieDiscovery.Server.Interfaces.IUserService.GetUserByEmailAndUsernameAsync(System.String,System.String)
+    name: GetUserByEmailAndUsernameAsync
+    href: MovieDiscovery.Server.Interfaces.IUserService.html#MovieDiscovery_Server_Interfaces_IUserService_GetUserByEmailAndUsernameAsync_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: MovieDiscovery.Server.Interfaces.IUserService.GetUserByEmailAndUsernameAsync(System.String,System.String)
+    name: GetUserByEmailAndUsernameAsync
+    href: MovieDiscovery.Server.Interfaces.IUserService.html#MovieDiscovery_Server_Interfaces_IUserService_GetUserByEmailAndUsernameAsync_System_String_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: MovieDiscovery.Server.Services.UserService.GetUserByIdAsync*
+  commentId: Overload:MovieDiscovery.Server.Services.UserService.GetUserByIdAsync
+  href: MovieDiscovery.Server.Services.UserService.html#MovieDiscovery_Server_Services_UserService_GetUserByIdAsync_System_Int32_
+  name: GetUserByIdAsync
+  nameWithType: UserService.GetUserByIdAsync
+  fullName: MovieDiscovery.Server.Services.UserService.GetUserByIdAsync
+- uid: MovieDiscovery.Server.Interfaces.IUserService.GetUserByIdAsync(System.Int32)
+  commentId: M:MovieDiscovery.Server.Interfaces.IUserService.GetUserByIdAsync(System.Int32)
+  parent: MovieDiscovery.Server.Interfaces.IUserService
+  isExternal: true
+  href: MovieDiscovery.Server.Interfaces.IUserService.html#MovieDiscovery_Server_Interfaces_IUserService_GetUserByIdAsync_System_Int32_
+  name: GetUserByIdAsync(int)
+  nameWithType: IUserService.GetUserByIdAsync(int)
+  fullName: MovieDiscovery.Server.Interfaces.IUserService.GetUserByIdAsync(int)
+  nameWithType.vb: IUserService.GetUserByIdAsync(Integer)
+  fullName.vb: MovieDiscovery.Server.Interfaces.IUserService.GetUserByIdAsync(Integer)
+  name.vb: GetUserByIdAsync(Integer)
+  spec.csharp:
+  - uid: MovieDiscovery.Server.Interfaces.IUserService.GetUserByIdAsync(System.Int32)
+    name: GetUserByIdAsync
+    href: MovieDiscovery.Server.Interfaces.IUserService.html#MovieDiscovery_Server_Interfaces_IUserService_GetUserByIdAsync_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: MovieDiscovery.Server.Interfaces.IUserService.GetUserByIdAsync(System.Int32)
+    name: GetUserByIdAsync
+    href: MovieDiscovery.Server.Interfaces.IUserService.html#MovieDiscovery_Server_Interfaces_IUserService_GetUserByIdAsync_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: MovieDiscovery.Server.Services.UserService.UpdateUserAsync*
+  commentId: Overload:MovieDiscovery.Server.Services.UserService.UpdateUserAsync
+  href: MovieDiscovery.Server.Services.UserService.html#MovieDiscovery_Server_Services_UserService_UpdateUserAsync_MovieDiscovery_Server_Contracts_User_UpdateUserRequest_System_Int32_
+  name: UpdateUserAsync
+  nameWithType: UserService.UpdateUserAsync
+  fullName: MovieDiscovery.Server.Services.UserService.UpdateUserAsync
+- uid: MovieDiscovery.Server.Interfaces.IUserService.UpdateUserAsync(MovieDiscovery.Server.Contracts.User.UpdateUserRequest,System.Int32)
+  commentId: M:MovieDiscovery.Server.Interfaces.IUserService.UpdateUserAsync(MovieDiscovery.Server.Contracts.User.UpdateUserRequest,System.Int32)
+  parent: MovieDiscovery.Server.Interfaces.IUserService
+  isExternal: true
+  href: MovieDiscovery.Server.Interfaces.IUserService.html#MovieDiscovery_Server_Interfaces_IUserService_UpdateUserAsync_MovieDiscovery_Server_Contracts_User_UpdateUserRequest_System_Int32_
+  name: UpdateUserAsync(UpdateUserRequest, int)
+  nameWithType: IUserService.UpdateUserAsync(UpdateUserRequest, int)
+  fullName: MovieDiscovery.Server.Interfaces.IUserService.UpdateUserAsync(MovieDiscovery.Server.Contracts.User.UpdateUserRequest, int)
+  nameWithType.vb: IUserService.UpdateUserAsync(UpdateUserRequest, Integer)
+  fullName.vb: MovieDiscovery.Server.Interfaces.IUserService.UpdateUserAsync(MovieDiscovery.Server.Contracts.User.UpdateUserRequest, Integer)
+  name.vb: UpdateUserAsync(UpdateUserRequest, Integer)
+  spec.csharp:
+  - uid: MovieDiscovery.Server.Interfaces.IUserService.UpdateUserAsync(MovieDiscovery.Server.Contracts.User.UpdateUserRequest,System.Int32)
+    name: UpdateUserAsync
+    href: MovieDiscovery.Server.Interfaces.IUserService.html#MovieDiscovery_Server_Interfaces_IUserService_UpdateUserAsync_MovieDiscovery_Server_Contracts_User_UpdateUserRequest_System_Int32_
+  - name: (
+  - uid: MovieDiscovery.Server.Contracts.User.UpdateUserRequest
+    name: UpdateUserRequest
+    href: MovieDiscovery.Server.Contracts.User.UpdateUserRequest.html
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: MovieDiscovery.Server.Interfaces.IUserService.UpdateUserAsync(MovieDiscovery.Server.Contracts.User.UpdateUserRequest,System.Int32)
+    name: UpdateUserAsync
+    href: MovieDiscovery.Server.Interfaces.IUserService.html#MovieDiscovery_Server_Interfaces_IUserService_UpdateUserAsync_MovieDiscovery_Server_Contracts_User_UpdateUserRequest_System_Int32_
+  - name: (
+  - uid: MovieDiscovery.Server.Contracts.User.UpdateUserRequest
+    name: UpdateUserRequest
+    href: MovieDiscovery.Server.Contracts.User.UpdateUserRequest.html
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: MovieDiscovery.Server.Contracts.User.UpdateUserRequest
+  commentId: T:MovieDiscovery.Server.Contracts.User.UpdateUserRequest
+  parent: MovieDiscovery.Server.Contracts.User
+  href: MovieDiscovery.Server.Contracts.User.UpdateUserRequest.html
+  name: UpdateUserRequest
+  nameWithType: UpdateUserRequest
+  fullName: MovieDiscovery.Server.Contracts.User.UpdateUserRequest

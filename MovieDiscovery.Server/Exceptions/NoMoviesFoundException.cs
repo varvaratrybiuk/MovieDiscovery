@@ -1,6 +1,14 @@
-﻿namespace api.Exceptions
+﻿namespace MovieDiscovery.Server.Exceptions
 {
-    public class NoMoviesFoundException() : Exception("Немає фільмів в базі даних")
+    /// <summary>
+    /// Виключення, яке виникає, коли в базі даних немає фільмів.
+    /// </summary>
+    public class NoMoviesFoundException : Exception
     {
+        /// <summary>
+        /// Конструктор для виключення <see cref="NoMoviesFoundException"/>.
+        /// </summary>
+        public NoMoviesFoundException()
+            : base("Немає фільмів в базі даних") { }
     }
 }

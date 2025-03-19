@@ -1,0 +1,710 @@
+{
+  "source_base_path": "C:/Users/User/Desktop/Study/MovieDiscoveryApi/MovieDiscovery.Server",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Context.MovieDBContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Context.MovieDBContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Context.MovieDBContext",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Context.MovieDBContext.yml\" sourcestartlinenumber=\"1\">Контекст бази даних для роботи з застосунком Movie Discovery.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Context.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Context.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Context",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Contracts.Genre.GenreResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Contracts.Genre.GenreResponse.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Contracts.Genre.GenreResponse",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Contracts.Genre.GenreResponse.yml\" sourcestartlinenumber=\"1\">Представляє відповідь, що містить основну інформацію про жанр.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Contracts.Genre.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Contracts.Genre.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Contracts.Genre",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest.yml\" sourcestartlinenumber=\"1\">Об'єкт, що представляє запит для створення нового фільму в системі.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Contracts.Movie.MovieResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Contracts.Movie.MovieResponse.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Contracts.Movie.MovieResponse",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Contracts.Movie.MovieResponse.yml\" sourcestartlinenumber=\"1\">Представляє відповідь, що містить основну інформацію про фільм.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Contracts.Movie.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Contracts.Movie.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Contracts.Movie",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Contracts.User.CreateUserRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Contracts.User.CreateUserRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Contracts.User.CreateUserRequest",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Contracts.User.CreateUserRequest.yml\" sourcestartlinenumber=\"1\">Об'єкт, що представляє запит для створення нового користувача.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Contracts.User.UpdateUserRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Contracts.User.UpdateUserRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Contracts.User.UpdateUserRequest",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Contracts.User.UpdateUserRequest.yml\" sourcestartlinenumber=\"1\">Об'єкт, що представляє запит для оновлення даних користувача.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Contracts.User.UserRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Contracts.User.UserRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Contracts.User.UserRequest",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Contracts.User.UserRequest.yml\" sourcestartlinenumber=\"1\">Об'єкт, що представляє запит для здійснення входу у систему.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Contracts.User.UserResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Contracts.User.UserResponse.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Contracts.User.UserResponse",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Contracts.User.UserResponse.yml\" sourcestartlinenumber=\"1\">Представляє відповідь, яка містить основну інформацію про користувача.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Contracts.User.UserResponseWithPassword.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Contracts.User.UserResponseWithPassword.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Contracts.User.UserResponseWithPassword",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Contracts.User.UserResponseWithPassword.yml\" sourcestartlinenumber=\"1\">Представляє відповідь, яка містить основну інформацію про користувача та його пароль.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Contracts.User.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Contracts.User.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Contracts.User",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Endpoints.AccountEndpoints.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Endpoints.AccountEndpoints.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Endpoints.AccountEndpoints",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Endpoints.AccountEndpoints.yml\" sourcestartlinenumber=\"1\">Клас, що містить ендпоїнти для обробки запитів, пов'язаних з обліковими записами користувачів.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Endpoints.GenreEndpoints.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Endpoints.GenreEndpoints.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Endpoints.GenreEndpoints",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Endpoints.GenreEndpoints.yml\" sourcestartlinenumber=\"1\">Клас, що містить ендпоїнти для обробки запитів, пов'язаних з жанрами.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Endpoints.MovieEndpoints.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Endpoints.MovieEndpoints.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Endpoints.MovieEndpoints",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Endpoints.MovieEndpoints.yml\" sourcestartlinenumber=\"1\">Клас, що містить ендпоїнти для обробки запитів, пов'язаних з фільмами.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Endpoints.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Endpoints.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Endpoints",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Exceptions.GlobalExceptionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Exceptions.GlobalExceptionHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Exceptions.GlobalExceptionHandler",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Exceptions.GlobalExceptionHandler.yml\" sourcestartlinenumber=\"1\">Глобальний обробник виключень, який обробляє різні типи виключень у застосунку.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Exceptions.MovieAlreadyExistsException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Exceptions.MovieAlreadyExistsException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Exceptions.MovieAlreadyExistsException",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Exceptions.MovieAlreadyExistsException.yml\" sourcestartlinenumber=\"1\">Виключення, яке виникає, коли фільм з такою ж назвою вже існує в базі даних.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Exceptions.MovieNotFoundException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Exceptions.MovieNotFoundException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Exceptions.MovieNotFoundException",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Exceptions.MovieNotFoundException.yml\" sourcestartlinenumber=\"1\">Виключення, яке виникає, коли фільм з такою назвою не знайдено в базі даних.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Exceptions.NoMoviesFoundException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Exceptions.NoMoviesFoundException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Exceptions.NoMoviesFoundException",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Exceptions.NoMoviesFoundException.yml\" sourcestartlinenumber=\"1\">Виключення, яке виникає, коли в базі даних немає фільмів.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Exceptions.UserAlreadyExistsException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Exceptions.UserAlreadyExistsException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Exceptions.UserAlreadyExistsException",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Exceptions.UserAlreadyExistsException.yml\" sourcestartlinenumber=\"1\">Виключення, яке виникає, коли користувач з таким ім'ям або електронною поштою вже існує.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Exceptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Exceptions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Helpers.ValidationUtilities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Helpers.ValidationUtilities.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Helpers.ValidationUtilities",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Helpers.ValidationUtilities.yml\" sourcestartlinenumber=\"1\">Статичний клас для обробки валідації запитів.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Helpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Helpers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Helpers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Interfaces.IGenreService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Interfaces.IGenreService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Interfaces.IGenreService",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Interfaces.IGenreService.yml\" sourcestartlinenumber=\"1\">Інтерфейс для сервісу жанрів.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Interfaces.IMovieService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Interfaces.IMovieService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Interfaces.IMovieService",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Interfaces.IMovieService.yml\" sourcestartlinenumber=\"1\">Інтерфейс для сервісу фільмів.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Interfaces.IUserService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Interfaces.IUserService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Interfaces.IUserService",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Interfaces.IUserService.yml\" sourcestartlinenumber=\"1\">Інтерфейс для сервісу користувачів.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Interfaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Interfaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Migrations.CreateUsersTable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Migrations.CreateUsersTable.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Migrations.CreateUsersTable",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Migrations.CreateUsersTable.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Migrations.InitialCreate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Migrations.InitialCreate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Migrations.InitialCreate",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Migrations.InitialCreate.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Migrations.SeedDatabase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Migrations.SeedDatabase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Migrations.SeedDatabase",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Migrations.SeedDatabase.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Migrations.SetNullOnUserDelete.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Migrations.SetNullOnUserDelete.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Migrations.SetNullOnUserDelete",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Migrations.SetNullOnUserDelete.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Migrations.UpdateMovieDescription.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Migrations.UpdateMovieDescription.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Migrations.UpdateMovieDescription",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Migrations.UpdateMovieDescription.yml\" sourcestartlinenumber=\"1\">A base class inherited by each EF Core migration.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Migrations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Migrations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Migrations",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Models.Genre.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Models.Genre.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Models.Genre",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Models.Genre.yml\" sourcestartlinenumber=\"1\">Сутність, що представляє жанр фільму.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Models.Movie.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Models.Movie.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Models.Movie",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Models.Movie.yml\" sourcestartlinenumber=\"1\">Сутність, що представляє фільм.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Models.Movie_Genre.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Models.Movie_Genre.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Models.Movie_Genre",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Models.Movie_Genre.yml\" sourcestartlinenumber=\"1\">Сутність, що представляє зв'язок між фільмами, жанрами та користувачами.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Models.User.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Models.User.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Models.User",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Models.User.yml\" sourcestartlinenumber=\"1\">Сутність, що представляє користувача в системі.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Services.GenreService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Services.GenreService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Services.GenreService",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Services.GenreService.yml\" sourcestartlinenumber=\"1\">Сервіс для роботи з жанрами фільмів.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Services.MovieService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Services.MovieService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Services.MovieService",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Services.MovieService.yml\" sourcestartlinenumber=\"1\">Сервіс для роботи з фільмами.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Services.UserContextService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Services.UserContextService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Services.UserContextService",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Services.UserContextService.yml\" sourcestartlinenumber=\"1\">Сервіс для роботи з контекстом користувача в HTTP запитах.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Services.UserService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Services.UserService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Services.UserService",
+      "Summary": "<p sourcefile=\"api/MovieDiscovery.Server.Services.UserService.yml\" sourcestartlinenumber=\"1\">Сервіс для керування користувачами.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MovieDiscovery.Server.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MovieDiscovery.Server.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "MovieDiscovery.Server.Services",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

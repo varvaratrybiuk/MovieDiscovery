@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: MovieDiscovery.Server.Helpers
+  commentId: N:MovieDiscovery.Server.Helpers
+  id: MovieDiscovery.Server.Helpers
+  children:
+  - MovieDiscovery.Server.Helpers.ValidationUtilities
+  langs:
+  - csharp
+  - vb
+  name: MovieDiscovery.Server.Helpers
+  nameWithType: MovieDiscovery.Server.Helpers
+  fullName: MovieDiscovery.Server.Helpers
+  type: Namespace
+  assemblies:
+  - MovieDiscovery.Server
+references:
+- uid: MovieDiscovery.Server.Helpers.ValidationUtilities
+  commentId: T:MovieDiscovery.Server.Helpers.ValidationUtilities
+  href: MovieDiscovery.Server.Helpers.ValidationUtilities.html
+  name: ValidationUtilities
+  nameWithType: ValidationUtilities
+  fullName: MovieDiscovery.Server.Helpers.ValidationUtilities

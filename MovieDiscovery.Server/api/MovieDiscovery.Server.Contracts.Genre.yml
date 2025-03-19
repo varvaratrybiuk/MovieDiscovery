@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: MovieDiscovery.Server.Contracts.Genre
+  commentId: N:MovieDiscovery.Server.Contracts.Genre
+  id: MovieDiscovery.Server.Contracts.Genre
+  children:
+  - MovieDiscovery.Server.Contracts.Genre.GenreResponse
+  langs:
+  - csharp
+  - vb
+  name: MovieDiscovery.Server.Contracts.Genre
+  nameWithType: MovieDiscovery.Server.Contracts.Genre
+  fullName: MovieDiscovery.Server.Contracts.Genre
+  type: Namespace
+  assemblies:
+  - MovieDiscovery.Server
+references:
+- uid: MovieDiscovery.Server.Contracts.Genre.GenreResponse
+  commentId: T:MovieDiscovery.Server.Contracts.Genre.GenreResponse
+  href: MovieDiscovery.Server.Contracts.Genre.GenreResponse.html
+  name: GenreResponse
+  nameWithType: GenreResponse
+  fullName: MovieDiscovery.Server.Contracts.Genre.GenreResponse

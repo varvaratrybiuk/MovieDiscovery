@@ -1,0 +1,880 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MovieDiscovery.Server</name>
+    </assembly>
+    <members>
+        <member name="T:MovieDiscovery.Server.Context.MovieDBContext">
+            <summary>
+            Контекст бази даних для роботи з застосунком Movie Discovery.
+            </summary>
+            <param name="dbContext">Конфігураційні параметри контексту бази даних.</param>
+        </member>
+        <member name="M:MovieDiscovery.Server.Context.MovieDBContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{MovieDiscovery.Server.Context.MovieDBContext})">
+            <summary>
+            Контекст бази даних для роботи з застосунком Movie Discovery.
+            </summary>
+            <param name="dbContext">Конфігураційні параметри контексту бази даних.</param>
+        </member>
+        <member name="P:MovieDiscovery.Server.Context.MovieDBContext.Movies">
+            <summary>
+            Колекція фільмів у базі даних.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Context.MovieDBContext.Genres">
+            <summary>
+            Колекція жанрів у базі даних.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Context.MovieDBContext.Movies_Genres">
+            <summary>
+            Колекція зв’язків між фільмами та жанрами.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Context.MovieDBContext.Users">
+            <summary>
+            Колекція користувачів у базі даних.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Context.MovieDBContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Заповнення початковими даними та налаштування моделей.
+            </summary>
+            <param name="modelBuilder">Об'єкт для конфігурації моделі.</param>
+        </member>
+        <member name="T:MovieDiscovery.Server.Contracts.Genre.GenreResponse">
+            <summary>
+            Представляє відповідь, що містить основну інформацію про жанр.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.Genre.GenreResponse.Id">
+            <summary>
+            Унікальний ідентифікатор жанру.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.Genre.GenreResponse.Name">
+            <summary>
+            Назва жанру.
+            </summary>
+        </member>
+        <member name="T:MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest">
+            <summary>
+            Об'єкт, що представляє запит для створення нового фільму в системі.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest.Title">
+            <summary>
+            Назва фільму.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest.Description">
+            <summary>
+            Опис фільму.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest.GenresID">
+            <summary>
+            Список ідентифікаторів жанрів, до яких належить фільм.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest.Year">
+            <summary>
+            Рік випуску фільму.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest.Rating">
+            <summary>
+            Рейтинг фільму.
+            </summary>
+        </member>
+        <member name="T:MovieDiscovery.Server.Contracts.Movie.MovieResponse">
+            <summary>
+            Представляє відповідь, що містить основну інформацію про фільм.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.Movie.MovieResponse.Id">
+            <summary>
+            Унікальний ідентифікатор фільму.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.Movie.MovieResponse.Title">
+            <summary>
+            Назва фільму.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.Movie.MovieResponse.Description">
+            <summary>
+            Опис фільму (необов'язково).
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.Movie.MovieResponse.Genres">
+            <summary>
+            Список жанрів, до яких належить фільм.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.Movie.MovieResponse.Year">
+            <summary>
+            Рік випуску фільму.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.Movie.MovieResponse.Rating">
+            <summary>
+            Рейтинг фільму (необов'язково).
+            </summary>
+        </member>
+        <member name="T:MovieDiscovery.Server.Contracts.User.CreateUserRequest">
+            <summary>
+            Об'єкт, що представляє запит для створення нового користувача.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.User.CreateUserRequest.Username">
+            <summary>
+            Ім'я користувача.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.User.CreateUserRequest.Email">
+            <summary>
+            Електронна пошта користувача.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.User.CreateUserRequest.Password">
+            <summary>
+            Пароль користувача.
+            </summary>
+        </member>
+        <member name="T:MovieDiscovery.Server.Contracts.User.UpdateUserRequest">
+            <summary>
+            Об'єкт, що представляє запит для оновлення даних користувача.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.User.UpdateUserRequest.Username">
+            <summary>
+            Нове ім'я користувача (необов'язково).
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.User.UpdateUserRequest.Email">
+            <summary>
+            Нова електронна пошта користувача (необов'язково).
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.User.UpdateUserRequest.Password">
+            <summary>
+            Новий пароль користувача (необов'язково).
+            </summary>
+        </member>
+        <member name="T:MovieDiscovery.Server.Contracts.User.UserRequest">
+            <summary>
+            Об'єкт, що представляє запит для здійснення входу у систему.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.User.UserRequest.Username">
+            <summary>
+            Ім'я користувача.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.User.UserRequest.Password">
+            <summary>
+            Пароль користувача.
+            </summary>
+        </member>
+        <member name="T:MovieDiscovery.Server.Contracts.User.UserResponse">
+            <summary>
+            Представляє відповідь, яка містить основну інформацію про користувача.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.User.UserResponse.Id">
+            <summary>
+            Унікальний ідентифікатор користувача.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.User.UserResponse.Username">
+            <summary>
+            Ім'я користувача, яке використовується для авторизації.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.User.UserResponse.Email">
+            <summary>
+            Адреса електронної пошти користувача.
+            </summary>
+        </member>
+        <member name="T:MovieDiscovery.Server.Contracts.User.UserResponseWithPassword">
+            <summary>
+            Представляє відповідь, яка містить основну інформацію про користувача та його пароль.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Contracts.User.UserResponseWithPassword.Password">
+            <summary>
+            Пароль користувача.
+            </summary>
+        </member>
+        <member name="T:MovieDiscovery.Server.Endpoints.AccountEndpoints">
+            <summary>
+            Клас, що містить ендпоїнти для обробки запитів, пов'язаних з обліковими записами користувачів.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.AccountEndpoints.MapAccountEndPoints(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)">
+            <summary>
+            Реєструє всі ендпоїнти для обробки запитів, пов'язаних з обліковими записами користувачів.
+            </summary>
+            <param name="app">Інтерфейс для налаштування маршрутів.</param>
+            <returns>Інтерфейс для налаштування маршрутів.</returns>
+        </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.AccountEndpoints.GetAuthUserInfo(Microsoft.AspNetCore.Http.HttpContext,MovieDiscovery.Server.Interfaces.IUserService)">
+            <summary>
+            Отримання інформації про аутентифікованого користувача за допомогою його ID.
+            </summary>
+            <param name="httpContext">Контекст HTTP для доступу до куків і даних користувача.</param>
+            <param name="service">Сервіс для роботи з користувачами, що дозволяє отримати користувача за ID.</param>
+            <returns>Статус 200 з даними користувача, якщо користувач знайдений, 
+            або статус 401, якщо користувач не авторизований.</returns>
+            <response code="200">Дані користувача успішно знайдені.</response>
+            <response code="401">Користувач не авторизований.</response>
+            <response code="500">Внутрішня помилка сервера.</response>
+        </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.AccountEndpoints.CheckAuth(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Перевірка чи користувач автентифікований.
+            </summary>
+            <returns>
+            Якщо користувач автентифікований, повертає статус 200 з даними користувача. Якщо ні - повертає статус 401.
+            </returns>
+            <param name="httpContext">Контекст HTTP.</param>
+            <response code="200">Користувач автентифікований.</response>
+            <response code="401">Користувач не увійшов у систему.</response>
+            <response code="401">Користувач не увійшов у систему.</response>
+        </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.AccountEndpoints.GetUserById(System.Int32,MovieDiscovery.Server.Interfaces.IUserService)">
+            <summary>
+            Отримання користувача за його ID.
+            </summary>
+            <param name="id">Унікальний ID користувача</param>
+            <param name="service">Сервіс для роботи з користувачами</param>
+            <returns>
+            Якщо користувач знайдений, повертає статус 200 з даними користувача. Якщо не знайдений - повертає статус 404.
+            </returns>
+            <response code="200">Користувач знайдений</response>
+            <response code="404">Користувач не знайдений</response>
+            <response code="500">Внутрішня помилка</response>
+        </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.AccountEndpoints.RegisterUser(MovieDiscovery.Server.Contracts.User.CreateUserRequest,MovieDiscovery.Server.Interfaces.IUserService)">
+            <summary>
+            Реєстрація нового користувача в системі.
+            </summary>
+            <param name="user">Об'єкт, що містить дані для реєстрації нового користувача</param>
+            <param name="service">Сервіс для роботи з користувачами</param>
+            <returns>Статус 201 при успішній реєстрації</returns>
+            <response code="201">Користувач успішно зареєстрований</response>
+            <response code="400">Некоректний запит</response>
+            <response code="500">Внутрішня помилка</response>
+        </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.AccountEndpoints.LoginUser(MovieDiscovery.Server.Contracts.User.UserRequest,MovieDiscovery.Server.Interfaces.IUserService,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Логін користувача.
+            </summary>
+            <param name="user">Об'єкт, що містить дані для автентифікації користувача</param>
+            <param name="service">Сервіс для роботи з користувачами</param>
+            <param name="httpContext">Контекст HTTP-запиту для управління сесією</param>
+            <returns>
+            Статус 200 при успішному вході, статус 401 при невірних даних для входу.
+            </returns>
+            <response code="200">Вхід успішний</response>
+            <response code="401">Невірні облікові дані</response>
+            <response code="404">Користувач не знайдений</response>
+            <response code="500">Внутрішня помилка</response>
+        </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.AccountEndpoints.LogoutUser(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Вихід з акаунту.
+            </summary>
+            <param name="httpContext">Контекст HTTP-запиту для видалення сесії</param>
+            <returns>Статус 200 при успішному виході</returns>
+            <response code="200">Вихід успішний</response>
+            <response code="500">Внутрішня помилка</response>
+        </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.AccountEndpoints.UpdateUser(MovieDiscovery.Server.Contracts.User.UpdateUserRequest,MovieDiscovery.Server.Interfaces.IUserService,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Оновлення даних користувача.
+            </summary>
+            <param name="user">Об'єкт, що містить дані для оновлення даних користувача</param>
+            <param name="service">Сервіс для роботи з користувачами</param>
+            <param name="httpContext">Контекст HTTP.</param>
+            <returns>Статус 204 при успішному оновленні</returns>
+            <response code="204">Оновлення успішне</response>
+            <response code="401">Користувач не увійшов у систему</response>
+            <response code="404">Користувач не знайдений</response>
+            <response code="500">Внутрішня помилка</response>
+        </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.AccountEndpoints.DeleteUser(MovieDiscovery.Server.Interfaces.IUserService,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Видалення користувача.
+            </summary>
+            <param name="service">Сервіс для роботи з користувачами</param>
+            <param name="httpContext">Контекст HTTP.</param>
+            <returns>Статус 204 при успішному видаленні</returns>
+            <response code="204">Користувач успішно видалений</response>
+            <response code="401">Користувач не увійшов у систему</response>
+            <response code="404">Користувач не знайдений</response>
+            <response code="500">Внутрішня помилка</response>
+        </member>
+        <member name="T:MovieDiscovery.Server.Endpoints.GenreEndpoints">
+            <summary>
+            Клас, що містить ендпоїнти для обробки запитів, пов'язаних з жанрами.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.GenreEndpoints.MapGenreEndPoints(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)">
+            <summary>
+            Реєструє всі ендпоїнти для обробки запитів, пов'язаних з жанрами.
+            </summary>
+            <param name="app">Інтерфейс для налаштування маршрутів.</param>
+            <returns>Інтерфейс для налаштування маршрутів.</returns>
+        </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.GenreEndpoints.GetAllGenres(MovieDiscovery.Server.Interfaces.IGenreService)">
+            <summary>
+            Отримання списку усіх жанрів.
+            </summary>
+            <param name="service">Сервіс для отримання жанрів.</param>
+            <returns>Результат у вигляді HTTP-відповіді з кодом 200 або 500.</returns>
+            <response code="200">Успішно отримано список жанрів.</response>
+            <response code="500">Внутрішня помилка.</response>
+        </member>
+        <member name="T:MovieDiscovery.Server.Endpoints.MovieEndpoints">
+            <summary>
+            Клас, що містить ендпоїнти для обробки запитів, пов'язаних з фільмами.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.MovieEndpoints.MapMovieEndPoints(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder)">
+            <summary>
+            Реєструє всі ендпоїнти для обробки запитів, пов'язаних з фільмами.
+            </summary>
+            <param name="app">Інтерфейс для налаштування маршрутів.</param>
+            <returns>Інтерфейс для налаштування маршрутів.</returns>
+        </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.MovieEndpoints.GetAllMovies(MovieDiscovery.Server.Interfaces.IMovieService)">
+            <summary>
+            Отримання списку всіх фільмів.
+            </summary>
+            <param name="service">Сервіс для роботи з фільмами.</param>
+            <returns>Список фільмів.</returns>
+            <response code="200">Успішно отримано список фільмів.</response>
+            <response code="500">Внутрішня помилка.</response>
+        </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.MovieEndpoints.GetRandomMovie(MovieDiscovery.Server.Interfaces.IMovieService)">
+            <summary>
+            Отримання випадкового фільму.
+            </summary>
+            <param name="service">Сервіс для роботи з фільмами.</param>
+            <returns>Випадковий фільм.</returns>
+            <response code="200">Успішно отримано випадковий фільм.</response>
+            <response code="404">Не знайдено жодного фільму.</response>
+            <response code="500">Внутрішня помилка сервера.</response>
+        </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.MovieEndpoints.GetMovieByTitle(System.String,MovieDiscovery.Server.Interfaces.IMovieService)">
+            <summary>
+            Отримання фільму(ів) за назвою.
+            </summary>
+            <param name="name">Назва фільму.</param>
+            <param name="service">Сервіс для роботи з фільмами.</param>
+            <returns>Інформація про фільм(и).</returns>
+            <response code="200">Успішно отримано інформацію про фільм(и).</response>
+            <response code="400">Некоректний запит.</response>
+            <response code="404">Фільм(и) із вказаною назвою не знайдено.</response>
+            <response code="500">Внутрішня помилка сервера.</response>
+        </member>
+        <member name="M:MovieDiscovery.Server.Endpoints.MovieEndpoints.AddMovie(MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest,MovieDiscovery.Server.Interfaces.IMovieService,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Додавання нового фільму.
+            </summary>
+            <param name="create">Об'єкт, що містить дані для додавання фільму.</param>
+            <param name="service">Сервіс для роботи з фільмами.</param>
+            <param name="httpContext">Контекст HTTP.</param>
+            <returns>Повернення статусу 201 і об'єкта нового фільму.</returns>
+            <response code="201">Фільм успішно додано.</response>
+            <response code="400">Некоректний запит.</response>
+            <response code="401">Користувач не увійшов у систему.</response>
+            <response code="500">Внутрішня помилка сервера.</response>
+        </member>
+        <member name="T:MovieDiscovery.Server.Exceptions.GlobalExceptionHandler">
+            <summary>
+            Глобальний обробник виключень, який обробляє різні типи виключень у застосунку.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Exceptions.GlobalExceptionHandler.TryHandleAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception,System.Threading.CancellationToken)">
+            <summary>
+            Метод, який асинхронно обробляє виключення, якщо це можливо.
+            </summary>
+            <param name="httpContext">Поточний HTTP контекст.</param>
+            <param name="exception">Виключення, яке потрібно обробити.</param>
+            <param name="cancellationToken">Токен для моніторингу запитів на скасування.</param>
+            <returns>Повертає `true`, якщо виключення було успішно оброблене, і `false` в іншому випадку.</returns>
+        </member>
+        <member name="T:MovieDiscovery.Server.Exceptions.MovieAlreadyExistsException">
+            <summary>
+            Виключення, яке виникає, коли фільм з такою ж назвою вже існує в базі даних.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Exceptions.MovieAlreadyExistsException.#ctor(System.String)">
+            <summary>
+            Конструктор для виключення <see cref="T:MovieDiscovery.Server.Exceptions.MovieAlreadyExistsException"/>.
+            </summary>
+            <param name="title">Назва фільму, який вже існує.</param>
+        </member>
+        <member name="T:MovieDiscovery.Server.Exceptions.MovieNotFoundException">
+            <summary>
+            Виключення, яке виникає, коли фільм з такою назвою не знайдено в базі даних.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Exceptions.MovieNotFoundException.#ctor(System.String)">
+            <summary>
+            Конструктор для виключення <see cref="T:MovieDiscovery.Server.Exceptions.MovieNotFoundException"/>.
+            </summary>
+            <param name="title">Назва фільму, який не знайдено.</param>
+        </member>
+        <member name="T:MovieDiscovery.Server.Exceptions.NoMoviesFoundException">
+            <summary>
+            Виключення, яке виникає, коли в базі даних немає фільмів.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Exceptions.NoMoviesFoundException.#ctor">
+            <summary>
+            Конструктор для виключення <see cref="T:MovieDiscovery.Server.Exceptions.NoMoviesFoundException"/>.
+            </summary>
+        </member>
+        <member name="T:MovieDiscovery.Server.Exceptions.UserAlreadyExistsException">
+            <summary>
+            Виключення, яке виникає, коли користувач з таким ім'ям або електронною поштою вже існує.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Exceptions.UserAlreadyExistsException.#ctor">
+            <summary>
+            Конструктор для виключення <see cref="T:MovieDiscovery.Server.Exceptions.UserAlreadyExistsException"/>.
+            </summary>
+        </member>
+        <member name="T:MovieDiscovery.Server.Helpers.ValidationUtilities">
+            <summary>
+            Статичний клас для обробки валідації запитів.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateMovieRequest(MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest)">
+            <summary>
+            Валідує запит на створення фільму.
+            </summary>
+            <param name="movie">Об'єкт, що містить дані для створення фільму.</param>
+            <returns>Повертає повідомлення про помилку, якщо валідація не пройдена, або порожній рядок, якщо все вірно.</returns>
+        </member>
+        <member name="M:MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateCreateUserRequest(MovieDiscovery.Server.Contracts.User.CreateUserRequest)">
+            <summary>
+            Валідує запит на створення користувача.
+            </summary>
+            <param name="user">Об'єкт, що містить дані для створення користувача.</param>
+            <returns>Повертає повідомлення про помилку, якщо валідація не пройдена, або порожній рядок, якщо все вірно.</returns>
+        </member>
+        <member name="M:MovieDiscovery.Server.Helpers.ValidationUtilities.ValidateUpdateUserRequest(MovieDiscovery.Server.Contracts.User.UpdateUserRequest)">
+            <summary>
+            Валідує запит на оновлення користувача.
+            </summary>
+            <param name="user">Об'єкт, що містить дані для оновлення користувача.</param>
+            <returns>Повертає повідомлення про помилку, якщо валідація не пройдена, або порожній рядок, якщо все вірно.</returns>
+        </member>
+        <member name="T:MovieDiscovery.Server.Interfaces.IGenreService">
+            <summary>
+            Інтерфейс для сервісу жанрів.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Interfaces.IGenreService.GetAllAsync">
+            <summary>
+            Отримання всіх жанрів.
+            </summary>
+            <returns>Колекція жанрів у вигляді <see cref="T:MovieDiscovery.Server.Contracts.Genre.GenreResponse"/>.</returns>
+        </member>
+        <member name="T:MovieDiscovery.Server.Interfaces.IMovieService">
+            <summary>
+            Інтерфейс для сервісу фільмів.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Interfaces.IMovieService.AddMovieAsync(MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest,System.Int32)">
+            <summary>
+            Додавання нового фільму.
+            </summary>
+            <param name="movieRequest">Об'єкт, що містить дані для створення фільму.</param>
+            <param name="userId">Ідентифікатор користувача, що додає фільм.</param>
+            <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.Movie.MovieResponse"/> з інформацією про доданий фільм.</returns>
+        </member>
+        <member name="M:MovieDiscovery.Server.Interfaces.IMovieService.GetRandomMovieAsync">
+            <summary>
+            Отримання випадкового фільму.
+            </summary>
+            <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.Movie.MovieResponse"/> з випадковим фільмом або null, якщо фільмів немає.</returns>
+        </member>
+        <member name="M:MovieDiscovery.Server.Interfaces.IMovieService.GetByTitleAsync(System.String)">
+            <summary>
+            Отримання фільму(ів) за назвою.
+            </summary>
+            <param name="title">Назва фільму, який потрібно знайти.</param>
+            <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.Movie.MovieResponse"/> з фільмом(ами) або null, якщо фільм не знайдено.</returns>
+        </member>
+        <member name="M:MovieDiscovery.Server.Interfaces.IMovieService.GetAllAsync">
+            <summary>
+            Отримання всіх фільмів.
+            </summary>
+            <returns>Колекція фільмів у вигляді <see cref="T:MovieDiscovery.Server.Contracts.Movie.MovieResponse"/>.</returns>
+        </member>
+        <member name="T:MovieDiscovery.Server.Interfaces.IUserService">
+            <summary>
+            Інтерфейс для сервісу користувачів.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Interfaces.IUserService.GetUserByEmailAndUsernameAsync(System.String,System.String)">
+            <summary>
+            Отримання користувача за електронною поштою та ім'ям користувача.
+            </summary>
+            <param name="username">Ім'я користувача.</param>
+            <param name="email">Електронна пошта користувача.</param>
+            <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.User.UserResponse"/> з даними користувача або null, якщо користувача не знайдено.</returns>
+        </member>
+        <member name="M:MovieDiscovery.Server.Interfaces.IUserService.GetUserByIdAsync(System.Int32)">
+            <summary>
+            Отримання користувача за його ідентифікатором.
+            </summary>
+            <param name="id">Ідентифікатор користувача.</param>
+            <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.User.UserResponse"/> з даними користувача або null, якщо користувача не знайдено.</returns>
+        </member>
+        <member name="M:MovieDiscovery.Server.Interfaces.IUserService.AddUser(MovieDiscovery.Server.Contracts.User.CreateUserRequest)">
+            <summary>
+            Додавання нового користувача.
+            </summary>
+            <param name="user">Запит на створення користувача.</param>
+            <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.User.UserResponse"/> з даними доданого користувача.</returns>
+        </member>
+        <member name="M:MovieDiscovery.Server.Interfaces.IUserService.UpdateUserAsync(MovieDiscovery.Server.Contracts.User.UpdateUserRequest,System.Int32)">
+            <summary>
+            Оновлення інформації про користувача.
+            </summary>
+            <param name="user">Запит на оновлення користувача.</param>
+            <param name="userId">Ідентифікатор користувача, інформацію якого потрібно оновити.</param>
+            <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.User.UserResponse"/> з оновленими даними користувача.</returns>
+        </member>
+        <member name="M:MovieDiscovery.Server.Interfaces.IUserService.DeleteUserAsync(System.Int32)">
+            <summary>
+            Видалення користувача за його ідентифікатором.
+            </summary>
+            <param name="id">Ідентифікатор користувача, якого потрібно видалити.</param>
+            <returns>True, якщо користувач успішно видалений, інакше false.</returns>
+        </member>
+        <member name="T:MovieDiscovery.Server.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:MovieDiscovery.Server.Migrations.SeedDatabase">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.SeedDatabase.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.SeedDatabase.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.SeedDatabase.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:MovieDiscovery.Server.Migrations.CreateUsersTable">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.CreateUsersTable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.CreateUsersTable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.CreateUsersTable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:MovieDiscovery.Server.Migrations.SetNullOnUserDelete">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.SetNullOnUserDelete.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.SetNullOnUserDelete.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.SetNullOnUserDelete.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:MovieDiscovery.Server.Migrations.UpdateMovieDescription">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.UpdateMovieDescription.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.UpdateMovieDescription.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:MovieDiscovery.Server.Migrations.UpdateMovieDescription.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:MovieDiscovery.Server.Models.Genre">
+            <summary>
+            Сутність, що представляє жанр фільму.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.Genre.Id">
+            <summary>
+            Унікальний ідентифікатор жанру.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.Genre.Name">
+            <summary>
+            Назва жанру.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.Genre.MoviesGenres">
+            <summary>
+            Колекція, що зберігає зв'язки між жанрами та фільмами.
+            </summary>
+        </member>
+        <member name="T:MovieDiscovery.Server.Models.Movie">
+            <summary>
+            Сутність, що представляє фільм.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.Movie.Id">
+            <summary>
+            Унікальний ідентифікатор фільму.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.Movie.Title">
+            <summary>
+            Назва фільму.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.Movie.Description">
+            <summary>
+            Опис фільму.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.Movie.Year">
+            <summary>
+            Рік випуску фільму.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.Movie.Rating">
+            <summary>
+            Рейтинг фільму.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.Movie.MoviesGenres">
+            <summary>
+            Колекція, що зберігає зв'язки між фільмами та жанрами.
+            </summary>
+        </member>
+        <member name="T:MovieDiscovery.Server.Models.Movie_Genre">
+            <summary>
+            Сутність, що представляє зв'язок між фільмами, жанрами та користувачами.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.Movie_Genre.Id">
+            <summary>
+            Унікальний ідентифікатор зв'язку.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.Movie_Genre.MovieId">
+            <summary>
+            Ідентифікатор фільму.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.Movie_Genre.GenreId">
+            <summary>
+            Ідентифікатор жанру.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.Movie_Genre.UserId">
+            <summary>
+            Ідентифікатор користувача (необов'язково).
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.Movie_Genre.Genre">
+            <summary>
+            Жанр, до якого належить фільм.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.Movie_Genre.Movie">
+            <summary>
+            Фільм, до якого належить жанр.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.Movie_Genre.User">
+            <summary>
+            Користувач, що додав фільм.
+            </summary>
+        </member>
+        <member name="T:MovieDiscovery.Server.Models.User">
+            <summary>
+            Сутність, що представляє користувача в системі.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.User.Id">
+            <summary>
+            Унікальний ідентифікатор користувача.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.User.Username">
+            <summary>
+            Ім'я користувача.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.User.Email">
+            <summary>
+            Електронна пошта користувача.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.User.PasswordHash">
+            <summary>
+            Хеш пароля користувача.
+            </summary>
+        </member>
+        <member name="P:MovieDiscovery.Server.Models.User.MoviesGenres">
+            <summary>
+            Колекція, що зберігає зв'язки між користувачами, фільмами та жанрами.
+            </summary>
+        </member>
+        <member name="T:MovieDiscovery.Server.Services.GenreService">
+            <summary>
+            Сервіс для роботи з жанрами фільмів.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Services.GenreService.#ctor(MovieDiscovery.Server.Context.MovieDBContext)">
+            <summary>
+            Ініціалізує новий екземпляр <see cref="T:MovieDiscovery.Server.Services.GenreService"/>.
+            </summary>
+            <param name="context">Контекст бази даних.</param>
+        </member>
+        <member name="M:MovieDiscovery.Server.Services.GenreService.GetAllAsync">
+            <summary>
+            Отримання списку усіх жанрів із бази даних.
+            </summary>
+            <returns>Колекція жанрів у вигляді <see cref="T:MovieDiscovery.Server.Contracts.Genre.GenreResponse"/>.</returns>
+            <exception cref="T:System.Exception">Може виникнути у разі неочікуваної помилки.</exception>
+        </member>
+        <member name="T:MovieDiscovery.Server.Services.MovieService">
+            <summary>
+            Сервіс для роботи з фільмами.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Services.MovieService.#ctor(MovieDiscovery.Server.Context.MovieDBContext)">
+            <summary>
+            Ініціалізує новий екземпляр <see cref="T:MovieDiscovery.Server.Services.MovieService"/>.
+            </summary>
+            <param name="context">Контекст бази даних.</param>
+        </member>
+        <member name="M:MovieDiscovery.Server.Services.MovieService.AddMovieAsync(MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest,System.Int32)">
+            <summary>
+            Додавання нового фільму у базу даних.
+            </summary>
+            <param name="movieRequest">Дані фільму для створення.</param>
+            <param name="userId">Ідентифікатор користувача, який додає фільм.</param>
+            <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.Movie.MovieResponse"/> із даними збереженого фільму.</returns>
+            <exception cref="T:System.ArgumentNullException">Виникає, якщо <paramref name="movieRequest"/> є null.</exception>
+            <exception cref="T:MovieDiscovery.Server.Exceptions.MovieAlreadyExistsException">Виникає, якщо фільм із таким заголовком уже існує.</exception>
+            <exception cref="T:System.Exception">Може виникнути у разі неочікуваної помилки.</exception>
+        </member>
+        <member name="M:MovieDiscovery.Server.Services.MovieService.GetAllAsync">
+            <summary>
+            Отримання списку усіх фільмів разом із жанрами.
+            </summary>
+            <returns>Колекція об'єктів <see cref="T:MovieDiscovery.Server.Contracts.Movie.MovieResponse"/>.</returns>
+            <exception cref="T:System.Exception">Може виникнути у разі неочікуваної помилки.</exception>
+        </member>
+        <member name="M:MovieDiscovery.Server.Services.MovieService.GetByTitleAsync(System.String)">
+            <summary>
+            Отримання фільму(ів) за назвою.
+            </summary>
+            <param name="title">Назва фільму.</param>
+            <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.Movie.MovieResponse"/> або викликає виняток.</returns>
+            <exception cref="T:System.ArgumentNullException">Виникає, якщо <paramref name="title"/> є null або порожнім.</exception>
+            <exception cref="T:MovieDiscovery.Server.Exceptions.MovieNotFoundException">Виникає, якщо фільм(и) не знайдено.</exception> 
+            <exception cref="T:System.Exception">Може виникнути у разі неочікуваної помилки.</exception>
+        </member>
+        <member name="M:MovieDiscovery.Server.Services.MovieService.GetRandomMovieAsync">
+            <summary>
+            Отримання випадкового фільму із бази даних.
+            </summary>
+            <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.Movie.MovieResponse"/>.</returns>
+            <exception cref="T:MovieDiscovery.Server.Exceptions.NoMoviesFoundException">Виникає, якщо у базі немає фільмів.</exception>
+            <exception cref="T:System.Exception">Може виникнути у разі неочікуваної помилки.</exception>
+        </member>
+        <member name="T:MovieDiscovery.Server.Services.UserContextService">
+            <summary>
+            Сервіс для роботи з контекстом користувача в HTTP запитах.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Services.UserContextService.GetUserIdFromHttpContext(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Отримання userId з контексту HTTP.
+            </summary>
+            <param name="httpContext">Контекст HTTP.</param>
+            <returns>userId користувача або null, якщо користувач не авторизований.</returns>
+        </member>
+        <member name="T:MovieDiscovery.Server.Services.UserService">
+            <summary>
+            Сервіс для керування користувачами.
+            </summary>
+        </member>
+        <member name="M:MovieDiscovery.Server.Services.UserService.#ctor(MovieDiscovery.Server.Context.MovieDBContext)">
+            <summary>
+            Конструктор класу UserService.
+            </summary>
+            <param name="context">Контекст бази даних.</param>
+        </member>
+        <member name="M:MovieDiscovery.Server.Services.UserService.AddUser(MovieDiscovery.Server.Contracts.User.CreateUserRequest)">
+            <summary>
+            Додавання нового користувача до бази даних.
+            </summary>
+            <param name="user">Об'єкт, що містить дані для створення користувача.</param>
+            <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.User.UserResponse"/> з інформацією про користувача.</returns>
+            <exception cref="T:MovieDiscovery.Server.Exceptions.UserAlreadyExistsException">Виникає, якщо користувач з такою електронною поштою або ім'ям вже існує.</exception>
+            <exception cref="T:System.Exception">Може виникнути у разі неочікуваної помилки.</exception>
+        </member>
+        <member name="M:MovieDiscovery.Server.Services.UserService.DeleteUserAsync(System.Int32)">
+            <summary>
+            Видалення користувача за його ідентифікатором.
+            </summary>
+            <param name="id">Ідентифікатор користувача.</param>
+            <returns>True, якщо користувача видалено, інакше - false.</returns>
+            <exception cref="T:System.Exception">Може виникнути у разі неочікуваної помилки.</exception>
+        </member>
+        <member name="M:MovieDiscovery.Server.Services.UserService.GetUserByEmailAndUsernameAsync(System.String,System.String)">
+            <summary>
+            Отримання користувача за електронною потошою або ім'ям користувача.
+            </summary>
+            <param name="username">Ім'я користувача.</param>
+            <param name="email">Електронна пошта користувача.</param>
+            <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.User.UserResponseWithPassword"/> з інформацією про користувача або null, якщо користувача не знайдено.</returns>
+            <exception cref="T:System.Exception">Може виникнути у разі неочікуваної помилки.</exception>
+        </member>
+        <member name="M:MovieDiscovery.Server.Services.UserService.GetUserByIdAsync(System.Int32)">
+            <summary>
+            Отримання користувача за ідентифікатором.
+            </summary>
+            <param name="id">Ідентифікатор користувача.</param>
+            <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.User.UserResponse"/> з інформацією про користувача або null, якщо користувача не знайдено.</returns>
+            <exception cref="T:System.Exception">Може виникнути у разі неочікуваної помилки.</exception>
+        </member>
+        <member name="M:MovieDiscovery.Server.Services.UserService.UpdateUserAsync(MovieDiscovery.Server.Contracts.User.UpdateUserRequest,System.Int32)">
+            <summary>
+            Оновлювання даних користувача.
+            </summary>
+            <param name="user">Об'єкт, що містить дані для оновлення користувача.</param>
+            <param name="userId">Ідентифікатор користувача.</param>
+            <returns>Об'єкт <see cref="T:MovieDiscovery.Server.Contracts.User.UserResponse"/> з оновленою інформацією або null, якщо користувача не знайдено.</returns>
+            <exception cref="T:System.Exception">Може виникнути у разі неочікуваної помилки.</exception>
+        </member>
+    </members>
+</doc>

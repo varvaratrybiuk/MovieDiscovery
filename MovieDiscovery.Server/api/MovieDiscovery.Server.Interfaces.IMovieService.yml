@@ -1,0 +1,455 @@
+### YamlMime:ManagedReference
+items:
+- uid: MovieDiscovery.Server.Interfaces.IMovieService
+  commentId: T:MovieDiscovery.Server.Interfaces.IMovieService
+  id: IMovieService
+  parent: MovieDiscovery.Server.Interfaces
+  children:
+  - MovieDiscovery.Server.Interfaces.IMovieService.AddMovieAsync(MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest,System.Int32)
+  - MovieDiscovery.Server.Interfaces.IMovieService.GetAllAsync
+  - MovieDiscovery.Server.Interfaces.IMovieService.GetByTitleAsync(System.String)
+  - MovieDiscovery.Server.Interfaces.IMovieService.GetRandomMovieAsync
+  langs:
+  - csharp
+  - vb
+  name: IMovieService
+  nameWithType: IMovieService
+  fullName: MovieDiscovery.Server.Interfaces.IMovieService
+  type: Interface
+  source:
+    remote:
+      path: MovieDiscovery.Server/Interfaces/IMovieService.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: IMovieService
+    path: Interfaces/IMovieService.cs
+    startLine: 7
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Interfaces
+  summary: Інтерфейс для сервісу фільмів.
+  example: []
+  syntax:
+    content: public interface IMovieService
+    content.vb: Public Interface IMovieService
+- uid: MovieDiscovery.Server.Interfaces.IMovieService.AddMovieAsync(MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest,System.Int32)
+  commentId: M:MovieDiscovery.Server.Interfaces.IMovieService.AddMovieAsync(MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest,System.Int32)
+  id: AddMovieAsync(MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest,System.Int32)
+  parent: MovieDiscovery.Server.Interfaces.IMovieService
+  langs:
+  - csharp
+  - vb
+  name: AddMovieAsync(CreateMovieRequest, int)
+  nameWithType: IMovieService.AddMovieAsync(CreateMovieRequest, int)
+  fullName: MovieDiscovery.Server.Interfaces.IMovieService.AddMovieAsync(MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest, int)
+  type: Method
+  source:
+    remote:
+      path: MovieDiscovery.Server/Interfaces/IMovieService.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: AddMovieAsync
+    path: Interfaces/IMovieService.cs
+    startLine: 15
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Interfaces
+  summary: Додавання нового фільму.
+  example: []
+  syntax:
+    content: Task<MovieResponse> AddMovieAsync(CreateMovieRequest movieRequest, int userId)
+    parameters:
+    - id: movieRequest
+      type: MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest
+      description: Об'єкт, що містить дані для створення фільму.
+    - id: userId
+      type: System.Int32
+      description: Ідентифікатор користувача, що додає фільм.
+    return:
+      type: System.Threading.Tasks.Task{MovieDiscovery.Server.Contracts.Movie.MovieResponse}
+      description: Об'єкт <xref href="MovieDiscovery.Server.Contracts.Movie.MovieResponse" data-throw-if-not-resolved="false"></xref> з інформацією про доданий фільм.
+    content.vb: Function AddMovieAsync(movieRequest As CreateMovieRequest, userId As Integer) As Task(Of MovieResponse)
+  overload: MovieDiscovery.Server.Interfaces.IMovieService.AddMovieAsync*
+  nameWithType.vb: IMovieService.AddMovieAsync(CreateMovieRequest, Integer)
+  fullName.vb: MovieDiscovery.Server.Interfaces.IMovieService.AddMovieAsync(MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest, Integer)
+  name.vb: AddMovieAsync(CreateMovieRequest, Integer)
+- uid: MovieDiscovery.Server.Interfaces.IMovieService.GetRandomMovieAsync
+  commentId: M:MovieDiscovery.Server.Interfaces.IMovieService.GetRandomMovieAsync
+  id: GetRandomMovieAsync
+  parent: MovieDiscovery.Server.Interfaces.IMovieService
+  langs:
+  - csharp
+  - vb
+  name: GetRandomMovieAsync()
+  nameWithType: IMovieService.GetRandomMovieAsync()
+  fullName: MovieDiscovery.Server.Interfaces.IMovieService.GetRandomMovieAsync()
+  type: Method
+  source:
+    remote:
+      path: MovieDiscovery.Server/Interfaces/IMovieService.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: GetRandomMovieAsync
+    path: Interfaces/IMovieService.cs
+    startLine: 21
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Interfaces
+  summary: Отримання випадкового фільму.
+  example: []
+  syntax:
+    content: Task<MovieResponse?> GetRandomMovieAsync()
+    return:
+      type: System.Threading.Tasks.Task{MovieDiscovery.Server.Contracts.Movie.MovieResponse}
+      description: Об'єкт <xref href="MovieDiscovery.Server.Contracts.Movie.MovieResponse" data-throw-if-not-resolved="false"></xref> з випадковим фільмом або null, якщо фільмів немає.
+    content.vb: Function GetRandomMovieAsync() As Task(Of MovieResponse)
+  overload: MovieDiscovery.Server.Interfaces.IMovieService.GetRandomMovieAsync*
+- uid: MovieDiscovery.Server.Interfaces.IMovieService.GetByTitleAsync(System.String)
+  commentId: M:MovieDiscovery.Server.Interfaces.IMovieService.GetByTitleAsync(System.String)
+  id: GetByTitleAsync(System.String)
+  parent: MovieDiscovery.Server.Interfaces.IMovieService
+  langs:
+  - csharp
+  - vb
+  name: GetByTitleAsync(string)
+  nameWithType: IMovieService.GetByTitleAsync(string)
+  fullName: MovieDiscovery.Server.Interfaces.IMovieService.GetByTitleAsync(string)
+  type: Method
+  source:
+    remote:
+      path: MovieDiscovery.Server/Interfaces/IMovieService.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: GetByTitleAsync
+    path: Interfaces/IMovieService.cs
+    startLine: 28
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Interfaces
+  summary: Отримання фільму(ів) за назвою.
+  example: []
+  syntax:
+    content: Task<IEnumerable<MovieResponse>> GetByTitleAsync(string title)
+    parameters:
+    - id: title
+      type: System.String
+      description: Назва фільму, який потрібно знайти.
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{MovieDiscovery.Server.Contracts.Movie.MovieResponse}}
+      description: Об'єкт <xref href="MovieDiscovery.Server.Contracts.Movie.MovieResponse" data-throw-if-not-resolved="false"></xref> з фільмом(ами) або null, якщо фільм не знайдено.
+    content.vb: Function GetByTitleAsync(title As String) As Task(Of IEnumerable(Of MovieResponse))
+  overload: MovieDiscovery.Server.Interfaces.IMovieService.GetByTitleAsync*
+  nameWithType.vb: IMovieService.GetByTitleAsync(String)
+  fullName.vb: MovieDiscovery.Server.Interfaces.IMovieService.GetByTitleAsync(String)
+  name.vb: GetByTitleAsync(String)
+- uid: MovieDiscovery.Server.Interfaces.IMovieService.GetAllAsync
+  commentId: M:MovieDiscovery.Server.Interfaces.IMovieService.GetAllAsync
+  id: GetAllAsync
+  parent: MovieDiscovery.Server.Interfaces.IMovieService
+  langs:
+  - csharp
+  - vb
+  name: GetAllAsync()
+  nameWithType: IMovieService.GetAllAsync()
+  fullName: MovieDiscovery.Server.Interfaces.IMovieService.GetAllAsync()
+  type: Method
+  source:
+    remote:
+      path: MovieDiscovery.Server/Interfaces/IMovieService.cs
+      branch: dev
+      repo: git@github.com:varvaratrybiuk/MovieDiscovery.git
+    id: GetAllAsync
+    path: Interfaces/IMovieService.cs
+    startLine: 34
+  assemblies:
+  - MovieDiscovery.Server
+  namespace: MovieDiscovery.Server.Interfaces
+  summary: Отримання всіх фільмів.
+  example: []
+  syntax:
+    content: Task<IEnumerable<MovieResponse>> GetAllAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{MovieDiscovery.Server.Contracts.Movie.MovieResponse}}
+      description: Колекція фільмів у вигляді <xref href="MovieDiscovery.Server.Contracts.Movie.MovieResponse" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Function GetAllAsync() As Task(Of IEnumerable(Of MovieResponse))
+  overload: MovieDiscovery.Server.Interfaces.IMovieService.GetAllAsync*
+references:
+- uid: MovieDiscovery.Server.Interfaces
+  commentId: N:MovieDiscovery.Server.Interfaces
+  href: MovieDiscovery.html
+  name: MovieDiscovery.Server.Interfaces
+  nameWithType: MovieDiscovery.Server.Interfaces
+  fullName: MovieDiscovery.Server.Interfaces
+  spec.csharp:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Interfaces
+    name: Interfaces
+    href: MovieDiscovery.Server.Interfaces.html
+  spec.vb:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Interfaces
+    name: Interfaces
+    href: MovieDiscovery.Server.Interfaces.html
+- uid: MovieDiscovery.Server.Contracts.Movie.MovieResponse
+  commentId: T:MovieDiscovery.Server.Contracts.Movie.MovieResponse
+  href: MovieDiscovery.Server.Contracts.Movie.MovieResponse.html
+  name: MovieResponse
+  nameWithType: MovieResponse
+  fullName: MovieDiscovery.Server.Contracts.Movie.MovieResponse
+- uid: MovieDiscovery.Server.Interfaces.IMovieService.AddMovieAsync*
+  commentId: Overload:MovieDiscovery.Server.Interfaces.IMovieService.AddMovieAsync
+  href: MovieDiscovery.Server.Interfaces.IMovieService.html#MovieDiscovery_Server_Interfaces_IMovieService_AddMovieAsync_MovieDiscovery_Server_Contracts_Movie_CreateMovieRequest_System_Int32_
+  name: AddMovieAsync
+  nameWithType: IMovieService.AddMovieAsync
+  fullName: MovieDiscovery.Server.Interfaces.IMovieService.AddMovieAsync
+- uid: MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest
+  commentId: T:MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest
+  parent: MovieDiscovery.Server.Contracts.Movie
+  href: MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest.html
+  name: CreateMovieRequest
+  nameWithType: CreateMovieRequest
+  fullName: MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.Tasks.Task{MovieDiscovery.Server.Contracts.Movie.MovieResponse}
+  commentId: T:System.Threading.Tasks.Task{MovieDiscovery.Server.Contracts.Movie.MovieResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<MovieResponse>
+  nameWithType: Task<MovieResponse>
+  fullName: System.Threading.Tasks.Task<MovieDiscovery.Server.Contracts.Movie.MovieResponse>
+  nameWithType.vb: Task(Of MovieResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of MovieDiscovery.Server.Contracts.Movie.MovieResponse)
+  name.vb: Task(Of MovieResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: MovieDiscovery.Server.Contracts.Movie.MovieResponse
+    name: MovieResponse
+    href: MovieDiscovery.Server.Contracts.Movie.MovieResponse.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: MovieDiscovery.Server.Contracts.Movie.MovieResponse
+    name: MovieResponse
+    href: MovieDiscovery.Server.Contracts.Movie.MovieResponse.html
+  - name: )
+- uid: MovieDiscovery.Server.Contracts.Movie
+  commentId: N:MovieDiscovery.Server.Contracts.Movie
+  href: MovieDiscovery.html
+  name: MovieDiscovery.Server.Contracts.Movie
+  nameWithType: MovieDiscovery.Server.Contracts.Movie
+  fullName: MovieDiscovery.Server.Contracts.Movie
+  spec.csharp:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts
+    name: Contracts
+    href: MovieDiscovery.Server.Contracts.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts.Movie
+    name: Movie
+    href: MovieDiscovery.Server.Contracts.Movie.html
+  spec.vb:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts
+    name: Contracts
+    href: MovieDiscovery.Server.Contracts.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts.Movie
+    name: Movie
+    href: MovieDiscovery.Server.Contracts.Movie.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: MovieDiscovery.Server.Interfaces.IMovieService.GetRandomMovieAsync*
+  commentId: Overload:MovieDiscovery.Server.Interfaces.IMovieService.GetRandomMovieAsync
+  href: MovieDiscovery.Server.Interfaces.IMovieService.html#MovieDiscovery_Server_Interfaces_IMovieService_GetRandomMovieAsync
+  name: GetRandomMovieAsync
+  nameWithType: IMovieService.GetRandomMovieAsync
+  fullName: MovieDiscovery.Server.Interfaces.IMovieService.GetRandomMovieAsync
+- uid: MovieDiscovery.Server.Interfaces.IMovieService.GetByTitleAsync*
+  commentId: Overload:MovieDiscovery.Server.Interfaces.IMovieService.GetByTitleAsync
+  href: MovieDiscovery.Server.Interfaces.IMovieService.html#MovieDiscovery_Server_Interfaces_IMovieService_GetByTitleAsync_System_String_
+  name: GetByTitleAsync
+  nameWithType: IMovieService.GetByTitleAsync
+  fullName: MovieDiscovery.Server.Interfaces.IMovieService.GetByTitleAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{MovieDiscovery.Server.Contracts.Movie.MovieResponse}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{MovieDiscovery.Server.Contracts.Movie.MovieResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IEnumerable<MovieResponse>>
+  nameWithType: Task<IEnumerable<MovieResponse>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<MovieDiscovery.Server.Contracts.Movie.MovieResponse>>
+  nameWithType.vb: Task(Of IEnumerable(Of MovieResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of MovieDiscovery.Server.Contracts.Movie.MovieResponse))
+  name.vb: Task(Of IEnumerable(Of MovieResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: MovieDiscovery.Server.Contracts.Movie.MovieResponse
+    name: MovieResponse
+    href: MovieDiscovery.Server.Contracts.Movie.MovieResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: MovieDiscovery.Server.Contracts.Movie.MovieResponse
+    name: MovieResponse
+    href: MovieDiscovery.Server.Contracts.Movie.MovieResponse.html
+  - name: )
+  - name: )
+- uid: MovieDiscovery.Server.Interfaces.IMovieService.GetAllAsync*
+  commentId: Overload:MovieDiscovery.Server.Interfaces.IMovieService.GetAllAsync
+  href: MovieDiscovery.Server.Interfaces.IMovieService.html#MovieDiscovery_Server_Interfaces_IMovieService_GetAllAsync
+  name: GetAllAsync
+  nameWithType: IMovieService.GetAllAsync
+  fullName: MovieDiscovery.Server.Interfaces.IMovieService.GetAllAsync

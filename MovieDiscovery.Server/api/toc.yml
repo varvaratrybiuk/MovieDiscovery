@@ -1,0 +1,149 @@
+### YamlMime:TableOfContent
+items:
+- uid: MovieDiscovery.Server.Context
+  name: MovieDiscovery.Server.Context
+  type: Namespace
+  items:
+  - uid: MovieDiscovery.Server.Context.MovieDBContext
+    name: MovieDBContext
+    type: Class
+- uid: MovieDiscovery.Server.Contracts.Genre
+  name: MovieDiscovery.Server.Contracts.Genre
+  type: Namespace
+  items:
+  - uid: MovieDiscovery.Server.Contracts.Genre.GenreResponse
+    name: GenreResponse
+    type: Class
+- uid: MovieDiscovery.Server.Contracts.Movie
+  name: MovieDiscovery.Server.Contracts.Movie
+  type: Namespace
+  items:
+  - uid: MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest
+    name: CreateMovieRequest
+    type: Class
+  - uid: MovieDiscovery.Server.Contracts.Movie.MovieResponse
+    name: MovieResponse
+    type: Class
+- uid: MovieDiscovery.Server.Contracts.User
+  name: MovieDiscovery.Server.Contracts.User
+  type: Namespace
+  items:
+  - uid: MovieDiscovery.Server.Contracts.User.CreateUserRequest
+    name: CreateUserRequest
+    type: Class
+  - uid: MovieDiscovery.Server.Contracts.User.UpdateUserRequest
+    name: UpdateUserRequest
+    type: Class
+  - uid: MovieDiscovery.Server.Contracts.User.UserRequest
+    name: UserRequest
+    type: Class
+  - uid: MovieDiscovery.Server.Contracts.User.UserResponse
+    name: UserResponse
+    type: Class
+  - uid: MovieDiscovery.Server.Contracts.User.UserResponseWithPassword
+    name: UserResponseWithPassword
+    type: Class
+- uid: MovieDiscovery.Server.Endpoints
+  name: MovieDiscovery.Server.Endpoints
+  type: Namespace
+  items:
+  - uid: MovieDiscovery.Server.Endpoints.AccountEndpoints
+    name: AccountEndpoints
+    type: Class
+  - uid: MovieDiscovery.Server.Endpoints.GenreEndpoints
+    name: GenreEndpoints
+    type: Class
+  - uid: MovieDiscovery.Server.Endpoints.MovieEndpoints
+    name: MovieEndpoints
+    type: Class
+- uid: MovieDiscovery.Server.Exceptions
+  name: MovieDiscovery.Server.Exceptions
+  type: Namespace
+  items:
+  - uid: MovieDiscovery.Server.Exceptions.GlobalExceptionHandler
+    name: GlobalExceptionHandler
+    type: Class
+  - uid: MovieDiscovery.Server.Exceptions.MovieAlreadyExistsException
+    name: MovieAlreadyExistsException
+    type: Class
+  - uid: MovieDiscovery.Server.Exceptions.MovieNotFoundException
+    name: MovieNotFoundException
+    type: Class
+  - uid: MovieDiscovery.Server.Exceptions.NoMoviesFoundException
+    name: NoMoviesFoundException
+    type: Class
+  - uid: MovieDiscovery.Server.Exceptions.UserAlreadyExistsException
+    name: UserAlreadyExistsException
+    type: Class
+- uid: MovieDiscovery.Server.Helpers
+  name: MovieDiscovery.Server.Helpers
+  type: Namespace
+  items:
+  - uid: MovieDiscovery.Server.Helpers.ValidationUtilities
+    name: ValidationUtilities
+    type: Class
+- uid: MovieDiscovery.Server.Interfaces
+  name: MovieDiscovery.Server.Interfaces
+  type: Namespace
+  items:
+  - uid: MovieDiscovery.Server.Interfaces.IGenreService
+    name: IGenreService
+    type: Interface
+  - uid: MovieDiscovery.Server.Interfaces.IMovieService
+    name: IMovieService
+    type: Interface
+  - uid: MovieDiscovery.Server.Interfaces.IUserService
+    name: IUserService
+    type: Interface
+- uid: MovieDiscovery.Server.Migrations
+  name: MovieDiscovery.Server.Migrations
+  type: Namespace
+  items:
+  - uid: MovieDiscovery.Server.Migrations.CreateUsersTable
+    name: CreateUsersTable
+    type: Class
+  - uid: MovieDiscovery.Server.Migrations.InitialCreate
+    name: InitialCreate
+    type: Class
+  - uid: MovieDiscovery.Server.Migrations.SeedDatabase
+    name: SeedDatabase
+    type: Class
+  - uid: MovieDiscovery.Server.Migrations.SetNullOnUserDelete
+    name: SetNullOnUserDelete
+    type: Class
+  - uid: MovieDiscovery.Server.Migrations.UpdateMovieDescription
+    name: UpdateMovieDescription
+    type: Class
+- uid: MovieDiscovery.Server.Models
+  name: MovieDiscovery.Server.Models
+  type: Namespace
+  items:
+  - uid: MovieDiscovery.Server.Models.Genre
+    name: Genre
+    type: Class
+  - uid: MovieDiscovery.Server.Models.Movie
+    name: Movie
+    type: Class
+  - uid: MovieDiscovery.Server.Models.Movie_Genre
+    name: Movie_Genre
+    type: Class
+  - uid: MovieDiscovery.Server.Models.User
+    name: User
+    type: Class
+- uid: MovieDiscovery.Server.Services
+  name: MovieDiscovery.Server.Services
+  type: Namespace
+  items:
+  - uid: MovieDiscovery.Server.Services.GenreService
+    name: GenreService
+    type: Class
+  - uid: MovieDiscovery.Server.Services.MovieService
+    name: MovieService
+    type: Class
+  - uid: MovieDiscovery.Server.Services.UserContextService
+    name: UserContextService
+    type: Class
+  - uid: MovieDiscovery.Server.Services.UserService
+    name: UserService
+    type: Class
+memberLayout: SamePage

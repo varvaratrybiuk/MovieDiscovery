@@ -1,0 +1,69 @@
+### YamlMime:ManagedReference
+items:
+- uid: MovieDiscovery.Server.Contracts.Movie
+  commentId: N:MovieDiscovery.Server.Contracts.Movie
+  id: MovieDiscovery.Server.Contracts.Movie
+  children:
+  - MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest
+  - MovieDiscovery.Server.Contracts.Movie.MovieResponse
+  langs:
+  - csharp
+  - vb
+  name: MovieDiscovery.Server.Contracts.Movie
+  nameWithType: MovieDiscovery.Server.Contracts.Movie
+  fullName: MovieDiscovery.Server.Contracts.Movie
+  type: Namespace
+  assemblies:
+  - MovieDiscovery.Server
+references:
+- uid: MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest
+  commentId: T:MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest
+  parent: MovieDiscovery.Server.Contracts.Movie
+  href: MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest.html
+  name: CreateMovieRequest
+  nameWithType: CreateMovieRequest
+  fullName: MovieDiscovery.Server.Contracts.Movie.CreateMovieRequest
+- uid: MovieDiscovery.Server.Contracts.Movie.MovieResponse
+  commentId: T:MovieDiscovery.Server.Contracts.Movie.MovieResponse
+  href: MovieDiscovery.Server.Contracts.Movie.MovieResponse.html
+  name: MovieResponse
+  nameWithType: MovieResponse
+  fullName: MovieDiscovery.Server.Contracts.Movie.MovieResponse
+- uid: MovieDiscovery.Server.Contracts.Movie
+  commentId: N:MovieDiscovery.Server.Contracts.Movie
+  href: MovieDiscovery.html
+  name: MovieDiscovery.Server.Contracts.Movie
+  nameWithType: MovieDiscovery.Server.Contracts.Movie
+  fullName: MovieDiscovery.Server.Contracts.Movie
+  spec.csharp:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts
+    name: Contracts
+    href: MovieDiscovery.Server.Contracts.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts.Movie
+    name: Movie
+    href: MovieDiscovery.Server.Contracts.Movie.html
+  spec.vb:
+  - uid: MovieDiscovery
+    name: MovieDiscovery
+    href: MovieDiscovery.html
+  - name: .
+  - uid: MovieDiscovery.Server
+    name: Server
+    href: MovieDiscovery.Server.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts
+    name: Contracts
+    href: MovieDiscovery.Server.Contracts.html
+  - name: .
+  - uid: MovieDiscovery.Server.Contracts.Movie
+    name: Movie
+    href: MovieDiscovery.Server.Contracts.Movie.html
