@@ -1,5 +1,6 @@
 import { useForm, FormProvider } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import PropTypes from "prop-types";
 
 import FormInput from "../formInput/FormInput";
 import FormTextarea from "../formTextarea/FormTextarea";
@@ -11,8 +12,10 @@ import { movieValidationShema } from "../../schemas/movieFormValidationSchema";
 import buttonStyles from "../../styles/buttonsStyle.module.css";
 import style from "./AddFilmFormStyle.module.css";
 
-export default function AddFilmForm(props) {
-  const { genres, onSubmit } = props;
+/**
+ * Форма для додавання нового фільму.
+ */
+export default function AddFilmForm({ genres, onSubmit }) {
   const {
     register,
     handleSubmit,
@@ -67,3 +70,11 @@ export default function AddFilmForm(props) {
     </FormProvider>
   );
 }
+
+AddFilmForm.propTypes = {
+  /** Список доступних жанрів */
+  genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+
+  /** Функція, що викликається при відправці форми */
+  onSubmit: PropTypes.func.isRequired,
+};

@@ -1,6 +1,8 @@
 .form-style {
-    margin: 20px;
-    border: 1px solid #ff4c91;
-    padding: 50px;
-    border-radius: 10px;
+  margin: 20px;
+  border: 1px solid #ff4c91;
+  padding: 50px;
+  border-radius: 10px;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  text-align: center;
 }
