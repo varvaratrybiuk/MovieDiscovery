@@ -1,7 +1,17 @@
+import PropTypes from "prop-types";
+
 import style from "./FilmCardStyle.module.css";
 
-export default function FilmCard(props) {
-  const { title, description, year, rating, genres } = props;
+/**
+ * Компонент для виведення інформації про фільм
+ */
+export default function FilmCard({
+  title,
+  description = "Опис до фільму відсутній",
+  year,
+  rating = 0.0,
+  genres,
+}) {
   return (
     <div className={style["card"]}>
       <p>{title}</p>
@@ -20,3 +30,20 @@ export default function FilmCard(props) {
     </div>
   );
 }
+
+FilmCard.propTypes = {
+  /** Назва фільму */
+  title: PropTypes.string.isRequired,
+
+  /** Опис фільму */
+  description: PropTypes.string,
+
+  /** Рік випуску */
+  year: PropTypes.number.isRequired,
+
+  /** Рейтинг фільму */
+  rating: PropTypes.number,
+
+  /** Жанри фільму */
+  genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+};

@@ -13,7 +13,7 @@ export const movieValidationShema = yup.object().shape({
     .typeError("Рік виходу має бути числом")
     .required("Рік виходу є обов'язковим")
     .integer("Рік має бути цілим числом")
-    .min(1888, "Рік має бути не раніше 1888")
+    .min(1920, "Рік має бути не раніше 1920")
     .max(new Date().getFullYear(), "Рік не може бути у майбутньому"),
   rating: yup
     .number()

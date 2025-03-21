@@ -35,10 +35,6 @@
 
    `cd MovieDiscovery.Server`
 
-1. Виконайте build, для відновлення всіх залежностей і побудови проєкту:
-
-   `dotnet build`
-
 1. Якщо база даних відсутня, заспустіть її створення:
 
    `dotnet ef database update`
@@ -89,23 +85,8 @@ docfx build docfx.json --serve
 
 ## Storybook
 
+На локальному сервері. Посилання [тут](http://localhost:6006/)
+
 ## Swagger
 
-На локальному сервері. Посилання [тут](http://localhost:5151)
-
-1. Назва проєкту, опис
-2. Базові команди
-   Запуск проєкту
-   Серверна частина
-   cd MovieDiscovery.Server
-   dotnet run / dotnet watch run
-   Клієнтська частина
-   cd MovieDiscovery.Client
-   npm run dev
-3. Файли конфігурації
-   .env
-   appsettings.Development.json
-4. Ліцензії Проєктів
-   Backend
-   Всі під MIT
-   Frontend
+На локальному сервері. Посилання [тут](http://localhost:5151/swagger/index.html)

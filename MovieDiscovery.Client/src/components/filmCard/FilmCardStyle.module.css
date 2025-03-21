@@ -7,12 +7,13 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 300px;
   font-family: Arial, sans-serif;
+  text-align: center;
 }
 
 .card p {
   font-size: 18px;
   font-weight: bold;
-    color: #333;
+  color: #333;
   margin-bottom: 8px;
 }
 
@@ -23,18 +24,19 @@
   border-radius: 8px;
   margin-bottom: 10px;
 }
-.title{
-    font-weight: bold;
-    color: #333;
+.title {
+  font-weight: bold;
+  text-align: center;
+  color: #333;
 }
- .row {
+.row {
   display: flex;
   justify-content: space-between;
   margin-top: 8px;
   font-size: 14px;
   font-weight: bold;
-    color: #333;
+  color: #333;
 }
-.genre{
+.genre {
   font-weight: bold;
 }
