@@ -57,8 +57,15 @@ export default function CookiePopup() {
         <p>
           Ми використовуємо cookies для покращення вашого досвіду на нашому
           сайті. Продовжуючи, ви погоджуєтеся з використанням cookies.
-          Детальніше про файли cookie можна дізнатися у Політиці
-          конфіденційності.
+          Детальніше про файли cookie можна дізнатися у
+          <a
+            style={{ margin: "5px" }}
+            href="https://github.com/varvaratrybiuk/MovieDiscovery/blob/main/privacy-policy.md"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Політиці конфіденційності.
+          </a>
         </p>
         <div>
           <button
