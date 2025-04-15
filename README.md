@@ -89,8 +89,18 @@ docfx build docfx.json --serve
 
 ## Storybook
 
+```
+cd MovieDiscovery.Client
+
+npm run storybook
+```
+
 На локальному сервері. Посилання [тут](http://localhost:6006/)
 
 ## Swagger
 
 На локальному сервері. Посилання [тут](http://localhost:5151/swagger/index.html)
+
+## Автор
+
+Розробник - Трибюк Варвара
